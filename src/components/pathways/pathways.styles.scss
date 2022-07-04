@@ -1,0 +1,49 @@
+.pathways {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+  padding: 2rem 4rem;
+
+  font-size: 2rem;
+
+  &__hashtags-container {
+    display: flex;
+    margin: 3rem auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  &__hastags-list {
+    display: flex;
+  }
+
+  &__hastags-item {
+    list-style: none;
+    cursor: pointer;
+
+    margin-left: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__pagination-btns {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.btn {
+  padding: 1rem 4rem;
+  margin-bottom: 4rem;
+}
+
+.temp-item {
+  background-image: url('https://images.unsplash.com/photo-1656919051982-a5718566de6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1135&q=80');
+  width: 35rem;
+  height: 35rem;
+  margin-bottom: 3rem;
+}

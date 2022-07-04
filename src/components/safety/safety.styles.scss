@@ -1,0 +1,12 @@
+.safety {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 5rem;
+
+  &__column {
+    width: 50rem;
+    margin: 4rem;
+    padding: 3rem 2rem;
+    background-color: #fff;
+  }
+}
