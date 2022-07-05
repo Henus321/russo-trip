@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
+import logo from '../../assets/logo.png';
+import avatar from '../../assets/avatar.png';
+
 import './header.styles.scss';
 
 const Header = () => {
@@ -9,7 +12,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header__icon-plug">Logo</div>
+      <div className="header__logo-container">
+        <img className="header__logo" src={logo} alt="" />
+      </div>
       <nav>
         <ul className="header__nav-list">
           <li className="header__nav-item" onClick={() => navigate('/')}>
@@ -28,7 +33,7 @@ const Header = () => {
             <span className="header__link">Sign In</span>
           </li>
           <li className="header__nav-item header__log-in">
-            <span className="header__link">Ava</span>
+            <img className="header__avatar" src={avatar} alt="" />
           </li>
         </ul>
       </nav>

@@ -9,13 +9,13 @@ const Cities = () => {
       <div className="citites">
         <Swiper
           slidesPerView={1}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide className="slide1">Slide 1</SwiperSlide>
-          <SwiperSlide className="slide2">Slide 2</SwiperSlide>
-          <SwiperSlide className="slide3">Slide 3</SwiperSlide>
-          <SwiperSlide className="slide4">Slide 4</SwiperSlide>
+          <SwiperSlide className="slide1"></SwiperSlide>
+          <SwiperSlide className="slide2"></SwiperSlide>
+          <SwiperSlide className="slide3"></SwiperSlide>
+          <SwiperSlide className="slide4"></SwiperSlide>
         </Swiper>
       </div>
     </>

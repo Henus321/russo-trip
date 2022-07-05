@@ -1,6 +1,14 @@
+import { useContext } from 'react';
+import { PathwaysContext } from '../../contexts/pathways.context';
+import PathwayItem from '../pathway-item/pathway-item.component';
+
 import './pathways.styles.scss';
 
 const Pathways = () => {
+  const { pathwaysInfo } = useContext(PathwaysContext);
+
+  const ready = Object.values(pathwaysInfo)[0].length > 0;
+
   return (
     <div className="pathways">
       <div className="pathways__title-container">
@@ -18,66 +26,14 @@ const Pathways = () => {
       </div>
 
       <div className="pathways__list">
-        <div className="pathways__item">
-          <div className="pathways__item-photo"></div>
-          <div className="pathways__item-info">
-            <div className="pathways__item-text">
-              <h3>Moscow</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <button className="pathways__item-button">click!</button>
-          </div>
-        </div>
-        <div className="pathways__item">
-          <div className="pathways__item-photo"></div>
-          <div className="pathways__item-info">
-            <div className="pathways__item-text">
-              <h3>Moscow</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <button className="pathways__item-button">click!</button>
-          </div>
-        </div>
-        <div className="pathways__item">
-          <div className="pathways__item-photo"></div>
-          <div className="pathways__item-info">
-            <div className="pathways__item-text">
-              <h3>Moscow</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <button className="pathways__item-button">click!</button>
-          </div>
-        </div>
-        <div className="pathways__item">
-          <div className="pathways__item-photo"></div>
-          <div className="pathways__item-info">
-            <div className="pathways__item-text">
-              <h3>Moscow</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <button className="pathways__item-button">click!</button>
-          </div>
-        </div>
-        <div className="pathways__item">
-          <div className="pathways__item-photo"></div>
-          <div className="pathways__item-info">
-            <div className="pathways__item-text">
-              <h3>Moscow</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <button className="pathways__item-button">click!</button>
-          </div>
-        </div>
-        <div className="pathways__item">
-          <div className="pathways__item-photo"></div>
-          <div className="pathways__item-info">
-            <div className="pathways__item-text">
-              <h3>Moscow</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <button className="pathways__item-button">click!</button>
-          </div>
-        </div>
+        {ready &&
+          pathwaysInfo.moscow.map((path) => (
+            <PathwayItem
+              key={path.id}
+              imageUrl={path.imageUrl}
+              name={path.name}
+            />
+          ))}
       </div>
 
       <div className="pathways__pagination-btns">

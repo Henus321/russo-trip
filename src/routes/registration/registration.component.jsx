@@ -1,9 +1,14 @@
+import logo from '../../assets/logo.png';
+
 import './registration.styles.scss';
 
 const Registration = () => {
   return (
     <main className="registration">
-      <div className="header__icon-plug registration__item"></div>
+      {/* TEMPORARY LOGO */}
+      <div className="header__logo-container registration__item">
+        <img className="header__logo" src={logo} alt="" />
+      </div>
       <h2 className="registration__title registration__item">
         Registration in Russo Trip
       </h2>
