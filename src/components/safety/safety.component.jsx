@@ -5,38 +5,54 @@ import React from 'react';
 const Safety = () => {
   return (
     <div className="safety">
-      <h2 className="safety__main-title">Some Title</h2>
+      <div className="safety__bg-content">
+        <video className="safety__bg-video" autoPlay muted loop>
+          <source
+            src="https://storage.coverr.co/videos/EPry5vFxnaOdvtBILZuhYNjHz901oFKvs?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjU3MDI2NDg4fQ.sfcBRV3UkvD3JeIWCbgNKndtlM5zOfb1XOCXMmRkq-w"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <h2 className="safety__main-title">Aditional Information</h2>
       <div className="safety__row">
         <div className="safety__column">
-          <h2 className="safety__title">Some text about safety</h2>
-          <p className="safety__paragraph">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            vero? Distinctio, suscipit cum repellendus nam, reprehenderit
-            quisquam libero alias ratione dolore cupiditate blanditiis.
-          </p>
+          <div className="safety__text">
+            <h2 className="safety__title">Some text</h2>
+            <p className="safety__paragraph">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+              vero? Distinctio, suscipit cum repellendus nam, reprehenderit
+              quisquam libero alias ratione dolore cupiditate blanditiis.
+            </p>
+          </div>
+          <button className="safety__button">Button</button>
         </div>
 
         <div className="safety__column">
-          <h2 className="safety__title">Mb some pictures</h2>
-          <p className="safety__paragraph">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            vero? Distinctio, suscipit cum repellendus nam, reprehenderit
-            quisquam libero alias ratione dolore cupiditate blanditiis ullam,
-            recusandae delectus maxime voluptatum eaque provident. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Quisquam, saepe
-            dolorum.
-          </p>
+          <div className="safety__text">
+            <h2 className="safety__title">Some text</h2>
+            <p className="safety__paragraph">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+              vero? Distinctio, suscipit cum repellendus nam, reprehenderit
+              quisquam libero alias ratione dolore cupiditate blanditiis. Lorem
+              ipsum dolor sit, amet consectetur adipisicing elit. Temporibus eos
+              voluptatibus nisi fugiat delectus et suscipit, vero ducimus fuga,
+              ullam quidem dicta, maiores omnis cum ipsa cumque illo. Neque,
+              vel.
+            </p>
+          </div>
+          <button className="safety__button">Button</button>
         </div>
 
         <div className="safety__column">
-          <h2 className="safety__title">CTA to buy safe-stuff</h2>
-          <p className="safety__paragraph">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            vero? Distinctio, suscipit cum <strong>repellendus nam</strong>,
-            reprehenderit quisquam libero alias ratione dolore cupiditate
-            blanditiis ullam, recusandae delectus maxime voluptatum eaque
-            provident.
-          </p>
+          <div className="safety__text">
+            <h2 className="safety__title">Some text</h2>
+            <p className="safety__paragraph">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+              vero? Distinctio, suscipit cum repellendus nam, reprehenderit
+              quisquam libero alias ratione dolore cupiditate blanditiis.
+            </p>
+          </div>
+          <button className="safety__button">Button</button>
         </div>
       </div>
     </div>

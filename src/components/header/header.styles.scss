@@ -3,7 +3,7 @@
   width: 100%;
   height: 7rem;
   padding: 3rem;
-  background-color: yellowgreen;
+  background-color: rgb(155, 155, 155);
 
   display: flex;
   justify-content: space-between;
@@ -23,6 +23,7 @@
 
   &__nav-item {
     list-style: none;
+    cursor: pointer;
 
     &:not(:last-child) {
       margin-right: 1.5rem;

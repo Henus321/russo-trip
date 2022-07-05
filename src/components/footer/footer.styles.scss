@@ -1,5 +1,25 @@
 .footer {
   background-color: rgb(155, 155, 155);
-  height: 20rem;
   font-size: 1.6rem;
+  padding: 5rem;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 3rem;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+
+  &__rights {
+    margin: 2rem 1rem;
+  }
 }
