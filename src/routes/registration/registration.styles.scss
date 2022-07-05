@@ -1,4 +1,4 @@
-.signIn {
+.registration {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +38,7 @@
     font-size: 1.6rem;
   }
 
-  &__registration-link {
+  &__sign-in-link {
     text-align: center;
   }
 }

@@ -24,15 +24,6 @@ const Footer = () => {
             cupiditate animi autem aliquam!
           </p>
         </div>
-        <div className="footer__column">
-          <h2>Some Text</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
-            voluptates, pariatur, earum id temporibus dolores nostrum maiores
-            modi doloremque natus neque cumque, facere possimus aliquid. Nam
-            cupiditate animi autem aliquam!
-          </p>
-        </div>
       </div>
 
       <div className="footer__row">
