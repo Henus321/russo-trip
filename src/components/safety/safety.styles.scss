@@ -1,12 +1,31 @@
 .safety {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   padding-bottom: 5rem;
+
+  &__main-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__paragraph {
+    margin-bottom: 1.5rem;
+    color: #777;
+  }
+
+  &__row {
+    display: flex;
+  }
 
   &__column {
     width: 50rem;
-    margin: 4rem;
-    padding: 3rem 2rem;
+    margin: 3rem;
+    padding: 1.5rem 3rem;
     background-color: #fff;
   }
 }
