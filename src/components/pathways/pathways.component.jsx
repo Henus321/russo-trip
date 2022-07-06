@@ -37,8 +37,8 @@ const Pathways = () => {
       </div>
 
       <div className="pathways__pagination-btns">
-        <button className="btn">PREV</button>
-        <button className="btn">NEXT</button>
+        <button className="btn pathways__btn">PREV</button>
+        <button className="btn pathways__btn">NEXT</button>
       </div>
     </div>
   );

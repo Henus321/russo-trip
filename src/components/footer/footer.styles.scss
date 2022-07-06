@@ -1,6 +1,8 @@
+@import '../../utils/sass/variables.styles.scss';
+
 .footer {
-  background-color: rgb(155, 155, 155);
-  font-size: 1.6rem;
+  background-color: $color-grey-dark-3;
+  font-size: $default-font-size;
   padding: 5rem;
 
   &__row {

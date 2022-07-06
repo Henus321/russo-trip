@@ -8,10 +8,21 @@ const PathwayItem = ({ imageUrl, name }) => {
       </div>
       <div className="pathway-item__info">
         <div className="pathway-item__text">
-          <h3>{name}</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <h3 className="pathway-item__title">{name}</h3>
+          <p className="pathway-item__adress">
+            г.Москва, Лаврушинский переулок, 10
+          </p>
+          <p className="pathway-item__paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+            officiis iste magni fugiat nisi quibusdam voluptatum, cum quaerat
+            tenetur quasi facilis distinctio sequi? Quisquam, repellendus cum
+            perferendis omnis eligendi laboriosam?
+          </p>
         </div>
-        <button className="pathway-item__button">click!</button>
+        <div className="pathway-item__btns-container">
+          <button className="pathway-item__link">Information</button>
+          <button className="btn pathway-item__button">Buy Tour</button>
+        </div>
       </div>
     </div>
   );
