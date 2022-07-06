@@ -41,7 +41,16 @@ const SignIn = () => {
       );
       resetFormFields();
     } catch (error) {
-      console.log(error.message);
+      switch (error.code) {
+        case 'auth/wrong-password':
+          console.log('incorrect password or email');
+          break;
+        case 'auth/user-not-found':
+          console.log('no user associated with this email');
+          break;
+        default:
+          console.log(error);
+      }
     }
   };
 
