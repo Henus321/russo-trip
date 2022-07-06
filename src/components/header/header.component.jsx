@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/user.context';
 import { useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
@@ -9,6 +11,7 @@ import './header.styles.scss';
 const Header = () => {
   const navigate = useNavigate();
   // const location = useLocation(); // later to know active
+  const { currentUser } = useContext(UserContext);
 
   return (
     <header className="header">
@@ -29,11 +32,21 @@ const Header = () => {
           >
             <span className="header__link">Contacts</span>
           </li>
+          <li
+            className="header__nav-item"
+            onClick={() => navigate('/registration')}
+          >
+            <span className="header__link">Registration</span>
+          </li>
           <li className="header__nav-item" onClick={() => navigate('/sign-in')}>
             <span className="header__link">Sign In</span>
           </li>
           <li className="header__nav-item header__log-in">
-            <img className="header__avatar" src={avatar} alt="" />
+            <img
+              className="header__avatar"
+              src={currentUser && currentUser.photoURL}
+              alt="User Photo"
+            />
           </li>
         </ul>
       </nav>

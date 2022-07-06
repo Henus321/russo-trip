@@ -36,6 +36,22 @@
     padding: 0.75rem 3rem;
     border-radius: 0.5rem;
     font-size: 1.6rem;
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__google-button {
+    background-color: transparent;
+    border: none;
+  }
+
+  &__google-logo {
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+    cursor: pointer;
   }
 
   &__registration-link {

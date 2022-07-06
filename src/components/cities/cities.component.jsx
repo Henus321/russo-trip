@@ -6,7 +6,7 @@ import './cities.styles.scss';
 const Cities = () => {
   return (
     <>
-      <div className="citites">
+      <div className="cities">
         <Swiper
           slidesPerView={1}
           // onSlideChange={() => console.log('slide change')}

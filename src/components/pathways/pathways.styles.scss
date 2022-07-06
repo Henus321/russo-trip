@@ -3,17 +3,18 @@
 .pathways {
   display: flex;
   flex-direction: column;
-  margin: 3rem 0;
+  margin-bottom: 3rem;
   padding: 2rem 4rem;
   font-size: 2rem;
 
   &__title-container {
+    margin-bottom: 1rem;
     text-align: center;
   }
 
   &__hashtags-container {
     display: flex;
-    margin: 3rem auto;
+    margin: 0 auto 3rem auto;
   }
 
   &__hastags-list {
@@ -45,11 +46,12 @@
 
   &__pagination-btns {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
   &__btn {
     margin-bottom: 4rem;
+    width: 18rem;
   }
 }

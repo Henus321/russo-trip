@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import { PathwaysProvider } from './contexts/pathways.context';
+import { UserProvider } from './contexts/user.context';
 
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
@@ -12,11 +13,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <PathwaysProvider>
-        <div className="container">
-          <App />
-        </div>
-      </PathwaysProvider>
+      <UserProvider>
+        <PathwaysProvider>
+          <div className="container">
+            <App />
+          </div>
+        </PathwaysProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
