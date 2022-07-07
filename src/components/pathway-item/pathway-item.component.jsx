@@ -1,6 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+
 import './pathway-item.styles.scss';
 
-const PathwayItem = ({ imageUrl, name }) => {
+const PathwayItem = ({ city }) => {
+  const { imageUrl, title, route } = city;
+  const navigate = useNavigate();
+
+  const onNavigateHandler = () => navigate(route);
+
   return (
     <div className="pathway-item">
       <div className="pathway-item__photo">
@@ -8,7 +15,7 @@ const PathwayItem = ({ imageUrl, name }) => {
       </div>
       <div className="pathway-item__info">
         <div className="pathway-item__text">
-          <h3 className="pathway-item__title">{name}</h3>
+          <h3 className="pathway-item__title">{title}</h3>
           <p className="pathway-item__adress">
             г.Москва, Лаврушинский переулок, 10
           </p>
@@ -20,7 +27,9 @@ const PathwayItem = ({ imageUrl, name }) => {
           </p>
         </div>
         <div className="pathway-item__btns-container">
-          <button className="pathway-item__link">Information</button>
+          <button onClick={onNavigateHandler} className="pathway-item__link">
+            Information
+          </button>
           <button className="btn pathway-item__button">Buy Tour</button>
         </div>
       </div>
