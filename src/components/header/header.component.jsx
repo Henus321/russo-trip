@@ -14,6 +14,12 @@ const Header = () => {
   // const location = useLocation(); // later to know active
   const { currentUser } = useContext(UserContext);
 
+  // TEMPORARY
+  const logout = () => {
+    onLogout();
+    navigate('/');
+  };
+
   return (
     <header className="header">
       <div className="header__logo-container">
@@ -43,7 +49,7 @@ const Header = () => {
                 <span className="header__link">
                   <button
                     type="button"
-                    onClick={onLogout}
+                    onClick={logout}
                     className="header__logout-btn"
                   >
                     Log Out

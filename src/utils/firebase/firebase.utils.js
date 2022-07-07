@@ -103,8 +103,8 @@ export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
 
 export const onLogout = async () => {
+  // temporary, do it in another file?
   try {
-    auth.signOut();
-    // NAVIGATE HOME AFTER?
+    await auth.signOut();
   } catch (error) {}
 };

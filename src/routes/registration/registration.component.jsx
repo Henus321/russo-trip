@@ -3,6 +3,7 @@ import { createAuthUserWithEmailAndPassword } from '../../utils/firebase/firebas
 
 import logo from '../../assets/logo.png';
 import './registration.styles.scss';
+import { useNavigate } from 'react-router-dom';
 
 const defaultFormFields = {
   email: '',
@@ -13,6 +14,8 @@ const defaultFormFields = {
 const Registration = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password, confirmPassword } = formFields;
+
+  const navigate = useNavigate();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -27,13 +30,9 @@ const Registration = () => {
     }
 
     try {
-      const { user } = await createAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-
-      console.log(user);
+      await createAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
+      navigate('/');
     } catch (error) {
       console.log(error.message);
     }
