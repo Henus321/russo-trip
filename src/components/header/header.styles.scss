@@ -50,6 +50,13 @@
     border-radius: 50%;
   }
 
+  &__logout-btn {
+    font-size: inherit;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
   &__avatar {
     width: 100%;
     height: auto;

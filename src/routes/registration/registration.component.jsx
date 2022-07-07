@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import {
-  createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from '../../utils/firebase/firebase.utils';
+import { createAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
 
 import logo from '../../assets/logo.png';
 import './registration.styles.scss';
 
 const defaultFormFields = {
-  displayName: '',
   email: '',
   password: '',
   confirmPassword: '',
@@ -16,7 +12,7 @@ const defaultFormFields = {
 
 const Registration = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { displayName, email, password, confirmPassword } = formFields;
+  const { email, password, confirmPassword } = formFields;
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -36,7 +32,7 @@ const Registration = () => {
         password
       );
 
-      await createUserDocumentFromAuth(user, { displayName });
+      console.log(user);
       resetFormFields();
     } catch (error) {
       console.log(error.message);
@@ -60,16 +56,6 @@ const Registration = () => {
       </h2>
       <div className="registration__container">
         <form onSubmit={handleSubmit} className="registration__form">
-          <label htmlFor="name">Name</label>
-          <input
-            className="registration__item registration__input"
-            type="text"
-            required
-            value={displayName}
-            onChange={handleChange}
-            name="displayName"
-            id="name"
-          />
           <label htmlFor="email">Email adress</label>
           <input
             className="registration__item registration__input"

@@ -2,9 +2,10 @@ import { useContext } from 'react';
 import { UserContext } from '../../contexts/user.context';
 import { useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { onLogout } from '../../utils/firebase/firebase.utils';
 
 import logo from '../../assets/logo.png';
-import avatar from '../../assets/avatar.png';
+import defaultAvatar from '../../assets/avatar.png';
 
 import './header.styles.scss';
 
@@ -17,6 +18,10 @@ const Header = () => {
     <header className="header">
       <div className="header__logo-container">
         <img className="header__logo" src={logo} alt="" />
+      </div>
+      <div>
+        {/* temporary check */}
+        <span>{currentUser && currentUser.email}</span>
       </div>
       <nav>
         <ul className="header__nav-list">
@@ -32,22 +37,48 @@ const Header = () => {
           >
             <span className="header__link">Contacts</span>
           </li>
-          <li
-            className="header__nav-item"
-            onClick={() => navigate('/registration')}
-          >
-            <span className="header__link">Registration</span>
-          </li>
-          <li className="header__nav-item" onClick={() => navigate('/sign-in')}>
-            <span className="header__link">Sign In</span>
-          </li>
-          <li className="header__nav-item header__log-in">
-            <img
-              className="header__avatar"
-              src={currentUser && currentUser.photoURL}
-              alt="User Photo"
-            />
-          </li>
+          {currentUser ? (
+            <>
+              <li className="header__nav-item">
+                <span className="header__link">
+                  <button
+                    type="button"
+                    onClick={onLogout}
+                    className="header__logout-btn"
+                  >
+                    Log Out
+                  </button>
+                </span>
+              </li>
+              <li className="header__nav-item header__log-in">
+                <img
+                  className="header__avatar"
+                  src={
+                    currentUser &&
+                    (currentUser.photoURL
+                      ? currentUser.photoURL
+                      : defaultAvatar)
+                  }
+                  alt="User"
+                />
+              </li>
+            </>
+          ) : (
+            <>
+              <li
+                className="header__nav-item"
+                onClick={() => navigate('/registration')}
+              >
+                <span className="header__link">Registration</span>
+              </li>
+              <li
+                className="header__nav-item"
+                onClick={() => navigate('/sign-in')}
+              >
+                <span className="header__link">Sign In</span>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
       <Outlet />

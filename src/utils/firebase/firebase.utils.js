@@ -90,7 +90,6 @@ export const signInWithGooglePopup = () =>
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
-
   return await createUserWithEmailAndPassword(auth, email, password);
 };
 
@@ -102,3 +101,10 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
+
+export const onLogout = async () => {
+  try {
+    auth.signOut();
+    // NAVIGATE HOME AFTER?
+  } catch (error) {}
+};
