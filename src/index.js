@@ -15,9 +15,7 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <PathwaysProvider>
-          <div className="container">
-            <App />
-          </div>
+          <App />
         </PathwaysProvider>
       </UserProvider>
     </BrowserRouter>

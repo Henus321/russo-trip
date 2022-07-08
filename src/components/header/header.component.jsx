@@ -24,11 +24,12 @@ const Header = () => {
     <header className="header">
       <div className="header__logo-container">
         <img className="header__logo" src={logo} alt="" />
+        <span className="header__logo-title">Russo Trip</span>
       </div>
-      <div>
-        {/* temporary check */}
+      {/* <div>
+     
         <span>{currentUser && currentUser.email}</span>
-      </div>
+      </div> */}
       <nav>
         <ul className="header__nav-list">
           <li className="header__nav-item" onClick={() => navigate('/')}>

@@ -63,12 +63,8 @@ const SignIn = () => {
 
   return (
     <main className="signIn">
-      {/* TEMPORARY LOGO */}
-      <div className="header__logo-container registration__item">
-        <img className="header__logo" src={logo} alt="" />
-      </div>
-      <h2 className="signIn__title signIn__item">Sign in to Russo Trip</h2>
       <div className="signIn__container">
+        <h2 className="signIn__title signIn__item">Sign in to Russo Trip</h2>
         <form onSubmit={handleSubmit} className="signIn__form">
           <label htmlFor="email">Email adress</label>
           <input

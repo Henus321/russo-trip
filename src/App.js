@@ -9,9 +9,11 @@ import Registration from './routes/registration/registration.component';
 import City from './routes/city/city.component';
 import Footer from './components/footer/footer.component';
 
+import './App.scss';
+
 const App = () => {
   return (
-    <>
+    <div className="container">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,7 +24,7 @@ const App = () => {
         <Route path="city/:cityName" element={<City />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 };
 

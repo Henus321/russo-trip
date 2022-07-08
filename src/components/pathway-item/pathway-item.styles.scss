@@ -3,11 +3,11 @@
 .pathway-item {
   width: 50%;
   height: 100%;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   &:hover {
     box-shadow: 0 1px 3px 5px rgba(0, 0, 0, 0.15);
@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     padding: 1rem;
   }
 
@@ -73,7 +73,7 @@
 
 .btn {
   padding: 1rem 3rem;
-  font-size: 1.6rem;
+  font-size: $default-font-size;
   background-color: transparent;
   border: 1px solid $color-primary;
   white-space: nowrap;

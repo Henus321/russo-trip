@@ -10,8 +10,6 @@ const City = () => {
   const { pathwaysInfo } = useContext(PathwaysContext);
   const [cities, setCities] = useState(pathwaysInfo[cityName]);
 
-  console.log(cityName);
-
   useEffect(() => {
     setCities(pathwaysInfo[cityName]);
   }, [cityName, pathwaysInfo]);

@@ -1,3 +1,5 @@
+@import '../../utils/sass/variables.styles.scss';
+
 .safety {
   display: flex;
   flex-direction: column;
@@ -34,7 +36,7 @@
     width: 50rem;
     margin: 3rem;
     padding: 2rem 4rem;
-    background-color: #fff;
+    background-color: $color-white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
   }
 
@@ -52,7 +54,7 @@
 
   &__paragraph {
     margin-bottom: 2.5rem;
-    color: #777;
+    color: $color-grey-dark-2;
   }
 
   &__button {

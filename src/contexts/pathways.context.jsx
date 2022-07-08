@@ -19,7 +19,6 @@ export const PathwaysProvider = ({ children }) => {
 
     getPathwaysInfo();
   }, []);
-  console.log(pathwaysInfo);
   const value = { pathwaysInfo };
   return (
     <PathwaysContext.Provider value={value}>

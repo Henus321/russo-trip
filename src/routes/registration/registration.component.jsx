@@ -47,13 +47,8 @@ const Registration = () => {
   return (
     <main className="registration">
       {/* TEMPORARY LOGO */}
-      <div className="header__logo-container registration__item">
-        <img className="header__logo" src={logo} alt="" />
-      </div>
-      <h2 className="registration__title registration__item">
-        Registration in Russo Trip
-      </h2>
       <div className="registration__container">
+        <h2 className="registration__title registration__item">Registration</h2>
         <form onSubmit={handleSubmit} className="registration__form">
           <label htmlFor="email">Email adress</label>
           <input

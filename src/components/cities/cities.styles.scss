@@ -1,5 +1,7 @@
+@import '../../utils/sass/variables.styles.scss';
+
 .cities {
-  font-size: 1.6rem;
+  font-size: $default-font-size;
   margin-bottom: 5rem;
 }
 

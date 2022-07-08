@@ -6,6 +6,7 @@ const Safety = () => {
   return (
     <div className="safety">
       <div className="safety__bg-content">
+        {/* VIDEO Z-INDEX??? */}
         <video className="safety__bg-video" autoPlay muted loop>
           <source
             src="https://storage.coverr.co/videos/EPry5vFxnaOdvtBILZuhYNjHz901oFKvs?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjU3MDI2NDg4fQ.sfcBRV3UkvD3JeIWCbgNKndtlM5zOfb1XOCXMmRkq-w"
