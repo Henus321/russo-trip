@@ -6,6 +6,7 @@
   justify-content: center;
   padding: 5rem 0;
   position: relative;
+  margin-bottom: 5rem;
 
   &__bg-content {
     position: absolute;
@@ -26,6 +27,7 @@
 
   &__row {
     display: flex;
+    justify-content: center;
   }
 
   &__column {
@@ -33,14 +35,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 50rem;
-    margin: 3rem;
-    padding: 2rem 4rem;
+    width: 25%;
+    margin: 3rem 4rem;
+    padding: 2rem;
     background-color: $color-white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
   }
 
-  &__safety-text {
+  &__text-container {
+    width: 90%;
   }
 
   &__main-title {
@@ -58,7 +61,17 @@
   }
 
   &__button {
-    padding: 1rem 4rem;
+    padding: 1rem 3rem;
+    font-size: $default-font-size;
+    background-color: transparent;
+    border: 1px solid $color-secondary;
+    white-space: nowrap;
+    cursor: pointer;
     margin-bottom: 1rem;
+
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
   }
 }

@@ -1,14 +1,15 @@
 @import '../../utils/sass/variables.styles.scss';
 
 .footer {
-  background-color: $color-smoke;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.15);
   font-size: $default-font-size;
-  padding: 5rem;
+  background-color: $color-black;
+  color: $color-grey-dark-3;
 
   &__row {
     display: flex;
     justify-content: space-between;
+    padding: 2rem 3rem;
   }
 
   &__column {
@@ -20,6 +21,61 @@
     &:not(:last-child) {
       margin-right: 3rem;
     }
+  }
+
+  &__nav-list {
+    list-style: none;
+    margin-bottom: 3rem;
+  }
+
+  &__nav-item {
+    font-size: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text-area {
+    background-color: $color-grey-dark-1;
+    color: $color-white;
+    border: none;
+    margin-bottom: 2rem;
+  }
+
+  &__text-area-btn {
+    padding: 1rem 3rem;
+    font-size: $default-font-size;
+    background-color: transparent;
+    border: 1px solid $color-white;
+    color: $color-white;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  // TEMPORARY STUFF
+  &__social-media {
+    width: 10rem;
+    height: 5rem;
+    background-color: $color-grey-dark-1;
+  }
+
+  &__title {
+    color: $color-white;
+  }
+
+  &__paragraph {
+  }
+
+  &__hr {
+    height: 1px;
+    background-color: rgba($color-grey-dark-2, 0.25);
   }
 
   &__rights {
