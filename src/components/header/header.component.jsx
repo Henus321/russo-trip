@@ -46,6 +46,12 @@ const Header = () => {
           </li>
           {currentUser ? (
             <>
+              <li
+                className="header__nav-item"
+                onClick={() => navigate('/create-pathway')}
+              >
+                <span>Create Pathway</span>
+              </li>
               <li className="header__nav-item">
                 <span className="header__link">
                   <button

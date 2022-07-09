@@ -5,7 +5,6 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
 
-import logo from '../../assets/logo.png';
 import { ReactComponent as GoogleLogo } from '../../assets/google.svg';
 
 import './sign-in.styles.scss';

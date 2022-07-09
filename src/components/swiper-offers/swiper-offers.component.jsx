@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
-import './cities.styles.scss';
+import './swiper-offers.styles.scss';
 
-const Cities = () => {
+const SwiperOffers = () => {
   return (
     <>
-      <div className="cities">
+      <div className="swiper-offers">
         <Swiper
           slidesPerView={1}
           // onSlideChange={() => console.log('slide change')}
@@ -22,4 +22,4 @@ const Cities = () => {
   );
 };
 
-export default Cities;
+export default SwiperOffers;

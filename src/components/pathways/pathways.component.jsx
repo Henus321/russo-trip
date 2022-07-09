@@ -70,6 +70,34 @@ const Pathways = () => {
       </div>
     </div>
   );
+  // return (
+  //   <div className="pathways">
+  //     <div className="pathways__title-container">
+  //       <h2 className="pathways__title">Pathways</h2>
+  //     </div>
+  //     <div className="pathways__hashtags-container">
+  //       <span className="pathways__span">Filter:</span>
+  //       <ul className="pathways__hastags-list">
+  //         <li className="pathways__hastags-item">#All</li>
+  //         <li className="pathways__hastags-item">#Moscow</li>
+  //         <li className="pathways__hastags-item">#Vladivostok</li>
+  //         <li className="pathways__hastags-item">#Saint-Petersburg</li>
+  //         <li className="pathways__hastags-item">#Mythishi</li>
+  //       </ul>
+  //     </div>
+
+  //     <div className="pathways__list">
+  //       {cities.map((city) => (
+  //         <PathwayItem key={city.id} city={city} />
+  //       ))}
+  //     </div>
+
+  //     <div className="pathways__pagination-btns">
+  //       {/* Add handler later */}
+  //       <Button buttonType={'btn__primary-wide'} buttonText={'Show More'} />
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Pathways;

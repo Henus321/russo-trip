@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { createAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
 
-import logo from '../../assets/logo.png';
 import './registration.styles.scss';
 import { useNavigate } from 'react-router-dom';
 
