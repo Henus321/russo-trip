@@ -1,0 +1,65 @@
+@import '../../utils/sass/variables.styles.scss';
+.btn {
+  font-size: $default-font-size;
+
+  &__primary {
+    padding: 1rem 3rem;
+    font-size: $default-font-size;
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  &__primary-wide {
+    padding: 1rem 3rem;
+    font-size: $default-font-size;
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    white-space: nowrap;
+    cursor: pointer;
+    width: 18rem;
+    margin-bottom: 4rem;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  &__secondary {
+    padding: 1rem 3.5rem;
+    font-size: $default-font-size;
+    background-color: transparent;
+    border: 1px solid $color-secondary;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+  }
+
+  &__black-submit {
+    padding: 1rem 3rem;
+    font-size: $default-font-size;
+    background-color: transparent;
+    border: 1px solid $color-grey-dark-3;
+    color: $color-white;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-grey-dark-1;
+      color: $color-white;
+    }
+  }
+}

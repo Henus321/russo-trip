@@ -59,19 +59,4 @@
     margin-bottom: 2.5rem;
     color: $color-grey-dark-2;
   }
-
-  &__button {
-    padding: 1rem 3rem;
-    font-size: $default-font-size;
-    background-color: transparent;
-    border: 1px solid $color-secondary;
-    white-space: nowrap;
-    cursor: pointer;
-    margin-bottom: 1rem;
-
-    &:hover {
-      background-color: $color-secondary;
-      color: $color-white;
-    }
-  }
 }

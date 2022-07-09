@@ -1,4 +1,5 @@
 import PathwayItem from '../pathway-item/pathway-item.component';
+import Button from '../button/button.component';
 
 import './pathways.styles.scss';
 
@@ -64,7 +65,8 @@ const Pathways = () => {
       </div>
 
       <div className="pathways__pagination-btns">
-        <button className="btn pathways__btn">Show More</button>
+        {/* Add handler later */}
+        <Button buttonType={'btn__primary-wide'} buttonText={'Show More'} />
       </div>
     </div>
   );

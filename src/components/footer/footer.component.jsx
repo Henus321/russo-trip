@@ -1,4 +1,4 @@
-import React from 'react';
+import Button from '../button/button.component';
 
 import './footer.styles.scss';
 
@@ -27,9 +27,8 @@ const Footer = () => {
               cols="30"
               rows="8"
             ></textarea>
-            <button className="footer__text-area-btn" type="submit">
-              Submit
-            </button>
+            {/* Add handler later */}
+            <Button buttonType="btn__black-submit" buttonText={'Submit'} />
           </form>
         </div>
         <div className="footer__column">

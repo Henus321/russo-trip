@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import Button from '../button/button.component';
 
 import './pathway-item.styles.scss';
 
@@ -30,7 +31,12 @@ const PathwayItem = ({ city }) => {
           <button onClick={onNavigateHandler} className="pathway-item__link">
             Information
           </button>
-          <button className="btn pathway-item__button">Buy Tour</button>
+          <Button
+            handler={onNavigateHandler}
+            buttonType={'btn__primary'}
+            buttonText={'Buy Tour'}
+          />
+          {/* <button className="btn pathway-item__button">Buy Tour</button> */}
         </div>
       </div>
     </div>

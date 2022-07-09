@@ -3,7 +3,7 @@ import './reviews.styles.scss';
 const Reviews = () => {
   return (
     <div className="reviews">
-      <h2 className="reviews__title">Some Stuff</h2>
+      <h2 className="reviews__title">Some Reviews?</h2>
       <p className="reviews__text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
         quibusdam ipsam commodi explicabo ea placeat animi temporibus dicta

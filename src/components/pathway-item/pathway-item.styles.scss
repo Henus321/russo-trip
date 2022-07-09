@@ -52,10 +52,6 @@
     width: 100%;
   }
 
-  &__button {
-    align-self: flex-end;
-  }
-
   &__link {
     display: block;
     font-size: 2rem;
@@ -68,19 +64,5 @@
     &:hover {
       filter: contrast(50%);
     }
-  }
-}
-
-.btn {
-  padding: 1rem 3rem;
-  font-size: $default-font-size;
-  background-color: transparent;
-  border: 1px solid $color-primary;
-  white-space: nowrap;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $color-primary;
-    color: $color-white;
   }
 }

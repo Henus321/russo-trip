@@ -1,6 +1,5 @@
 import './safety.styles.scss';
-
-import React from 'react';
+import Button from '../button/button.component';
 
 const Safety = () => {
   return (
@@ -24,7 +23,8 @@ const Safety = () => {
               quisquam libero alias ratione dolore cupiditate blanditiis.
             </p>
           </div>
-          <button className="safety__button">Button</button>
+          {/* add handler later */}
+          <Button buttonType="btn__secondary" buttonText="Button" />
         </div>
 
         <div className="safety__column">
@@ -40,7 +40,8 @@ const Safety = () => {
               vel.
             </p>
           </div>
-          <button className="safety__button">Button</button>
+          {/* add handler later */}
+          <Button buttonType="btn__secondary" buttonText="Button" />
         </div>
 
         <div className="safety__column">
@@ -52,7 +53,8 @@ const Safety = () => {
               quisquam libero alias ratione dolore cupiditate blanditiis.
             </p>
           </div>
-          <button className="safety__button">Button</button>
+          {/* add handler later */}
+          <Button buttonType="btn__secondary" buttonText="Button" />
         </div>
       </div>
     </div>
