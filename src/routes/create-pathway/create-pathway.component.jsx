@@ -6,7 +6,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage';
-import { updateDoc, doc, arrayUnion } from 'firebase/firestore';
+import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 import { db } from '../../utils/firebase/firebase.utils';
 
 import { useNavigate } from 'react-router-dom';
@@ -18,16 +18,16 @@ const YANDEX_API_KEY = process.env.REACT_APP_YANDEX_API_KEY;
 
 const CreatePathway = () => {
   const [formData, setFormData] = useState({
-    city: '',
+    city: 'moscow',
     name: '',
+    type: 'observer',
     address: '',
-    type: '',
     price: 0,
     discountPercent: 0,
     image: '',
   });
 
-  const { city, name, address, type, price, discountPercent, image } = formData;
+  const { city, name, type, address, price, discountPercent, image } = formData;
 
   const auth = getAuth();
   const navigate = useNavigate();
@@ -60,6 +60,7 @@ const CreatePathway = () => {
     }
 
     let geolocation = {};
+
     const responce = await fetch(
       `https://geocode-maps.yandex.ru/1.x/?apikey=${YANDEX_API_KEY}&format=json&geocode=${address}`
     );
@@ -127,17 +128,17 @@ const CreatePathway = () => {
       ...formData,
       imgUrls,
       geolocation,
+      timestamp: serverTimestamp(),
     };
 
     formDataCopy.location = address;
     delete formDataCopy.image;
     delete formDataCopy.address;
 
-    // const docRef =
-    await updateDoc(doc(db, 'cities', city), {
-      items: arrayUnion(formDataCopy),
-    });
-    // add navigation later
+    console.log(formDataCopy);
+
+    const docRef = await addDoc(collection(db, 'pathways'), formDataCopy);
+    console.log(`/${formDataCopy.city}/${docRef.id}`);
     // navigate(`/${formDataCopy.city}/${formDataCopy.type}/${docRef.id}`);
   };
 
@@ -170,19 +171,6 @@ const CreatePathway = () => {
     <main className="createPath">
       <h2 className="createPath__title">Create a Pathway</h2>
       <form className="createPath__form" onSubmit={onSubmit}>
-        <label className="createPath__formLabel">Type</label>
-        <select
-          className="createPath__formInputType"
-          id="type"
-          value={type}
-          onChange={onMutate}
-          required
-        >
-          <option value="observer">Observer</option>
-          <option value="active">Active</option>
-          <option value="extreme">Extreme</option>
-        </select>
-
         <label className="createPath__formLabel">City</label>
         <select
           className="createPath__formInputCity"
@@ -194,6 +182,19 @@ const CreatePathway = () => {
           <option value="moscow">Moscow</option>
           <option value="vladivostok">Vladivostok</option>
           <option value="kazan">Kazan</option>
+        </select>
+
+        <label className="createPath__formLabel">Type</label>
+        <select
+          className="createPath__formInputType"
+          id="type"
+          value={type}
+          onChange={onMutate}
+          required
+        >
+          <option value="observer">observer</option>
+          <option value="active">active</option>
+          <option value="extreme">extreme</option>
         </select>
 
         <label className="createPath__formLabel">Name</label>

@@ -1,140 +1,66 @@
-import PathwayItem from '../pathway-item/pathway-item.component';
-import Button from '../button/button.component';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
+import { useParams } from 'react-router-dom';
+import { db } from '../../utils/firebase/firebase.utils';
 
 import './pathways.styles.scss';
 
-const cities = [
-  {
-    id: 1,
-    title: 'Moscow',
-    imageUrl:
-      'https://images.unsplash.com/photo-1576413326475-ea6c788332fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80',
-    route: 'city/moscow',
-  },
-  {
-    id: 2,
-    title: 'Saint Petersburg',
-    imageUrl:
-      'https://images.unsplash.com/photo-1603732547557-b8f216d50442?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-    route: 'city/saint-petersburg',
-  },
-  {
-    id: 3,
-    title: 'Vladivostok',
-    imageUrl:
-      'https://images.unsplash.com/photo-1643281237869-90f896c8fd6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80',
-    route: 'city/vladivostok',
-  },
-  {
-    id: 4,
-    title: 'Altai Republic',
-    imageUrl:
-      'https://images.unsplash.com/photo-1615364989603-7c575b346199?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    route: 'city/altai-republic',
-  },
-  {
-    id: 5,
-    title: 'Kazan',
-    imageUrl:
-      'https://images.unsplash.com/photo-1504615458222-979e04d69a27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80',
-    route: 'city/kazan',
-  },
-];
-
 const Pathways = () => {
+  const [pathways, setPathways] = useState(null);
+
+  const params = useParams();
+
+  useEffect(() => {
+    const fetchPathways = async () => {
+      try {
+        const pathwaysRef = collection(db, 'pathways');
+
+        const q = query(
+          pathwaysRef,
+          where('city', '==', params.cityName),
+          orderBy('timestamp', 'desc')
+        );
+
+        const querySnap = await getDocs(q);
+
+        const pathways = [];
+
+        querySnap.forEach((doc) => {
+          return pathways.push({
+            id: doc.id,
+            data: doc.data(),
+          });
+        });
+
+        setPathways(pathways);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    fetchPathways();
+  }, [params.cityName]);
+
   return (
-    <div className="pathways">
-      <div className="pathways__title-container">
-        <h2 className="pathways__title">Pathways</h2>
-      </div>
-      <div className="pathways__hashtags-container">
-        <span className="pathways__span">Filter:</span>
-        <ul className="pathways__hastags-list">
-          <li className="pathways__hastags-item">#All</li>
-          <li className="pathways__hastags-item">#Moscow</li>
-          <li className="pathways__hastags-item">#Vladivostok</li>
-          <li className="pathways__hastags-item">#Saint-Petersburg</li>
-          <li className="pathways__hastags-item">#Mythishi</li>
-        </ul>
-      </div>
-
-      <div className="pathways__list">
-        {cities.map((city) => (
-          <PathwayItem key={city.id} city={city} />
-        ))}
-      </div>
-
-      <div className="pathways__pagination-btns">
-        {/* Add handler later */}
-        <Button buttonType={'btn__primary-wide'} buttonText={'Show More'} />
-      </div>
+    <div className="city">
+      <ul className="city__list">
+        {pathways &&
+          pathways.map((pathway) => (
+            <li key={pathway.id}>
+              <h2 className="city__title">{pathway.data.city}</h2>
+              <Link to={`/city/${pathway.data.city}/${pathway.id}`}>
+                <img
+                  className="city__img"
+                  src={pathway.data.imgUrls}
+                  alt={pathway.data.city}
+                />
+              </Link>
+            </li>
+          ))}
+      </ul>
     </div>
   );
-  // return (
-  //   <div className="pathways">
-  //     <div className="pathways__title-container">
-  //       <h2 className="pathways__title">Pathways</h2>
-  //     </div>
-  //     <div className="pathways__hashtags-container">
-  //       <span className="pathways__span">Filter:</span>
-  //       <ul className="pathways__hastags-list">
-  //         <li className="pathways__hastags-item">#All</li>
-  //         <li className="pathways__hastags-item">#Moscow</li>
-  //         <li className="pathways__hastags-item">#Vladivostok</li>
-  //         <li className="pathways__hastags-item">#Saint-Petersburg</li>
-  //         <li className="pathways__hastags-item">#Mythishi</li>
-  //       </ul>
-  //     </div>
-
-  //     <div className="pathways__list">
-  //       {cities.map((city) => (
-  //         <PathwayItem key={city.id} city={city} />
-  //       ))}
-  //     </div>
-
-  //     <div className="pathways__pagination-btns">
-  //       {/* Add handler later */}
-  //       <Button buttonType={'btn__primary-wide'} buttonText={'Show More'} />
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default Pathways;
-
-//   return (
-//     <div className="pathways">
-//       <div className="pathways__title-container">
-//         <h2 className="pathways__title">Pathways</h2>
-//       </div>
-//       <div className="pathways__hashtags-container">
-//         <span className="pathways__span">Filter:</span>
-//         <ul className="pathways__hastags-list">
-//           <li className="pathways__hastags-item">#All</li>
-//           <li className="pathways__hastags-item">#Moscow</li>
-//           <li className="pathways__hastags-item">#Vladivostok</li>
-//           <li className="pathways__hastags-item">#Saint-Petersburg</li>
-//           <li className="pathways__hastags-item">#Mythishi</li>
-//         </ul>
-//       </div>
-
-//       <div className="pathways__list">
-//         {ready &&
-//           pathwaysInfo.moscow.map((path) => (
-//             <PathwayItem
-//               key={path.id}
-//               imageUrl={path.imageUrl}
-//               name={path.name}
-//             />
-//           ))}
-//       </div>
-
-//       <div className="pathways__pagination-btns">
-//         <button className="btn pathways__btn">Previous Page</button>
-//         <button className="btn pathways__btn">Next Page</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Pathways;

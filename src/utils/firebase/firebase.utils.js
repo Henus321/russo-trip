@@ -7,15 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
 } from 'firebase/auth';
-import {
-  getFirestore,
-  doc,
-  getDocs,
-  collection,
-  query,
-  getDoc,
-  setDoc,
-} from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
 
@@ -31,20 +23,6 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 export const db = getFirestore();
-
-export const getCategoriesAndDocuments = async () => {
-  const collectionRef = collection(db, 'pathways');
-  const q = query(collectionRef);
-
-  const querySnapshot = await getDocs(q);
-  const pathwaysInfo = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-
-  return pathwaysInfo;
-};
 
 export const createUserDocumentFromAuth = async (
   userAuth,

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
-import { PathwaysProvider } from './contexts/pathways.context';
 import { UserProvider } from './contexts/user.context';
 
 import './index.scss';
@@ -14,9 +13,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <PathwaysProvider>
-          <App />
-        </PathwaysProvider>
+        <App />
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
