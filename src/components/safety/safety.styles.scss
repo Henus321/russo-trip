@@ -14,7 +14,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    z-index: 1;
     opacity: 0.35;
     overflow: hidden;
   }
@@ -28,6 +28,7 @@
   &__row {
     display: flex;
     justify-content: center;
+    z-index: 10;
   }
 
   &__column {
@@ -49,6 +50,7 @@
   &__main-title {
     text-align: center;
     margin-bottom: 1.5rem;
+    z-index: 10;
   }
 
   &__title {

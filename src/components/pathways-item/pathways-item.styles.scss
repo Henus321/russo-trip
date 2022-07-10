@@ -1,10 +1,41 @@
+@import '../../utils/sass/variables.styles.scss';
+
 .pathways-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 3rem;
+  margin: 5rem auto;
+  padding: 0 0 3rem;
+  font-size: $default-font-size;
+  width: 90%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  &__title {
+    font-size: 2.5rem;
+    text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+  }
+
+  &__under-title {
+    margin-bottom: 1rem;
+    color: $color-grey-dark-3;
+  }
+
+  &__paragraph {
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
 
   &__img {
-    width: 50rem;
+    width: 60%;
+    height: 35rem;
+    object-fit: cover;
+    margin: 0 0 1rem 2.5rem;
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
   }
 }

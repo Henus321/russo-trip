@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { db } from '../../utils/firebase/firebase.utils';
+import Button from '../button/button.component';
 
 import './pathways.styles.scss';
 
@@ -43,23 +44,43 @@ const Pathways = () => {
   }, [params.cityName]);
 
   return (
-    <div className="city">
-      <ul className="city__list">
+    <main className="pathways">
+      <h2 className="pathways__title">Choose your pathway</h2>
+      <p className="pathways__under-title">
+        Wanna be peaceful observer or active pathfinder?
+      </p>
+      <ul className="pathways__list">
         {pathways &&
           pathways.map((pathway) => (
-            <li key={pathway.id}>
-              <h2 className="city__title">{pathway.data.city}</h2>
-              <Link to={`/city/${pathway.data.city}/${pathway.id}`}>
+            <li className="pathways__list-item" key={pathway.id}>
+              <Link
+                className="pathways__link"
+                to={`/city/${pathway.data.city}/${pathway.id}`}
+              >
                 <img
-                  className="city__img"
+                  className="pathways__img"
                   src={pathway.data.imgUrls}
                   alt={pathway.data.city}
                 />
+                <h2 className="pathways__item-title">{pathway.data.name}</h2>
+                <p className="pathways__paragraph">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Officia adipisci porro cumque officiis a alias eveniet tempora
+                  omnis molestias tenetur labore, accusantium, ad sequi dicta
+                  corrupti! Error consectetur magni odit.
+                </p>
+                <span className="pathways__information-span">
+                  {pathway.data.type}
+                </span>
               </Link>
+              <Button
+                buttonType="btn__primary pathways__btn"
+                buttonText="Buy Tour"
+              />
             </li>
           ))}
       </ul>
-    </div>
+    </main>
   );
 };
 
