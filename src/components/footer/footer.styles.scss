@@ -9,7 +9,7 @@
   &__row {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 3rem;
+    padding: 1rem 2rem;
     margin: 0 3rem;
   }
 
@@ -17,20 +17,47 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 3rem;
+    padding: 3rem 5rem;
 
-    &:not(:last-child) {
-      margin-right: 3rem;
+    &:nth-child(2) {
+      flex: 0 0 40%;
     }
+  }
+
+  &__nav {
+    margin-bottom: 0.5rem;
   }
 
   &__nav-list {
     list-style: none;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   &__nav-item {
     font-size: 2rem;
+  }
+
+  &__logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__logo {
+    font-size: 4rem;
+    width: auto;
+    color: $color-secondary;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 
   &__form {
@@ -45,19 +72,13 @@
     margin-bottom: 2rem;
   }
 
-  // TEMPORARY STUFF
-  &__social-media {
-    width: 10rem;
-    height: 5rem;
-    background-color: $color-grey-dark-1;
-  }
-
   &__title {
     color: $color-white;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   &__paragraph {
+    text-align: justify;
   }
 
   &__hr {
@@ -67,5 +88,6 @@
 
   &__rights {
     margin: 2rem 1rem;
+    color: $color-grey-dark-2;
   }
 }

@@ -50,10 +50,17 @@
     }
   }
 
+  &__link-active:link,
+  &__link-active:visited,
   &__link:link,
   &__link:visited {
-    text-transform: uppercase;
     text-decoration: none;
+    color: $color-secondary;
+  }
+
+  &__link-active:link,
+  &__link-active:visited {
+    text-decoration: underline;
     color: $color-black;
   }
 
