@@ -29,6 +29,11 @@ const PathwaysItem = () => {
   const cityWithCapitalizedFirstLetter =
     params.cityName.charAt(0).toUpperCase() + params.cityName.slice(1);
 
+  const backHandler = () => {
+    navigate(`/city/${params.cityName}`);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <main className="pathways-item">
       <h2 className="pathways-item__title">{pathwaysItem.name}</h2>
@@ -68,7 +73,8 @@ const PathwaysItem = () => {
       </p>
       <div className="pathways-item__buttons-container">
         <Button
-          buttonType="btn__primary pathways-item__btn"
+          handler={() => backHandler()}
+          buttonType="btn__line pathways-item__btn"
           buttonText="&larr;&nbsp;&nbsp;Back to City"
         />
         <Button buttonType="btn__primary" buttonText="Buy Tour" />

@@ -1,10 +1,18 @@
-import { Link } from 'react-router-dom';
-import moscowImage from '../../assets/cities/moscow.jpg';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CitiesContext } from '../../contexts/cities.context';
 import Button from '../button/button.component';
 
 import './cities.styles.scss';
 
 const Cities = () => {
+  const navigate = useNavigate();
+  const { cities } = useContext(CitiesContext);
+
+  const forthHandler = (cityRoute) => {
+    navigate(`/${cityRoute}`);
+  };
+
   return (
     <main className="cities">
       <h2 className="cities__title">Travel around Russia with Russo Trip!</h2>
@@ -12,76 +20,22 @@ const Cities = () => {
         Choose a city and start your journey...
       </p>
       <ul className="cities__list">
-        <li className="cities__list-item">
-          <Link className="cities__link" to="/city/moscow">
-            <img className="cities__img" src={moscowImage} alt="Moscow" />
-            <h2 className="cities__item-title">Moscow</h2>
-            <p className="cities__paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              adipisci porro cumque officiis a alias eveniet tempora omnis
-              molestias tenetur labore, accusantium, ad sequi dicta corrupti!
-              Error consectetur magni odit.
-            </p>
-            <span className="cities__information-span">Information</span>
-          </Link>
-          <Button buttonType="btn__primary cities__btn" buttonText="Buy Tour" />
-        </li>
-        <li className="cities__list-item">
-          <Link className="cities__link" to="/city/moscow">
-            <img className="cities__img" src={moscowImage} alt="Moscow" />
-            <h2 className="cities__item-title">Moscow</h2>
-            <p className="cities__paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              adipisci porro cumque officiis a alias eveniet tempora omnis
-              molestias tenetur labore, accusantium, ad sequi dicta corrupti!
-              Error consectetur magni odit.
-            </p>
-            <span className="cities__information-span">Information</span>
-          </Link>
-          <Button buttonType="btn__primary cities__btn" buttonText="Buy Tour" />
-        </li>
-        <li className="cities__list-item">
-          <Link className="cities__link" to="/city/moscow">
-            <img className="cities__img" src={moscowImage} alt="Moscow" />
-            <h2 className="cities__item-title">Moscow</h2>
-            <p className="cities__paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              adipisci porro cumque officiis a alias eveniet tempora omnis
-              molestias tenetur labore, accusantium, ad sequi dicta corrupti!
-              Error consectetur magni odit.
-            </p>
-            <span className="cities__information-span">Information</span>
-          </Link>
-          <Button buttonType="btn__primary cities__btn" buttonText="Buy Tour" />
-        </li>
-        <li className="cities__list-item">
-          <Link className="cities__link" to="/city/moscow">
-            <img className="cities__img" src={moscowImage} alt="Moscow" />
-            <h2 className="cities__item-title">Moscow</h2>
-            <p className="cities__paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              adipisci porro cumque officiis a alias eveniet tempora omnis
-              molestias tenetur labore, accusantium, ad sequi dicta corrupti!
-              Error consectetur magni odit.
-            </p>
-            <span className="cities__information-span">Information</span>
-          </Link>
-          <Button buttonType="btn__primary cities__btn" buttonText="Buy Tour" />
-        </li>
-        <li className="cities__list-item">
-          <Link className="cities__link" to="/city/moscow">
-            <img className="cities__img" src={moscowImage} alt="Moscow" />
-            <h2 className="cities__item-title">Moscow</h2>
-            <p className="cities__paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              adipisci porro cumque officiis a alias eveniet tempora omnis
-              molestias tenetur labore, accusantium, ad sequi dicta corrupti!
-              Error consectetur magni odit.
-            </p>
-            <span className="cities__information-span">Information</span>
-          </Link>
-          <Button buttonType="btn__primary cities__btn" buttonText="Buy Tour" />
-        </li>
+        {cities &&
+          cities.map((city) => (
+            <li className="cities__list-item" key={city.id}>
+              <img className="cities__img" src={city.imageUrl} alt="Moscow" />
+              <h2 className="cities__item-title">{city.title}</h2>
+              <p className="cities__paragraph">{city.description}</p>
+              <div className="cities__information-container">
+                <span className="cities__information-span">Information</span>
+                <Button
+                  handler={() => forthHandler(city.route)}
+                  buttonType="btn__primary"
+                  buttonText="View Tours"
+                />
+              </div>
+            </li>
+          ))}
       </ul>
     </main>
   );

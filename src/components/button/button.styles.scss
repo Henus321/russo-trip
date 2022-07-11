@@ -62,4 +62,24 @@
       color: $color-white;
     }
   }
+
+  &__line {
+    color: $color-primary;
+    padding: 1rem 3rem;
+    font-size: $default-font-size;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:active {
+      transform: scale(105%);
+      filter: brightness(90%);
+    }
+  }
 }

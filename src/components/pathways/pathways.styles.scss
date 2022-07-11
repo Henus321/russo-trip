@@ -1,22 +1,17 @@
 @import '../../utils/sass/variables.styles.scss';
+@import '../../utils/sass/mixins.styles.scss';
 
 .pathways {
-  display: flex;
-  margin: 5rem auto;
-  flex-direction: column;
-  padding: 0 3rem 3rem;
-  font-size: $default-font-size;
-  width: 90%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  @include section();
 
   &__title {
     font-size: 2.5rem;
-    text-align: center;
+    align-self: center;
     text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
   }
 
   &__under-title {
-    text-align: center;
+    align-self: center;
     color: $color-grey-dark-2;
     margin-bottom: 3rem;
   }
@@ -28,19 +23,14 @@
   }
 
   &__list-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 48rem;
-    height: auto;
-    padding: 1rem;
-    margin-bottom: 3rem;
-    border-radius: 0.5rem;
-    align-items: center;
+    @include list-item();
+  }
 
-    &:hover {
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-    }
+  &__img {
+    width: 100%;
+    height: 35rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
   }
 
   &__item-title {
@@ -57,12 +47,6 @@
     text-decoration: underline;
   }
 
-  &__img {
-    width: 100%;
-    height: 35rem;
-    object-fit: cover;
-  }
-
   &__link {
     margin-bottom: 1rem;
 
@@ -73,10 +57,9 @@
     }
   }
 
-  &__btn {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0 1rem 1rem;
+  &__information-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

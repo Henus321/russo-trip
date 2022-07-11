@@ -192,9 +192,9 @@ const CreatePathway = () => {
           onChange={onMutate}
           required
         >
-          <option value="observer">observer</option>
-          <option value="active">active</option>
-          <option value="extreme">extreme</option>
+          <option value="Observer">Observer</option>
+          <option value="Active">Active</option>
+          <option value="Extreme">Extreme</option>
         </select>
 
         <label className="createPath__formLabel">Name</label>
