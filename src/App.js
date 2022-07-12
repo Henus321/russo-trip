@@ -9,6 +9,8 @@ import Registration from './routes/registration/registration.component';
 import Pathways from './components/pathways/pathways.component';
 import PathwaysItem from './components/pathways-item/pathways-item.component';
 import CreatePathway from './routes/create-pathway/create-pathway.component';
+import PrivateRoute from './components/private-route/private-route.component';
+import Profile from './components/profile/profile.component';
 import Footer from './components/footer/footer.component';
 
 import './App.scss';
@@ -26,6 +28,9 @@ const App = () => {
         <Route path="city/:cityName" element={<Pathways />} />
         <Route path="city/:cityName/:pathwayId" element={<PathwaysItem />} />
         <Route path="create-pathway" element={<CreatePathway />} />
+        <Route path="/profile" element={<PrivateRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
       <Footer />
     </div>

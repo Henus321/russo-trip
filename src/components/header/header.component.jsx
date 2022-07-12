@@ -68,17 +68,19 @@ const Header = () => {
                   </button>
                 </span>
               </li>
-              <li className="header__nav-item header__log-in">
-                <img
-                  className="header__link header__avatar"
-                  src={
-                    currentUser &&
-                    (currentUser.photoURL
-                      ? currentUser.photoURL
-                      : defaultAvatar)
-                  }
-                  alt="User"
-                />
+              <li className="header__nav-item header__profile">
+                <NavLink to="/profile" className={setNavLinkActive}>
+                  <img
+                    className="header__link header__avatar"
+                    src={
+                      currentUser &&
+                      (currentUser.photoURL
+                        ? currentUser.photoURL
+                        : defaultAvatar)
+                    }
+                    alt="User"
+                  />
+                </NavLink>
               </li>
             </>
           ) : (

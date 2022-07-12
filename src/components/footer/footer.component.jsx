@@ -66,7 +66,7 @@ const Footer = () => {
           </form>
         </div>
         <div className="footer__column">
-          <h2 className="footer__title">Permissions</h2>
+          <h2 className="footer__title">Licensing</h2>
           <p className="footer__paragraph">
             The activity is carried out in accordance with the regulations on
             licensing of tour operator and travel agency activities approved by

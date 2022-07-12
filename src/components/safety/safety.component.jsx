@@ -1,5 +1,8 @@
+import { FaTree } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
+import { FaSun } from 'react-icons/fa';
+
 import './safety.styles.scss';
-import Button from '../button/button.component';
 
 const Safety = () => {
   return (
@@ -15,46 +18,39 @@ const Safety = () => {
       <h2 className="safety__main-title">Aditional Information</h2>
       <div className="safety__row">
         <div className="safety__column">
-          <div className="safety__text-container">
-            <h2 className="safety__title">Some text</h2>
+          <div className="safety__card-container">
+            <FaTree className="safety__icon" />
+            <h2 className="safety__title">Forest</h2>
             <p className="safety__paragraph">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
               vero? Distinctio, suscipit cum repellendus nam, reprehenderit
               quisquam libero alias ratione dolore cupiditate blanditiis.
             </p>
           </div>
-          {/* add handler later */}
-          <Button buttonType="btn__secondary" buttonText="Button" />
         </div>
 
         <div className="safety__column">
-          <div className="safety__text-container">
-            <h2 className="safety__title">Some text</h2>
-            <p className="safety__paragraph">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-              vero? Distinctio, suscipit cum repellendus nam, reprehenderit
-              quisquam libero alias ratione dolore cupiditate blanditiis. Lorem
-              ipsum dolor sit, amet consectetur adipisicing elit. Temporibus eos
-              voluptatibus nisi fugiat delectus et suscipit, vero ducimus fuga,
-              ullam quidem dicta, maiores omnis cum ipsa cumque illo. Neque,
-              vel.
-            </p>
-          </div>
-          {/* add handler later */}
-          <Button buttonType="btn__secondary" buttonText="Button" />
-        </div>
-
-        <div className="safety__column">
-          <div className="safety__text-container">
-            <h2 className="safety__title">Some text</h2>
+          <div className="safety__card-container">
+            <FaHeart className="safety__icon" />
+            <h2 className="safety__title">Heart</h2>
             <p className="safety__paragraph">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
               vero? Distinctio, suscipit cum repellendus nam, reprehenderit
               quisquam libero alias ratione dolore cupiditate blanditiis.
             </p>
           </div>
-          {/* add handler later */}
-          <Button buttonType="btn__secondary" buttonText="Button" />
+        </div>
+
+        <div className="safety__column">
+          <div className="safety__card-container">
+            <FaSun className="safety__icon" />
+            <h2 className="safety__title">Sun</h2>
+            <p className="safety__paragraph">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+              vero? Distinctio, suscipit cum repellendus nam, reprehenderit
+              quisquam libero alias ratione dolore cupiditate blanditiis.
+            </p>
+          </div>
         </div>
       </div>
     </div>

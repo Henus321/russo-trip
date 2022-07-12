@@ -1,6 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  limit,
+  startAfter,
+} from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { db } from '../../utils/firebase/firebase.utils';
 import Button from '../button/button.component';
@@ -9,6 +17,10 @@ import './pathways.styles.scss';
 
 const Pathways = () => {
   const [pathways, setPathways] = useState(null);
+  const [lastFetchedPathways, setlastFetchedPathways] = useState(null);
+  const [currentCollectionLength, setCurrentCollectionLength] = useState(0);
+  const [fullCollectionLength, setFullCollectionLength] = useState(0);
+  const [needPagination, setNeedPagination] = useState(true);
 
   const params = useParams();
   const navigate = useNavigate();
@@ -21,10 +33,16 @@ const Pathways = () => {
         const q = query(
           pathwaysRef,
           where('city', '==', params.cityName),
-          orderBy('timestamp', 'desc')
+          orderBy('timestamp', 'desc'),
+          limit(2)
         );
 
+        const fullSnap = await getDocs(pathwaysRef);
+
         const querySnap = await getDocs(q);
+
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+        setlastFetchedPathways(lastVisible);
 
         const pathways = [];
 
@@ -36,13 +54,52 @@ const Pathways = () => {
         });
 
         setPathways(pathways);
+        setFullCollectionLength(fullSnap.docs.length);
+        setCurrentCollectionLength(pathways.length);
+        setNeedPagination(fullCollectionLength > pathways.length);
       } catch (error) {
         console.log(error.message);
       }
     };
 
     fetchPathways();
-  }, [params.cityName]);
+  }, [params.cityName, fullCollectionLength]);
+
+  const onFetchMorePathways = async () => {
+    try {
+      const pathwaysRef = collection(db, 'pathways');
+
+      const q = query(
+        pathwaysRef,
+        where('city', '==', params.cityName),
+        orderBy('timestamp', 'desc'),
+        startAfter(lastFetchedPathways),
+        limit(2)
+      );
+
+      const querySnap = await getDocs(q);
+
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+      setlastFetchedPathways(lastVisible);
+
+      const pathways = [];
+
+      querySnap.forEach((doc) => {
+        return pathways.push({
+          id: doc.id,
+          data: doc.data(),
+        });
+      });
+
+      const currentPathwayLength = currentCollectionLength + pathways.length;
+
+      setPathways((prevState) => [...prevState, ...pathways]);
+      setCurrentCollectionLength(currentCollectionLength + pathways.length);
+      setNeedPagination(fullCollectionLength > currentPathwayLength);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   const backHandler = () => {
     navigate('/');
@@ -78,7 +135,9 @@ const Pathways = () => {
               </p>
               <div className="pathways__information-container">
                 <span className="pathways__information-span">
-                  {pathway.data.type}
+                  {/* Change observe on Observing Tour etc */}
+                  Extreme Tour
+                  {/* {pathway.data.type} */}
                 </span>
                 <Button
                   handler={() => forthHandler(pathway)}
@@ -89,11 +148,20 @@ const Pathways = () => {
             </li>
           ))}
       </ul>
-      <Button
-        handler={() => backHandler()}
-        buttonType="btn__line"
-        buttonText="&larr;&nbsp;&nbsp;Back to Home"
-      />
+      <div className="pathways__buttons-container">
+        <Button
+          handler={() => backHandler()}
+          buttonType="btn__line"
+          buttonText="&larr;&nbsp;&nbsp;Back to Home"
+        />
+
+        <Button
+          handler={() => onFetchMorePathways()}
+          buttonType={needPagination ? 'btn__line' : 'btn__line-disabled'}
+          buttonText="Show More&nbsp;&nbsp;&rarr;"
+          disabled={needPagination ? false : true}
+        />
+      </div>
     </main>
   );
 };

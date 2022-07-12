@@ -1,14 +1,11 @@
+@import '../../utils/sass/variables.styles.scss';
+@import '../../utils/sass/mixins.styles.scss';
+
 .reviews {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 4rem 3rem;
-  margin-bottom: 5rem;
-  width: 90%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  @include section();
 
   &__title {
-    text-align: center;
+    align-self: center;
     margin-bottom: 1rem;
   }
 

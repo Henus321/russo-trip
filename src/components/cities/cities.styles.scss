@@ -24,6 +24,7 @@
 
   &__list-item {
     @include list-item();
+    justify-content: space-between;
   }
 
   &__img {
@@ -43,11 +44,6 @@
     margin-bottom: 2rem;
   }
 
-  &__information-span {
-    color: $color-primary;
-    text-decoration: underline;
-  }
-
   &__link {
     margin-bottom: 1rem;
 
@@ -58,9 +54,14 @@
     }
   }
 
-  &__information-container {
+  &__buttons-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__information-span {
+    color: $color-primary;
+    text-decoration: underline;
   }
 }

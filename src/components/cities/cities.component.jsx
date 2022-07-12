@@ -23,10 +23,12 @@ const Cities = () => {
         {cities &&
           cities.map((city) => (
             <li className="cities__list-item" key={city.id}>
-              <img className="cities__img" src={city.imageUrl} alt="Moscow" />
-              <h2 className="cities__item-title">{city.title}</h2>
-              <p className="cities__paragraph">{city.description}</p>
               <div className="cities__information-container">
+                <img className="cities__img" src={city.imageUrl} alt="Moscow" />
+                <h2 className="cities__item-title">{city.title}</h2>
+                <p className="cities__paragraph">{city.description}</p>
+              </div>
+              <div className="cities__buttons-container">
                 <span className="cities__information-span">Information</span>
                 <Button
                   handler={() => forthHandler(city.route)}

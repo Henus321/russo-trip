@@ -7,6 +7,8 @@
   padding: 5rem 0;
   position: relative;
   margin-bottom: 5rem;
+  // temporary
+  height: 60rem;
 
   &__bg-content {
     position: absolute;
@@ -36,15 +38,31 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 25%;
+    width: 30rem;
     margin: 3rem 4rem;
     padding: 2rem;
     background-color: $color-white;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease;
+
+    &:hover {
+      transform: scale(101%);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    }
   }
 
-  &__text-container {
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     width: 90%;
+  }
+
+  &__icon {
+    margin: 1rem 0;
+    font-size: 6rem;
   }
 
   &__main-title {
@@ -59,6 +77,7 @@
 
   &__paragraph {
     margin-bottom: 2.5rem;
+    text-align: justify;
     color: $color-grey-dark-2;
   }
 }

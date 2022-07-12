@@ -81,5 +81,16 @@
       transform: scale(105%);
       filter: brightness(90%);
     }
+
+    &-disabled {
+      color: rgba($color-grey-dark-2, 0.5);
+      padding: 1rem 3rem;
+      font-size: $default-font-size;
+      text-decoration: underline;
+      background-color: transparent;
+      border: none;
+
+      white-space: nowrap;
+    }
   }
 }
