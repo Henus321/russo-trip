@@ -1,23 +1,39 @@
 import { useState } from 'react';
-import { createAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
-
-import './registration.styles.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import {
+  createAuthUserWithEmailAndPassword,
+  updateAuthProfile,
+  signInWithGooglePopup,
+} from '../../utils/firebase/firebase.utils';
+
+import { ReactComponent as GoogleLogo } from '../../assets/google.svg';
+
+import './sign-up.styles.scss';
 
 const defaultFormFields = {
+  displayName: '',
   email: '',
   password: '',
   confirmPassword: '',
 };
 
-const Registration = () => {
+const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { email, password, confirmPassword } = formFields;
+  const { displayName, email, password, confirmPassword } = formFields;
 
   const navigate = useNavigate();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
+  };
+
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithGooglePopup();
+      navigate('/');
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -30,6 +46,8 @@ const Registration = () => {
 
     try {
       await createAuthUserWithEmailAndPassword(email, password);
+
+      updateAuthProfile(displayName);
       resetFormFields();
       navigate('/');
     } catch (error) {
@@ -44,13 +62,24 @@ const Registration = () => {
   };
 
   return (
-    <main className="registration">
-      <div className="registration__container">
-        <h2 className="registration__title registration__item">Registration</h2>
-        <form onSubmit={handleSubmit} className="registration__form">
+    <main className="sign-up">
+      <div className="sign-up__container">
+        <h2 className="sign-up__title sign-up__item">Sign Up to Russo Trip</h2>
+        <form onSubmit={handleSubmit} className="sign-up__form">
+          <label htmlFor="displayName">Name</label>
+          <input
+            className="sign-up__item sign-up__input"
+            type="text"
+            required
+            onChange={handleChange}
+            name="displayName"
+            id="displayName"
+            value={displayName}
+          />
+
           <label htmlFor="email">Email adress</label>
           <input
-            className="registration__item registration__input"
+            className="sign-up__item sign-up__input"
             type="email"
             required
             onChange={handleChange}
@@ -60,7 +89,7 @@ const Registration = () => {
           />
           <label htmlFor="password">Password</label>
           <input
-            className="registration__item registration__input"
+            className="sign-up__item sign-up__input"
             type="password"
             required
             onChange={handleChange}
@@ -70,7 +99,7 @@ const Registration = () => {
           />
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
-            className="registration__item registration__input"
+            className="sign-up__item sign-up__input"
             type="password"
             required
             onChange={handleChange}
@@ -78,14 +107,15 @@ const Registration = () => {
             name="confirmPassword"
             value={confirmPassword}
           />
-          <button
-            className="registration__item registration__button"
-            type="submit"
-          >
+          <button className="sign-up__item sign-up__button" type="submit">
             Create account
           </button>
         </form>
-        <span className="registration__sign-in-link">
+        <span>or</span>
+        <button onClick={signInWithGoogle} className="signIn__google-button">
+          <GoogleLogo className="signIn__google-logo" />
+        </button>
+        <span className="sign-up__sign-in-link">
           Already have an account? <Link to="/sign-in">Sign in.</Link>
         </span>
       </div>
@@ -93,4 +123,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default SignUp;

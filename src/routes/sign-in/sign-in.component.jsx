@@ -63,7 +63,7 @@ const SignIn = () => {
   return (
     <main className="signIn">
       <div className="signIn__container">
-        <h2 className="signIn__title signIn__item">Sign in to Russo Trip</h2>
+        <h2 className="signIn__title signIn__item">Sign In to Russo Trip</h2>
         <form onSubmit={handleSubmit} className="signIn__form">
           <label htmlFor="email">Email adress</label>
           <input

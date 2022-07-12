@@ -83,8 +83,8 @@ const Header = () => {
           ) : (
             <>
               <li className="header__nav-item">
-                <NavLink to="/registration" className={setNavLinkActive}>
-                  Registration
+                <NavLink to="/sign-up" className={setNavLinkActive}>
+                  Sign Up
                 </NavLink>
               </li>
               <li className="header__nav-item">

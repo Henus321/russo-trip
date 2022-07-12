@@ -5,7 +5,7 @@ import Home from './routes/home/home.component';
 import About from './routes/about/about.component';
 import Contacts from './routes/contacts/contacts.component';
 import SignIn from './routes/sign-in/sign-in.component';
-import Registration from './routes/registration/registration.component';
+import SignUp from './routes/sign-up/sign-up.component';
 import Pathways from './components/pathways/pathways.component';
 import PathwaysItem from './components/pathways-item/pathways-item.component';
 import CreatePathway from './routes/create-pathway/create-pathway.component';
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="sign-in" element={<SignIn />} />
-        <Route path="registration" element={<Registration />} />
+        <Route path="sign-up" element={<SignUp />} />
         <Route path="city/:cityName" element={<Pathways />} />
         <Route path="city/:cityName/:pathwayId" element={<PathwaysItem />} />
         <Route path="create-pathway" element={<CreatePathway />} />

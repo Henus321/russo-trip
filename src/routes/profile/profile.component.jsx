@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/user.context';
 
+import defaultAvatar from '../../assets/avatar.png';
+
 import './profile.styles.scss';
 
 const Profile = () => {
   const { currentUser } = useContext(UserContext);
 
-  // need useeffect
   console.log(currentUser);
   return (
     <main className="profile">
@@ -14,7 +15,7 @@ const Profile = () => {
         <div className="profile__container">
           <img
             className="profile__photo"
-            src={currentUser.photoURL}
+            src={currentUser.photoURL ? currentUser.photoURL : defaultAvatar}
             alt={currentUser.displayName}
           />
           <span>{currentUser.displayName}</span>

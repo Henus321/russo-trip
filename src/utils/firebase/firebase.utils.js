@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateProfile,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
@@ -76,6 +77,9 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const updateAuthProfile = (displayName) =>
+  updateProfile(auth.currentUser, { displayName });
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
