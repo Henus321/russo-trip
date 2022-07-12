@@ -26,3 +26,14 @@
   width: 90%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+@mixin container() {
+  width: auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-smoke;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+}

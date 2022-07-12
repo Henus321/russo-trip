@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../contexts/user.context';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import { onLogout } from '../../utils/firebase/firebase.utils';
+import { onSignOut } from '../../utils/firebase/firebase.utils';
 
 import logo from '../../assets/logo.png';
 import defaultAvatar from '../../assets/avatar.png';
@@ -18,8 +18,8 @@ const Header = () => {
     isActive ? 'header__link-active' : 'header__link';
 
   // TEMPORARY
-  const logout = () => {
-    onLogout();
+  const onSignOutHandler = () => {
+    onSignOut();
     navigate('/');
   };
 
@@ -29,10 +29,7 @@ const Header = () => {
         <img className="header__logo" src={logo} alt="" />
         <span className="header__logo-title">Russo Trip</span>
       </div>
-      {/* <div>
-     
-        <span>{currentUser && currentUser.email}</span>
-      </div> */}
+
       <nav>
         <ul className="header__nav-list">
           <li className="header__nav-item">
@@ -61,7 +58,7 @@ const Header = () => {
                 <span className="header__link">
                   <button
                     type="button"
-                    onClick={logout}
+                    onClick={onSignOutHandler}
                     className="header__link header__logout-btn"
                   >
                     Log Out

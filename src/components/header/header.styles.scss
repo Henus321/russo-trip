@@ -1,4 +1,4 @@
-@import '../../utils/sass/variables.styles.scss';
+@import '../../sass/variables.styles.scss';
 
 .header {
   display: flex;
@@ -72,11 +72,12 @@
   }
 
   &__logout-btn {
+    font-family: inherit;
     font-size: inherit;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: inherit;
+    color: rgba($color-secondary, 0.95);
   }
 
   &__avatar {

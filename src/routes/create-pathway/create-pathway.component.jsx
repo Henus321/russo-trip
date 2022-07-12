@@ -169,96 +169,98 @@ const CreatePathway = () => {
 
   return (
     <main className="createPath">
-      <h2 className="createPath__title">Create a Pathway</h2>
-      <form className="createPath__form" onSubmit={onSubmit}>
-        <label className="createPath__formLabel">City</label>
-        <select
-          className="createPath__formInputCity"
-          id="city"
-          value={city}
-          onChange={onMutate}
-          required
-        >
-          <option value="moscow">Moscow</option>
-          <option value="vladivostok">Vladivostok</option>
-          <option value="kazan">Kazan</option>
-        </select>
+      <div className="createPath__container">
+        <h2 className="createPath__title">Create a Pathway</h2>
+        <form className="createPath__form" onSubmit={onSubmit}>
+          <label className="createPath__formLabel">City</label>
+          <select
+            className="createPath__formInputCity"
+            id="city"
+            value={city}
+            onChange={onMutate}
+            required
+          >
+            <option value="moscow">Moscow</option>
+            <option value="vladivostok">Vladivostok</option>
+            <option value="kazan">Kazan</option>
+          </select>
 
-        <label className="createPath__formLabel">Type</label>
-        <select
-          className="createPath__formInputType"
-          id="type"
-          value={type}
-          onChange={onMutate}
-          required
-        >
-          <option value="Observer">Observer</option>
-          <option value="Active">Active</option>
-          <option value="Extreme">Extreme</option>
-        </select>
+          <label className="createPath__formLabel">Type</label>
+          <select
+            className="createPath__formInputType"
+            id="type"
+            value={type}
+            onChange={onMutate}
+            required
+          >
+            <option value="Observer">Observer</option>
+            <option value="Active">Active</option>
+            <option value="Extreme">Extreme</option>
+          </select>
 
-        <label className="createPath__formLabel">Name</label>
-        <input
-          className="createPath__formInputName"
-          type="text"
-          id="name"
-          value={name}
-          onChange={onMutate}
-          maxLength="32"
-          minLength="4"
-          required
-        />
+          <label className="createPath__formLabel">Name</label>
+          <input
+            className="createPath__formInputName"
+            type="text"
+            id="name"
+            value={name}
+            onChange={onMutate}
+            maxLength="32"
+            minLength="4"
+            required
+          />
 
-        <label className="createPath__formLabel">Start Point Address</label>
-        <textarea
-          className="createPath__formInputAddress"
-          type="text"
-          id="address"
-          value={address}
-          onChange={onMutate}
-          required
-        />
+          <label className="createPath__formLabel">Start Point Address</label>
+          <textarea
+            className="createPath__formInputAddress"
+            type="text"
+            id="address"
+            value={address}
+            onChange={onMutate}
+            required
+          />
 
-        <label className="createPath__formLabel">Price</label>
-        <input
-          className="createPath__formInputPrice"
-          type="number"
-          id="price"
-          value={price}
-          onChange={onMutate}
-          min="1"
-          max="5000000"
-          required
-        />
+          <label className="createPath__formLabel">Price</label>
+          <input
+            className="createPath__formInputPrice"
+            type="number"
+            id="price"
+            value={price}
+            onChange={onMutate}
+            min="1"
+            max="5000000"
+            required
+          />
 
-        <label className="createPath__formLabel">Discount Percent</label>
-        <input
-          className="createPath__formInputDiscount"
-          type="number"
-          id="discountPercent"
-          value={discountPercent}
-          onChange={onMutate}
-          min="0"
-          max="100"
-          required
-        />
+          <label className="createPath__formLabel">Discount Percent</label>
+          <input
+            className="createPath__formInputDiscount"
+            type="number"
+            id="discountPercent"
+            value={discountPercent}
+            onChange={onMutate}
+            min="0"
+            max="100"
+            required
+          />
 
-        <label className="createPath__formLabel">Image</label>
-        <p>One Image Allowed</p>
-        <input
-          className="createPath__formInputfile"
-          type="file"
-          id="image"
-          onChange={onMutate}
-          max="6"
-          accept=".jpg,.png,.jpeg"
-          required
-        />
+          <label className="createPath__formLabel">Image</label>
+          <p>One Image Allowed</p>
+          <input
+            className="createPath__formInputfile"
+            type="file"
+            id="image"
+            onChange={onMutate}
+            max="6"
+            accept=".jpg,.png,.jpeg"
+            required
+          />
 
-        <button type="submit" className="createPath__button">
-          Create Path
-        </button>
-      </form>
+          <button type="submit" className="createPath__button">
+            Create Path
+          </button>
+        </form>
+      </div>
     </main>
   );
 };

@@ -1,7 +1,13 @@
-@import '../../utils/sass/variables.styles.scss';
+@import '../../sass/variables.styles.scss';
+@import '../../sass/mixins.styles.scss';
 
 .createPath {
-  padding: 5rem;
+  @include section();
+  align-items: center;
+
+  &__container {
+    @include container();
+  }
 
   &__form {
     display: flex;

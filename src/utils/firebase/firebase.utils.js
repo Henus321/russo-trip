@@ -80,8 +80,7 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
 
-export const onLogout = async () => {
-  // temporary, do it in another file?
+export const onSignOut = async () => {
   try {
     auth.signOut();
   } catch (error) {}

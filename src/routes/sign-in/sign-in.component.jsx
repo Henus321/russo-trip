@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
@@ -94,8 +94,7 @@ const SignIn = () => {
           <GoogleLogo className="signIn__google-logo" />
         </button>
         <span className="signIn__registration-link">
-          {/* TEMPORARY ANCHOR */}
-          New to Russo Trip? <a href="/registration">Create an account.</a>
+          New to Russo Trip? <Link to="/registration">Create an account.</Link>
         </span>
       </div>
     </main>

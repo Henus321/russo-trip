@@ -1,7 +1,9 @@
-@import '../../utils/sass/variables.styles.scss';
+@import '../../sass/variables.styles.scss';
+@import '../../sass/mixins.styles.scss';
 
 .contacts {
-  padding: 5rem;
+  @include section();
+  align-items: center;
 
   &__title {
     font-size: 2.5rem;

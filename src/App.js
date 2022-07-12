@@ -10,7 +10,7 @@ import Pathways from './components/pathways/pathways.component';
 import PathwaysItem from './components/pathways-item/pathways-item.component';
 import CreatePathway from './routes/create-pathway/create-pathway.component';
 import PrivateRoute from './components/private-route/private-route.component';
-import Profile from './components/profile/profile.component';
+import Profile from './routes/profile/profile.component';
 import Footer from './components/footer/footer.component';
 
 import './App.scss';

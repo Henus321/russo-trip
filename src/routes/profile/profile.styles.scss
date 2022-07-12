@@ -1,16 +1,17 @@
 @import '../../sass/variables.styles.scss';
 @import '../../sass/mixins.styles.scss';
 
-.about {
+.profile {
   @include section();
   align-items: center;
 
-  &__title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  &__container {
+    @include container();
   }
 
-  &__text {
-    font-size: $default-font-size;
+  &__photo {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
   }
 }

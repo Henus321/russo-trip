@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
 
 import './registration.styles.scss';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const defaultFormFields = {
   email: '',
@@ -45,7 +45,6 @@ const Registration = () => {
 
   return (
     <main className="registration">
-      {/* TEMPORARY LOGO */}
       <div className="registration__container">
         <h2 className="registration__title registration__item">Registration</h2>
         <form onSubmit={handleSubmit} className="registration__form">
@@ -87,8 +86,7 @@ const Registration = () => {
           </button>
         </form>
         <span className="registration__sign-in-link">
-          {/* TEMPORARY ANCHOR */}
-          Already have an account? <a href="/sign-in">Sign in.</a>
+          Already have an account? <Link to="/sign-in">Sign in.</Link>
         </span>
       </div>
     </main>
