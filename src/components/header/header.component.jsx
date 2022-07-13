@@ -1,8 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/user.context';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import { onSignOut } from '../../utils/firebase/firebase.utils';
 
 import logo from '../../assets/logo.png';
 import defaultAvatar from '../../assets/avatar.png';
@@ -10,18 +9,10 @@ import defaultAvatar from '../../assets/avatar.png';
 import './header.styles.scss';
 
 const Header = () => {
-  const navigate = useNavigate();
-  // const location = useLocation(); // later to know active
   const { currentUser } = useContext(UserContext);
 
   const setNavLinkActive = ({ isActive }) =>
     isActive ? 'header__link-active' : 'header__link';
-
-  // TEMPORARY
-  const onSignOutHandler = () => {
-    onSignOut();
-    navigate('/');
-  };
 
   return (
     <header className="header">
@@ -30,7 +21,7 @@ const Header = () => {
         <span className="header__logo-title">Russo Trip</span>
       </div>
 
-      <nav>
+      <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
             <NavLink to={'/'} className={setNavLinkActive}>
@@ -54,17 +45,7 @@ const Header = () => {
                   Create Pathway
                 </NavLink>
               </li>
-              <li className="header__nav-item">
-                <span className="header__link">
-                  <button
-                    type="button"
-                    onClick={onSignOutHandler}
-                    className="header__link header__logout-btn"
-                  >
-                    Log Out
-                  </button>
-                </span>
-              </li>
+
               <li className="header__nav-item header__profile">
                 <NavLink to="/profile" className={setNavLinkActive}>
                   <img

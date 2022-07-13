@@ -8,7 +8,13 @@ import {
   signInWithPopup,
   updateProfile,
 } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+} from 'firebase/firestore';
 
 const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
 
@@ -76,6 +82,23 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
 
   return await signInWithEmailAndPassword(auth, email, password);
+};
+
+export const onNameChangeSubmit = async (currentUser, name) => {
+  try {
+    if (currentUser.displayName !== name) {
+      await updateProfile(currentUser, {
+        displayName: name,
+      });
+
+      const userRef = doc(db, 'users', currentUser.uid);
+      await updateDoc(userRef, {
+        name,
+      });
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export const updateAuthProfile = (displayName) =>

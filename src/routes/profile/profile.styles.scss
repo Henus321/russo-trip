@@ -7,11 +7,44 @@
 
   &__container {
     @include container();
+    width: 36rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 1rem;
   }
 
   &__photo {
     height: 15rem;
     width: 15rem;
     border-radius: 50%;
+  }
+
+  &__change-details {
+    padding: 1rem 1.5rem;
+    background-color: $color-primary;
+    color: #fff;
+    cursor: pointer;
+
+    &-active {
+      padding: 1rem 1.5rem;
+      background-color: $color-secondary;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  &__input {
+    padding: 1rem;
+
+    &-active {
+      padding: 1rem;
+      background-color: $color-smoke;
+    }
   }
 }

@@ -25,6 +25,8 @@ const Pathways = () => {
   const params = useParams();
   const navigate = useNavigate();
 
+  const paginationLimit = 3;
+
   useEffect(() => {
     const fetchPathways = async () => {
       try {
@@ -34,7 +36,7 @@ const Pathways = () => {
           pathwaysRef,
           where('city', '==', params.cityName),
           orderBy('timestamp', 'desc'),
-          limit(2)
+          limit(paginationLimit)
         );
 
         const fullSnap = await getDocs(pathwaysRef);
@@ -74,7 +76,7 @@ const Pathways = () => {
         where('city', '==', params.cityName),
         orderBy('timestamp', 'desc'),
         startAfter(lastFetchedPathways),
-        limit(2)
+        limit(paginationLimit)
       );
 
       const querySnap = await getDocs(q);

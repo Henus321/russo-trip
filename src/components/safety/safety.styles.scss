@@ -44,10 +44,12 @@
     background-color: $color-white;
     border-radius: 0.5rem;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    transition: transform 0.1s ease;
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
+    filter: brightness(97%);
 
     &:hover {
-      transform: scale(101%);
+      // transform: scale(101%);
+      filter: brightness(100%);
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     }
   }
