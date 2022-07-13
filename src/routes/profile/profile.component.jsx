@@ -35,8 +35,6 @@ const Profile = () => {
     navigate('/');
   };
 
-  console.log(currentUser);
-
   return (
     <main className="profile">
       <div className="profile__container">

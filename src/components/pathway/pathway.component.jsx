@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../utils/firebase/firebase.utils';
-import './pathways-item.styles.scss';
+
+import Map from '../map/map.component';
 import Button from '../button/button.component';
+import './pathway.styles.scss';
 
 const PathwaysItem = () => {
   const [pathwaysItem, setPathwaysItem] = useState(null);
@@ -35,14 +37,14 @@ const PathwaysItem = () => {
   };
 
   return (
-    <main className="pathways-item">
-      <h2 className="pathways-item__title">{pathwaysItem.name}</h2>
-      <span className="pathways-item__under-title">
+    <main className="pathway">
+      <h2 className="pathway__title">{pathwaysItem.name}</h2>
+      <span className="pathway__under-title">
         {cityWithCapitalizedFirstLetter}
       </span>
-      <p className="pathways-item__paragraph">
+      <p className="pathway__paragraph">
         <img
-          className="pathways-item__img"
+          className="pathway__img"
           src={pathwaysItem.imgUrls}
           alt={pathwaysItem.name}
           align="right"
@@ -71,10 +73,14 @@ const PathwaysItem = () => {
         voluptatibus excepturi soluta, sit, illo corrupti placeat veritatis,
         sint et! Ea dicta ipsam sit vitae.
       </p>
-      <div className="pathways-item__buttons-container">
+      <Map
+        geolocation={pathwaysItem.geolocation}
+        tourName={pathwaysItem.name}
+      />
+      <div className="pathway__buttons-container">
         <Button
           handler={() => backHandler()}
-          buttonType="btn__line pathways-item__btn"
+          buttonType="btn__line pathway__btn"
           buttonText="&larr;&nbsp;&nbsp;Back to City"
         />
         <Button buttonType="btn__primary" buttonText="Buy Tour" />
