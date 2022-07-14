@@ -10,15 +10,15 @@ import './slider.styles.scss';
 const data = [
   {
     imageUrl:
-      'https://images.unsplash.com/photo-1612966809481-b84cb86ee3f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+      'https://images.unsplash.com/photo-1567449303070-ed66e1d59843?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
   },
   {
     imageUrl:
-      'https://images.unsplash.com/photo-1540388482879-c02f7127c83f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+      'https://images.unsplash.com/photo-1625780248192-cfdc2d61a996?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
   },
   {
     imageUrl:
-      'https://images.unsplash.com/photo-1505551071487-d4a3fd384857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
+      'https://images.unsplash.com/photo-1592150587525-90486c792197?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
   },
 ];
 
@@ -34,6 +34,13 @@ const Slider = () => {
       >
         {data.map((slide, i) => (
           <SwiperSlide key={i}>
+            <h2 className="slider__title">
+              <span className="slider__main-title">RUSSIA AWAITS</span>
+              <span className="slider__under-title">
+                Travel with Russo Trip
+              </span>
+            </h2>
+
             <img className="slider__image" src={slide.imageUrl} alt="Slide" />
           </SwiperSlide>
         ))}
