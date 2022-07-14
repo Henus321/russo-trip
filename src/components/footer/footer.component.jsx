@@ -1,4 +1,4 @@
-import Button from '../button/button.component';
+import { useState } from 'react';
 
 import { FaVk } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
@@ -7,6 +7,12 @@ import { FaYoutube } from 'react-icons/fa';
 import './footer.styles.scss';
 
 const Footer = () => {
+  const [message, setMessage] = useState('');
+
+  const adminEmail = 'tyrantbud@yandex.ru';
+
+  const onChange = (e) => setMessage(e.target.value);
+
   return (
     <footer className="footer">
       <div className="footer__row">
@@ -48,25 +54,27 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="footer__column footer__column-middle">
+        <div className="footer__column">
           <h2 className="footer__title">Feedback</h2>
           <form className="footer__form" action="">
             <textarea
               className="footer__text-area"
-              name=""
-              id=""
-              cols="30"
-              rows="8"
+              name="message"
+              id="message"
+              value={message}
+              onChange={onChange}
+              cols="20"
+              rows="6"
             ></textarea>
-            {/* Add handler later */}
-            <Button
-              buttonType="btn__black-submit"
-              buttonText="Submit&nbsp;&rarr; "
-            />
+            <a
+              className="footer__feedback-submit"
+              href={`mailto:${adminEmail}?Subject=Russo Trip Feedback&body=${message}`}
+            >
+              Submit&nbsp;&rarr;
+            </a>
           </form>
         </div>
         <div className="footer__column">
-          <h2 className="footer__title">Licensing</h2>
           <p className="footer__paragraph">
             The activity is carried out in accordance with the regulations on
             licensing of tour operator and travel agency activities approved by
@@ -78,8 +86,8 @@ const Footer = () => {
       </div>
       <div className="footer__hr"></div>
       <div className="footer__row">
-        <p className="footer__rights">2022 @ all rights not reserved</p>
-        <p className="footer__rights">Developed by Russo Trip</p>
+        <p className="footer__rights">2022 &#169; all rights not reserved</p>
+        <p className="footer__rights">Developed by Alexander Erkhov</p>
       </div>
     </footer>
   );

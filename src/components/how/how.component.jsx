@@ -3,12 +3,12 @@ import './how.styles.scss';
 const How = () => {
   return (
     <div className="how">
-      <h2 className="how__title">How We Work</h2>
+      <h2 className="how__title">How</h2>
       <span className="how__under-title">
         Do you want to know all the details?
       </span>
       <p className="how__text">
-        <div className="how__composition-container">
+        <span className="how__composition-container">
           <img
             className="how__composition-image how__composition-image--1"
             src="https://images.unsplash.com/photo-1504615458222-979e04d69a27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
@@ -24,7 +24,7 @@ const How = () => {
             src="https://images.unsplash.com/photo-1643281237869-90f896c8fd6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
             alt="cities"
           />
-        </div>
+        </span>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
         quibusdam ipsam commodi explicabo ea placeat animi temporibus dicta
         harum modi numquam doloribus, quia non? Atque quasi ullam aperiam

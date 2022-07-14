@@ -20,7 +20,9 @@
     padding: 3rem 4rem;
 
     &:nth-child(2) {
+      text-align: center;
       flex: 0 0 40%;
+      margin-right: 3rem;
     }
   }
 
@@ -66,10 +68,37 @@
   }
 
   &__text-area {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-size: $default-font-size;
     background-color: $color-grey-dark-1;
     color: $color-white;
-    border: none;
-    margin-bottom: 2rem;
+    border: 1px solid $color-grey-dark-2;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      background-color: $color-secondary;
+      border: 1px solid $color-grey-dark-3;
+    }
+  }
+
+  &__feedback-submit {
+    padding: 0.75rem 2.5rem;
+    align-self: center;
+    background-color: $color-grey-dark-1;
+    text-decoration: none;
+    border: 1px solid $color-grey-dark-2;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-secondary;
+      border: 1px solid $color-grey-dark-3;
+    }
+
+    &:active {
+      transform: scale(98%);
+    }
   }
 
   &__title {

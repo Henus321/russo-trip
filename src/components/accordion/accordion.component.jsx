@@ -8,12 +8,7 @@ import './accordion.styles.scss';
 
 const data = [
   {
-    question: "What's right after, how to get to the hotel?",
-    answer:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam modi consequuntur sed velit quae fuga eius dolores ex repellat adipisci, sapiente blanditiis, molestias deserunt optio magnam ad aut esse nulla.',
-  },
-  {
-    question: 'What about lunch during the tour?',
+    question: 'What about transportation, how do I get to the place?',
     answer:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam modi consequuntur sed velit quae fuga eius dolores ex repellat adipisci, sapiente blanditiis, molestias deserunt optio magnam ad aut esse nulla.',
   },
@@ -24,7 +19,7 @@ const data = [
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam modi consequuntur sed velit quae fuga eius dolores ex repellat adipisci, sapiente blanditiis, molestias deserunt optio magnam ad aut esse nulla.',
   },
   {
-    question: 'What about transportation, how do I get to the place?',
+    question: 'What about lunch during the tour?',
     answer:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam modi consequuntur sed velit quae fuga eius dolores ex repellat adipisci, sapiente blanditiis, molestias deserunt optio magnam ad aut esse nulla.',
   },
@@ -34,7 +29,12 @@ const data = [
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam modi consequuntur sed velit quae fuga eius dolores ex repellat adipisci, sapiente blanditiis, molestias deserunt optio magnam ad aut esse nulla.',
   },
   {
-    question: "What if I don't want to go until the end of the tour?",
+    question: 'What if I get tired before the tour ends?',
+    answer:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam modi consequuntur sed velit quae fuga eius dolores ex repellat adipisci, sapiente blanditiis, molestias deserunt optio magnam ad aut esse nulla.',
+  },
+  {
+    question: "What's right after, how to get to the hotel?",
     answer:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam modi consequuntur sed velit quae fuga eius dolores ex repellat adipisci, sapiente blanditiis, molestias deserunt optio magnam ad aut esse nulla.',
   },
