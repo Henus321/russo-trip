@@ -1,0 +1,25 @@
+@import '../../sass/variables.styles.scss';
+@import '../../sass/mixins.styles.scss';
+
+.how {
+  @include section();
+  // temporary
+  height: 60rem;
+
+  &__title {
+    align-self: center;
+    font-size: 2.5rem;
+    text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+  }
+
+  &__under-title {
+    align-self: center;
+    color: $color-grey-dark-2;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    font-size: $default-font-size;
+    text-align: justify;
+  }
+}

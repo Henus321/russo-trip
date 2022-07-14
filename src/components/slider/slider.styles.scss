@@ -1,0 +1,17 @@
+@import '../../sass/variables.styles.scss';
+
+:root {
+  --swiper-theme-color: #fff;
+}
+
+.slider {
+  font-size: $default-font-size;
+  margin-bottom: 5rem;
+
+  &__image {
+    width: 100%;
+    height: 65rem;
+    object-fit: cover;
+    object-position: center center;
+  }
+}

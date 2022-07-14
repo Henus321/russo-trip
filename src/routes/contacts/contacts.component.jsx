@@ -3,7 +3,7 @@ import './contacts.styles.scss';
 const Contacts = () => {
   return (
     <main className="contacts">
-      <h2 className="contacts__title">I AM Contacts</h2>
+      <h2 className="contacts__title">Contacts</h2>
       <p className="contacts__text">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
         magnam explicabo vero vel voluptatem, dignissimos ea aut qui ullam
@@ -20,7 +20,17 @@ const Contacts = () => {
         doloribus, quos eaque laborum eius, maxime voluptatem! Accusantium ipsam
         maxime sequi tenetur cupiditate veritatis veniam necessitatibus non
         quasi officiis est id sunt alias animi eaque earum, quo minus. Similique
-        porro ipsa earum temporibus tempora eius nemo ad?
+        porro ipsa earum temporibus tempora eius nemo ad? Lorem ipsum dolor, sit
+        amet consectetur adipisicing elit. In ipsum vel culpa corrupti animi
+        veniam quisquam perferendis commodi. Blanditiis harum beatae laborum
+        libero sit eius expedita dolorum ducimus autem minus! Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Officia animi reiciendis sequi
+        dicta, consequuntur quis natus eius aperiam perferendis, et illum, optio
+        nisi obcaecati excepturi. Perspiciatis vitae culpa earum et? Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Tenetur suscipit
+        consequatur mollitia sapiente quaerat iusto enim laboriosam ullam
+        maiores quo repellat rerum quis, cum ut eveniet saepe quisquam minima
+        exercitationem?
       </p>
     </main>
   );

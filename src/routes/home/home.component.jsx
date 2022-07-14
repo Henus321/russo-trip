@@ -1,19 +1,17 @@
-import SwiperOffers from '../../components/swiper-offers/swiper-offers.component';
-
+import Slider from '../../components/slider/slider.component';
 import Cities from '../../components/cities/cities.component';
-import Safety from '../../components/safety/safety.component';
-import Reviews from '../../components/reviews/reviews.component';
+import Faq from '../../components/faq/faq.component';
+import How from '../../components/how/how.component';
 
 import './home.styles.scss';
 
 const Home = () => {
   return (
     <main className="home">
-      <SwiperOffers />
+      <Slider />
       <Cities />
-      {/* <Pathways /> */}
-      <Safety />
-      <Reviews />
+      <Faq />
+      <How />
     </main>
   );
 };

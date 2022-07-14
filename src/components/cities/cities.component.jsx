@@ -16,9 +16,9 @@ const Cities = () => {
   return (
     <main className="cities">
       <h2 className="cities__title">Travel around Russia with Russo Trip!</h2>
-      <p className="cities__under-title">
+      <span className="cities__under-title">
         Choose a city and start your journey...
-      </p>
+      </span>
       <ul className="cities__list">
         {cities &&
           cities.map((city) => (
