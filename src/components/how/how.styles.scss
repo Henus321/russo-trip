@@ -3,8 +3,6 @@
 
 .how {
   @include section();
-  // temporary
-  height: 60rem;
 
   &__title {
     align-self: center;
@@ -21,5 +19,44 @@
   &__text {
     font-size: $default-font-size;
     text-align: justify;
+  }
+
+  &__composition-container {
+    position: relative;
+    float: right;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+    width: 50rem;
+    height: 30rem;
+  }
+
+  &__composition-image {
+    position: absolute;
+    width: 30rem;
+    height: auto;
+    box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    opacity: 0.95;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &--1 {
+      top: 1rem;
+      left: -1rem;
+    }
+    &--2 {
+      top: 4rem;
+      right: -2rem;
+    }
+    &--3 {
+      top: 10rem;
+      left: 20%;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      z-index: 20;
+      opacity: 1;
+    }
   }
 }

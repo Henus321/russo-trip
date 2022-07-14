@@ -8,6 +8,23 @@ const How = () => {
         Do you want to know all the details?
       </span>
       <p className="how__text">
+        <div className="how__composition-container">
+          <img
+            className="how__composition-image how__composition-image--1"
+            src="https://images.unsplash.com/photo-1504615458222-979e04d69a27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
+            alt="cities"
+          />
+          <img
+            className="how__composition-image how__composition-image--2"
+            src="https://images.unsplash.com/photo-1635172298210-b8891ba8f53f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+            alt="cities"
+          />
+          <img
+            className="how__composition-image how__composition-image--3"
+            src="https://images.unsplash.com/photo-1643281237869-90f896c8fd6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+            alt="cities"
+          />
+        </div>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
         quibusdam ipsam commodi explicabo ea placeat animi temporibus dicta
         harum modi numquam doloribus, quia non? Atque quasi ullam aperiam
@@ -33,26 +50,14 @@ const How = () => {
         commodi accusantium ullam blanditiis assumenda. Ducimus repellat
         molestias labore officiis doloremque expedita laborum eaque quaerat,
         provident aut ad, officia minima incidunt recusandae alias perferendis,
-        blanditiis porro sint eveniet deleniti commodi quisquam nam! Fuga,
-        labore atque. Esse quibusdam magnam illo aspernatur eius quaerat
-        distinctio fuga natus voluptas! Exercitationem consectetur ducimus esse
-        voluptatibus. Unde asperiores officiis sit fugiat assumenda optio illum
-        non ad a cupiditate? Eum, quibusdam? Labore provident quidem similique.
-        Veniam dolorum autem voluptas inventore similique, voluptatum aperiam
-        adipisci officia! Laborum, doloribus nesciunt, nobis qui provident culpa
-        nisi labore aperiam perspiciatis possimus voluptate quibusdam illum
-        iusto. Dolorum repellat commodi accusantium ullam blanditiis assumenda.
-        Ducimus repellat molestias labore officiis doloremque expedita laborum
-        eaque quaerat, provident aut ad, officia minima incidunt recusandae
-        alias perferendis, blanditiis porro sint eveniet deleniti commodi
-        quisquam nam! Fuga, labore atque. Esse quibusdam magnam illo aspernatur
-        eius quaerat distinctio fuga natus voluptas! Exercitationem consectetur
-        ducimus esse voluptatibus. Unde asperiores officiis sit fugiat assumenda
-        optio illum non ad a cupiditate? Eum, quibusdam? Labore provident quidem
-        similique. Veniam dolorum autem voluptas inventore similique, voluptatum
-        aperiam adipisci officia! Laborum, doloribus nesciunt, nobis qui
-        provident culpa nisi labore aperiam perspiciatis possimus voluptate
-        quibusdam illum iusto.
+        blanditiis porro sint eveniet deleniti commodi quisquam nam! Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Molestiae itaque eum illum
+        corrupti animi earum, vero nisi unde laudantium explicabo neque aut
+        similique rem consectetur. Eveniet necessitatibus at voluptatibus
+        temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Facilis saepe nostrum accusamus nam ullam eaque ex vitae, enim eius
+        voluptatem fugiat vero officiis dolores quo, corrupti quidem commodi
+        dolore odit.
       </p>
     </div>
   );
