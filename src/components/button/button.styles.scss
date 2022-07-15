@@ -1,8 +1,6 @@
 @import '../../sass/variables.styles.scss';
 
 .btn {
-  font-size: $default-font-size;
-
   &__primary {
     padding: 1rem 3rem;
     font-size: $default-font-size;
@@ -12,29 +10,6 @@
     white-space: nowrap;
     cursor: pointer;
     transition: transform 0.3s ease;
-
-    &:hover {
-      background-color: $color-primary;
-      color: $color-white;
-    }
-
-    &:active {
-      transform: scale(98%);
-    }
-  }
-
-  &__primary-wide {
-    padding: 1rem 3rem;
-    font-size: $default-font-size;
-    background-color: transparent;
-    border: 1px solid $color-primary;
-    width: 18rem;
-    margin-bottom: 4rem;
-
-    transition: transform 0.3s ease;
-
-    white-space: nowrap;
-    cursor: pointer;
 
     &:hover {
       background-color: $color-primary;
@@ -61,6 +36,30 @@
     &:hover {
       background-color: $color-secondary;
       color: $color-white;
+    }
+
+    &:active {
+      transform: scale(98%);
+    }
+  }
+
+  &__secondary-inverted {
+    padding: 1rem 3.5rem;
+    font-size: $default-font-size;
+    background-color: $color-secondary;
+    color: $color-white;
+    border: 1px solid $color-secondary;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-secondary;
     }
 
     &:active {

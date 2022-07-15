@@ -1,7 +1,7 @@
 @import '../../sass/variables.styles.scss';
 @import '../../sass/mixins.styles.scss';
 
-.signIn {
+.sign-in {
   @include section();
   align-items: center;
 
@@ -14,26 +14,10 @@
   &__form {
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
   }
 
   &__input {
-    padding: 0.5rem;
-  }
-
-  &__item {
-    margin-bottom: 1rem;
-  }
-
-  &__button {
-    margin-bottom: 1rem;
-    padding: 0.75rem 3rem;
-    border-radius: 0.5rem;
-    font-size: $default-font-size;
-
-    &:active {
-      transform: scale(0.98);
-    }
+    @include input();
   }
 
   &__google-button {
@@ -48,7 +32,7 @@
     cursor: pointer;
   }
 
-  &__registration-link {
+  &__link {
     text-align: center;
   }
 }

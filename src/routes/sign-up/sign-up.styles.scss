@@ -14,29 +14,25 @@
   &__form {
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
   }
 
   &__input {
-    padding: 0.5rem;
+    @include input();
   }
 
-  &__item {
-    margin-bottom: 1rem;
+  &__google-button {
+    background-color: transparent;
+    border: none;
   }
 
-  &__button {
-    margin-bottom: 1rem;
-    padding: 0.75rem 3rem;
-    border-radius: 0.5rem;
-    font-size: $default-font-size;
-
-    &:active {
-      transform: scale(0.98);
-    }
+  &__google-logo {
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+    cursor: pointer;
   }
 
-  &__sign-in-link {
+  &__link {
     text-align: center;
   }
 }

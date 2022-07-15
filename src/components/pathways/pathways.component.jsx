@@ -25,7 +25,7 @@ const Pathways = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const paginationLimit = 3;
+  const paginationLimit = 4;
 
   useEffect(() => {
     const fetchPathways = async () => {
@@ -137,9 +137,7 @@ const Pathways = () => {
               </p>
               <div className="pathways__information-container">
                 <span className="pathways__information-span">
-                  {/* Change observe on Observing Tour etc */}
-                  Extreme Tour
-                  {/* {pathway.data.type} */}
+                  {pathway.data.type} Tour
                 </span>
                 <Button
                   handler={() => forthHandler(pathway)}

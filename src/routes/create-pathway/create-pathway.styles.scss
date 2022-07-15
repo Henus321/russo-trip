@@ -1,26 +1,26 @@
 @import '../../sass/variables.styles.scss';
 @import '../../sass/mixins.styles.scss';
 
-.createPath {
+.create-pathway {
   @include section();
   align-items: center;
 
   &__container {
     @include container();
+    width: 40rem;
+    text-align: center;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
   }
 
-  &__title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  &__input {
+    @include input();
   }
 
-  &__text {
-    font-size: $default-font-size;
+  &__choose-file {
+    border: none;
   }
 }

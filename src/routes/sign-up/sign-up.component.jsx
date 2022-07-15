@@ -5,7 +5,7 @@ import {
   updateAuthProfile,
   signInWithGooglePopup,
 } from '../../utils/firebase/firebase.utils';
-
+import Button from '../../components/button/button.component';
 import { ReactComponent as GoogleLogo } from '../../assets/google.svg';
 
 import './sign-up.styles.scss';
@@ -64,11 +64,11 @@ const SignUp = () => {
   return (
     <main className="sign-up">
       <div className="sign-up__container">
-        <h2 className="sign-up__title sign-up__item">Sign Up to Russo Trip</h2>
+        <h2 className="sign-up__title">Sign Up to Russo Trip</h2>
         <form onSubmit={handleSubmit} className="sign-up__form">
           <label htmlFor="displayName">Name</label>
           <input
-            className="sign-up__item sign-up__input"
+            className="sign-up__input"
             type="text"
             required
             onChange={handleChange}
@@ -79,7 +79,7 @@ const SignUp = () => {
 
           <label htmlFor="email">Email adress</label>
           <input
-            className="sign-up__item sign-up__input"
+            className="sign-up__input"
             type="email"
             required
             onChange={handleChange}
@@ -89,7 +89,7 @@ const SignUp = () => {
           />
           <label htmlFor="password">Password</label>
           <input
-            className="sign-up__item sign-up__input"
+            className="sign-up__input"
             type="password"
             required
             onChange={handleChange}
@@ -99,7 +99,7 @@ const SignUp = () => {
           />
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
-            className="sign-up__item sign-up__input"
+            className="sign-up__input"
             type="password"
             required
             onChange={handleChange}
@@ -107,15 +107,17 @@ const SignUp = () => {
             name="confirmPassword"
             value={confirmPassword}
           />
-          <button className="sign-up__item sign-up__button" type="submit">
-            Create account
-          </button>
+          <Button
+            buttonType={'btn__secondary-inverted'}
+            buttonText={'Create Account'}
+            type="submit"
+          />
         </form>
         <span>or</span>
-        <button onClick={signInWithGoogle} className="signIn__google-button">
-          <GoogleLogo className="signIn__google-logo" />
+        <button onClick={signInWithGoogle} className="sign-up__google-button">
+          <GoogleLogo className="sign-up__google-logo" />
         </button>
-        <span className="sign-up__sign-in-link">
+        <span className="sign-up__link">
           Already have an account? <Link to="/sign-in">Sign in.</Link>
         </span>
       </div>

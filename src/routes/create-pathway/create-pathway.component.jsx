@@ -11,6 +11,7 @@ import { db } from '../../utils/firebase/firebase.utils';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { CompanyContext } from '../../contexts/company.context';
+import Button from '../../components/button/button.component';
 
 import './create-pathway.styles.scss';
 
@@ -169,26 +170,28 @@ const CreatePathway = () => {
   };
 
   return (
-    <main className="createPath">
-      <div className="createPath__container">
-        <h2 className="createPath__title">Create a Pathway</h2>
-        <form className="createPath__form" onSubmit={onSubmit}>
-          <label className="createPath__formLabel">City</label>
+    <main className="create-pathway">
+      <div className="create-pathway__container">
+        <h2 className="create-pathway__title">Create a Pathway</h2>
+        <form className="create-pathway__form" onSubmit={onSubmit}>
+          <label className="create-pathway__label">City</label>
           <select
-            className="createPath__formInputCity"
+            className="create-pathway__input"
             id="city"
             value={city}
             onChange={onMutate}
             required
           >
             <option value="moscow">Moscow</option>
-            <option value="vladivostok">Vladivostok</option>
+            <option value="saint-petersburg">Saint Petersburg</option>
+            <option value="altai-krai">Altai Krai</option>
             <option value="kazan">Kazan</option>
+            <option value="vladivostok">Vladivostok</option>
           </select>
 
-          <label className="createPath__formLabel">Type</label>
+          <label className="create-pathway__label">Type</label>
           <select
-            className="createPath__formInputType"
+            className="create-pathway__input"
             id="type"
             value={type}
             onChange={onMutate}
@@ -199,9 +202,9 @@ const CreatePathway = () => {
             <option value="Extreme">Extreme</option>
           </select>
 
-          <label className="createPath__formLabel">Name</label>
+          <label className="create-pathway__label">Name</label>
           <input
-            className="createPath__formInputName"
+            className="create-pathway__input"
             type="text"
             id="name"
             value={name}
@@ -211,9 +214,9 @@ const CreatePathway = () => {
             required
           />
 
-          <label className="createPath__formLabel">Start Point Address</label>
+          <label className="create-pathway__label">Start Point Address</label>
           <textarea
-            className="createPath__formInputAddress"
+            className="create-pathway__input"
             type="text"
             id="address"
             value={address}
@@ -221,9 +224,9 @@ const CreatePathway = () => {
             required
           />
 
-          <label className="createPath__formLabel">Price</label>
+          <label className="create-pathway__label">Price</label>
           <input
-            className="createPath__formInputPrice"
+            className="create-pathway__input"
             type="number"
             id="price"
             value={price}
@@ -233,9 +236,9 @@ const CreatePathway = () => {
             required
           />
 
-          <label className="createPath__formLabel">Discount Percent</label>
+          <label className="create-pathway__label">Discount Percent</label>
           <input
-            className="createPath__formInputDiscount"
+            className="create-pathway__input"
             type="number"
             id="discountPercent"
             value={discountPercent}
@@ -245,10 +248,9 @@ const CreatePathway = () => {
             required
           />
 
-          <label className="createPath__formLabel">Image</label>
-          <p>One Image Allowed</p>
+          <label className="create-pathway__label">One Image Allowed</label>
           <input
-            className="createPath__formInputfile"
+            className="create-pathway__input create-pathway__choose-file"
             type="file"
             id="image"
             onChange={onMutate}
@@ -256,10 +258,11 @@ const CreatePathway = () => {
             accept=".jpg,.png,.jpeg"
             required
           />
-
-          <button type="submit" className="createPath__button">
-            Create Path
-          </button>
+          <Button
+            buttonType={'btn__secondary-inverted'}
+            buttonText={'Create Pathway'}
+            type="submit"
+          />
         </form>
       </div>
     </main>

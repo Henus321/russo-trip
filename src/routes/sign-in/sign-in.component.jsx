@@ -8,6 +8,7 @@ import {
 import { ReactComponent as GoogleLogo } from '../../assets/google.svg';
 
 import './sign-in.styles.scss';
+import Button from '../../components/button/button.component';
 
 const defaultFormFields = {
   email: '',
@@ -61,13 +62,13 @@ const SignIn = () => {
   };
 
   return (
-    <main className="signIn">
-      <div className="signIn__container">
-        <h2 className="signIn__title signIn__item">Sign In to Russo Trip</h2>
-        <form onSubmit={handleSubmit} className="signIn__form">
+    <main className="sign-in">
+      <div className="sign-in__container">
+        <h2 className="sign-in__title">Sign In to Russo Trip</h2>
+        <form onSubmit={handleSubmit} className="sign-in__form">
           <label htmlFor="email">Email adress</label>
           <input
-            className="signIn__item signIn__input"
+            className="sign-in__input"
             type="email"
             required
             onChange={handleChange}
@@ -77,7 +78,7 @@ const SignIn = () => {
           />
           <label htmlFor="password">Password</label>
           <input
-            className="signIn__item signIn__input"
+            className="sign-in__input"
             type="password"
             required
             onChange={handleChange}
@@ -85,16 +86,18 @@ const SignIn = () => {
             id="password"
             value={password}
           />
-          <button type="submit" className="signIn__item signIn__button">
-            Sign in
-          </button>
+          <Button
+            buttonType={'btn__secondary-inverted'}
+            buttonText={'Sign In'}
+            type="submit"
+          />
         </form>
         <span>or</span>
-        <button onClick={signInWithGoogle} className="signIn__google-button">
-          <GoogleLogo className="signIn__google-logo" />
+        <button onClick={signInWithGoogle} className="sign-in__google-button">
+          <GoogleLogo className="sign-in__google-logo" />
         </button>
-        <span className="signIn__registration-link">
-          New to Russo Trip? <Link to="/registration">Create an account.</Link>
+        <span className="sign-in__link">
+          New to Russo Trip? <Link to="/sign-up">Create an account.</Link>
         </span>
       </div>
     </main>
