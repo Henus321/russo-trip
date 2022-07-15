@@ -11,6 +11,7 @@ import Pathway from './components/pathway/pathway.component';
 import CreatePathway from './routes/create-pathway/create-pathway.component';
 import PrivateRoute from './components/private-route/private-route.component';
 import Profile from './routes/profile/profile.component';
+import Team from './routes/team/team.component';
 import Footer from './components/footer/footer.component';
 
 import './App.scss';
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
+        <Route path="team" element={<Team />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
         <Route path="city/:cityName" element={<Pathways />} />

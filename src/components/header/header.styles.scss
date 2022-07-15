@@ -49,8 +49,6 @@
     }
   }
 
-  &__link-active:link,
-  &__link-active:visited,
   &__link:link,
   &__link:visited {
     text-decoration: none;
@@ -60,6 +58,10 @@
   &__link-active:link,
   &__link-active:visited {
     text-decoration: underline;
+    color: $color-black;
+  }
+
+  &__link:hover {
     color: $color-black;
   }
 

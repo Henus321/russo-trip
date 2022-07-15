@@ -1,4 +1,3 @@
-import video from '../../assets/video.mp4';
 import Accordion from '../accordion/accordion.component';
 
 import './faq.styles.scss';

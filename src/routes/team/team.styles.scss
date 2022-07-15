@@ -1,0 +1,80 @@
+@import '../../sass/variables.styles.scss';
+@import '../../sass/mixins.styles.scss';
+
+.team {
+  @include section();
+  border-bottom: none;
+  align-items: center;
+  padding: 0;
+
+  &__title {
+    font-size: 2.5rem;
+    text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+  }
+
+  &__under-title {
+    font-size: 1.4rem;
+    color: $color-grey-dark-3;
+    margin-bottom: 1rem;
+  }
+
+  &__city-description {
+    text-align: justify;
+    margin: 0 1rem 1rem;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 3rem;
+    list-style: none;
+  }
+
+  &__list-item {
+    @include list-item();
+    margin: 1rem;
+    text-align: center;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  &__img {
+    align-self: center;
+    width: auto;
+    height: 18rem;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(0.25);
+  }
+
+  &__text-container {
+    text-align: left;
+    padding: 1rem 3rem;
+  }
+
+  &__item-title {
+    font-size: 2rem;
+    text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+  }
+
+  &__type {
+    font-size: 1.4rem;
+    color: $color-grey-dark-3;
+  }
+
+  &__description {
+    text-align: justify;
+  }
+}

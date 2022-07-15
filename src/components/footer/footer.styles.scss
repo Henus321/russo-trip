@@ -39,6 +39,16 @@
     font-size: 2rem;
   }
 
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: $color-grey-dark-3;
+  }
+
+  &__link:hover {
+    color: $color-white;
+  }
+
   &__logo-container {
     display: flex;
     justify-content: flex-start;
@@ -80,6 +90,7 @@
     color: $color-white;
     border: 1px solid $color-grey-dark-2;
     outline: none;
+    resize: none;
 
     &:hover,
     &:focus {

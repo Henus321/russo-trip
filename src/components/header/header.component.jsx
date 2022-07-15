@@ -12,7 +12,6 @@ import './header.styles.scss';
 const Header = () => {
   const { currentUser } = useContext(UserContext);
   const { admin } = useContext(CompanyContext);
-  // console.log(admin.uid === currentUser.uid);
 
   const setNavLinkActive = ({ isActive }) =>
     isActive ? 'header__link-active' : 'header__link';
@@ -39,6 +38,11 @@ const Header = () => {
           <li className="header__nav-item">
             <NavLink to="/contacts" className={setNavLinkActive}>
               Contacts
+            </NavLink>
+          </li>
+          <li className="header__nav-item">
+            <NavLink to="/team" className={setNavLinkActive}>
+              Team
             </NavLink>
           </li>
           {currentUser ? (

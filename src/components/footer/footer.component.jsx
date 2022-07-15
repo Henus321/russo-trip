@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { CompanyContext } from '../../contexts/company.context';
+import { Link } from 'react-router-dom';
 
 import { FaVk } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
@@ -18,14 +19,34 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__row">
         <div className="footer__column">
-          <h2 className="footer__title">About</h2>
+          <h2 className="footer__title">Menu</h2>
           <nav className="footer__nav">
             <ul className="footer__nav-list">
-              <li className="footer__nav-item">FAQ</li>
-              <li className="footer__nav-item">Home</li>
-              <li className="footer__nav-item">About</li>
-              <li className="footer__nav-item">Contacts</li>
-              <li className="footer__nav-item">Registration</li>
+              <li className="footer__nav-item">
+                <Link to={'/'} className="footer__link">
+                  Home
+                </Link>
+              </li>
+              <li className="footer__nav-item">
+                <Link to={'/about'} className="footer__link">
+                  About
+                </Link>
+              </li>
+              <li className="footer__nav-item">
+                <Link to={'/contacts'} className="footer__link">
+                  Contacts
+                </Link>
+              </li>
+              <li className="footer__nav-item">
+                <Link to={'/team'} className="footer__link">
+                  Team
+                </Link>
+              </li>
+              <li className="footer__nav-item">
+                <Link to={'/profile'} className="footer__link">
+                  Profile
+                </Link>
+              </li>
             </ul>
           </nav>
           <div className="footer__logo-container">
