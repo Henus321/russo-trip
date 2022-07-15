@@ -74,7 +74,7 @@ const Profile = () => {
             </div>
             <div className="profile__item">
               <Button
-                buttonType="btn__primary"
+                buttonType="btn__secondary-inverted"
                 buttonText="Log Out"
                 handler={() => onSignOutHandler()}
               >

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/user.context';
 import { CompanyContext } from '../../contexts/company.context';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
@@ -19,8 +19,12 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__logo-container">
-        <img className="header__logo" src={logo} alt="Russo Trip" />
-        <span className="header__logo-title">Russo Trip</span>
+        <Link to="/" className="header__logo-img">
+          <img className="header__logo" src={logo} alt="Russo Trip" />
+        </Link>
+        <Link to="/" className="header__logo-title">
+          <span>Russo Trip</span>
+        </Link>
       </div>
 
       <nav className="header__nav">

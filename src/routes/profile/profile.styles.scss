@@ -27,13 +27,13 @@
 
   &__change-details {
     padding: 1rem 1.5rem;
-    background-color: $color-primary;
+    background-color: $color-secondary;
     color: #fff;
     cursor: pointer;
 
     &-active {
       padding: 1rem 1.5rem;
-      background-color: $color-secondary;
+      background-color: $color-primary;
       color: #fff;
       cursor: pointer;
     }

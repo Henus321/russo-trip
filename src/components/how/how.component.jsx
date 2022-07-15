@@ -3,7 +3,7 @@ import './how.styles.scss';
 const How = () => {
   return (
     <div className="how">
-      <h2 className="how__title">How</h2>
+      <h2 className="how__title">How To</h2>
       <span className="how__under-title">
         Do you want to know all the details?
       </span>
