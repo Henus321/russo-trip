@@ -11,13 +11,15 @@ import './header.styles.scss';
 const Header = () => {
   const { currentUser } = useContext(UserContext);
 
+  if (!currentUser) return;
+
   const setNavLinkActive = ({ isActive }) =>
     isActive ? 'header__link-active' : 'header__link';
 
   return (
     <header className="header">
       <div className="header__logo-container">
-        <img className="header__logo" src={logo} alt="" />
+        <img className="header__logo" src={logo} alt="Russo Trip" />
         <span className="header__logo-title">Russo Trip</span>
       </div>
 
@@ -51,10 +53,9 @@ const Header = () => {
                   <img
                     className="header__link header__avatar"
                     src={
-                      currentUser &&
-                      (currentUser.photoURL
+                      currentUser.photoURL
                         ? currentUser.photoURL
-                        : defaultAvatar)
+                        : defaultAvatar
                     }
                     alt="User"
                   />

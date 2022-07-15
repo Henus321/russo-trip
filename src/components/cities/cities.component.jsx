@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CitiesContext } from '../../contexts/cities.context';
+import { CompanyContext } from '../../contexts/company.context';
 import Button from '../button/button.component';
 
 import './cities.styles.scss';
 
 const Cities = () => {
   const navigate = useNavigate();
-  const { cities } = useContext(CitiesContext);
+  const { cities } = useContext(CompanyContext);
 
   const forthHandler = (cityRoute) => {
     navigate(`/${cityRoute}`);

@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import { UserProvider } from './contexts/user.context';
-import { CitiesProvider } from './contexts/cities.context';
+import { CompanyProvider } from './contexts/company.context';
 
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
@@ -14,9 +14,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <CitiesProvider>
+        <CompanyProvider>
           <App />
-        </CitiesProvider>
+        </CompanyProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

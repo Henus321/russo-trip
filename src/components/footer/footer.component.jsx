@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CompanyContext } from '../../contexts/company.context';
 
 import { FaVk } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
@@ -9,7 +10,7 @@ import './footer.styles.scss';
 const Footer = () => {
   const [message, setMessage] = useState('');
 
-  const adminEmail = 'tyrantbud@yandex.ru';
+  const { contacts } = useContext(CompanyContext);
 
   const onChange = (e) => setMessage(e.target.value);
 
@@ -22,7 +23,7 @@ const Footer = () => {
             <ul className="footer__nav-list">
               <li className="footer__nav-item">FAQ</li>
               <li className="footer__nav-item">Home</li>
-              <li className="footer__nav-item">About Us</li>
+              <li className="footer__nav-item">About</li>
               <li className="footer__nav-item">Contacts</li>
               <li className="footer__nav-item">Registration</li>
             </ul>
@@ -68,7 +69,7 @@ const Footer = () => {
             ></textarea>
             <a
               className="footer__feedback-submit"
-              href={`mailto:${adminEmail}?Subject=Russo Trip Feedback&body=${message}`}
+              href={`mailto:${contacts.email}?Subject=Russo Trip Feedback&body=${message}`}
             >
               Submit&nbsp;&rarr;
             </a>
@@ -87,7 +88,7 @@ const Footer = () => {
       <div className="footer__hr"></div>
       <div className="footer__row">
         <p className="footer__rights">2022 &#169; all rights not reserved</p>
-        <p className="footer__rights">Developed by Alexander Erkhov</p>
+        <p className="footer__rights">Developed by {contacts.admin}</p>
       </div>
     </footer>
   );
