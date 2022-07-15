@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/user.context';
+import { CompanyContext } from '../../contexts/company.context';
 import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
@@ -10,8 +11,8 @@ import './header.styles.scss';
 
 const Header = () => {
   const { currentUser } = useContext(UserContext);
-
-  if (!currentUser) return;
+  const { admin } = useContext(CompanyContext);
+  // console.log(admin.uid === currentUser.uid);
 
   const setNavLinkActive = ({ isActive }) =>
     isActive ? 'header__link-active' : 'header__link';
@@ -42,11 +43,13 @@ const Header = () => {
           </li>
           {currentUser ? (
             <>
-              <li className="header__nav-item">
-                <NavLink to="/create-pathway" className={setNavLinkActive}>
-                  Create Pathway
-                </NavLink>
-              </li>
+              {admin && admin.uid === currentUser.uid && (
+                <li className="header__nav-item">
+                  <NavLink to="/create-pathway" className={setNavLinkActive}>
+                    Create Pathway
+                  </NavLink>
+                </li>
+              )}
 
               <li className="header__nav-item header__profile">
                 <NavLink to="/profile" className={setNavLinkActive}>

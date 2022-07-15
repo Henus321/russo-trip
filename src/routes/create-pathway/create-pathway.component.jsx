@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import {
   getStorage,
@@ -8,9 +8,9 @@ import {
 } from 'firebase/storage';
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 import { db } from '../../utils/firebase/firebase.utils';
-
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { CompanyContext } from '../../contexts/company.context';
 
 import './create-pathway.styles.scss';
 
@@ -27,20 +27,21 @@ const CreatePathway = () => {
     image: '',
   });
 
+  const { admin } = useContext(CompanyContext);
+
   const { city, name, type, address, price, discountPercent, image } = formData;
 
   const auth = getAuth();
   const navigate = useNavigate();
   const isMounted = useRef(true);
 
-  // НЕ ДАСТ ЗАЙТИ ЕСЛИ НЕ ЗАЛОГИНЕН!
   useEffect(() => {
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
-        if (user) {
+        if (user && user.uid === admin.uid) {
           setFormData({ ...formData, userRef: user.uid });
         } else {
-          navigate('/sign-in');
+          navigate('/');
         }
       });
     }
