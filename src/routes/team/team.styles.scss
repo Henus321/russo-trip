@@ -18,13 +18,9 @@
     margin-bottom: 1rem;
   }
 
-  &__city-description {
-    text-align: justify;
-    margin: 0 1rem 1rem;
-  }
-
   &__column {
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     text-align: center;
     width: 100%;
@@ -34,9 +30,7 @@
 
   &__row {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    flex-wrap: wrap;
     width: 100%;
     margin-bottom: 3rem;
     list-style: none;
@@ -44,9 +38,8 @@
 
   &__list-item {
     @include list-item();
+    width: auto;
     margin: 1rem;
-    text-align: center;
-    width: 100%;
     flex-direction: row;
   }
 
