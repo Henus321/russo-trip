@@ -53,11 +53,8 @@ const Contacts = () => {
             <span className="contacts__info-title">Address:</span>
             <span className="contacts__info-item">{cityData.address}</span>
 
-            <span className="contacts__info-title">How to Walk:</span>
+            <span className="contacts__info-title">How to Get:</span>
             <span className="contacts__info-item">{cityData.walk}</span>
-
-            <span className="contacts__info-title">How to Drive</span>
-            <span className="contacts__info-item">{cityData.drive}</span>
 
             <span className="contacts__info-title">
               Customer Service Department

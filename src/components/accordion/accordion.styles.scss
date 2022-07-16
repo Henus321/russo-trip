@@ -9,12 +9,13 @@
   &__item-container {
     position: relative;
     z-index: 10;
-    background-color: rgba($color-white, 0.9);
+    background-color: rgba($color-white, 0.5);
 
     margin-bottom: 1rem;
     padding: 1rem 2rem;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
     transition: filter 0.3s ease, box-shadow 0.3s ease;
+
     filter: brightness(98%);
 
     &:hover {

@@ -37,23 +37,13 @@
   }
 
   &__info-title {
+    display: flex;
     color: $color-grey-dark-2;
     text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
   }
 
   &__info-item {
     display: flex;
-    flex-direction: column;
     margin-bottom: 2rem;
-  }
-
-  &__info-row {
-    display: flex;
-  }
-
-  &__info-column {
-    display: flex;
-    flex-direction: column;
-    margin-right: 2rem;
   }
 }
