@@ -11,7 +11,7 @@ import './footer.styles.scss';
 const Footer = () => {
   const [message, setMessage] = useState('');
 
-  const { contacts } = useContext(CompanyContext);
+  const { admin } = useContext(CompanyContext);
 
   const onChange = (e) => setMessage(e.target.value);
 
@@ -90,7 +90,7 @@ const Footer = () => {
             ></textarea>
             <a
               className="footer__feedback-submit"
-              href={`mailto:${contacts.email}?Subject=Russo Trip Feedback&body=${message}`}
+              href={`mailto:${admin.email}?Subject=Russo Trip Feedback&body=${message}`}
             >
               Submit&nbsp;&rarr;
             </a>
@@ -109,7 +109,7 @@ const Footer = () => {
       <div className="footer__hr"></div>
       <div className="footer__row">
         <p className="footer__rights">2022 &#169; all rights not reserved</p>
-        <p className="footer__rights">Developed by {contacts.admin}</p>
+        <p className="footer__rights">Developed by {admin.name}</p>
       </div>
     </footer>
   );

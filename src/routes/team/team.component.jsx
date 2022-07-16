@@ -6,7 +6,6 @@ import './team.styles.scss';
 
 const Team = () => {
   const { cities } = useContext(CompanyContext);
-  console.log();
 
   return (
     <main className="team">
@@ -15,6 +14,11 @@ const Team = () => {
           <div className="team__column" key={uuidv4()}>
             <h2 className="team__title">Team {city.title}</h2>
             <span className="team__under-title">Guides and Instructors</span>
+            <img
+              className="team__background"
+              src={city.imageUrl}
+              alt={city.title}
+            />
             <ul className="team__row">
               {city.guides &&
                 city.guides.map((guide) => (

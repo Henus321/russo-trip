@@ -1,9 +1,19 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { useMap } from 'react-leaflet/hooks';
 
 import './map.styles.scss';
 
+function SetViewOnClick({ coords }) {
+  const map = useMap();
+  map.setView(coords, map.getZoom());
+
+  return null;
+}
+
 const Map = ({ geolocation, tourName }) => {
+  if (!geolocation && !tourName) return;
   const { lat, lng } = geolocation;
+
   return (
     <div className="map">
       <MapContainer
@@ -17,8 +27,9 @@ const Map = ({ geolocation, tourName }) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={[lat, lng]}>
-          <Popup>{tourName} Start Point</Popup>
+          <Popup>{tourName} Russo Trip Office</Popup>
         </Marker>
+        <SetViewOnClick coords={[lat, lng]} />
       </MapContainer>
     </div>
   );

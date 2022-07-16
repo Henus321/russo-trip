@@ -1,37 +1,75 @@
+import { useContext, useState } from 'react';
+import { CompanyContext } from '../../contexts/company.context';
+import { v4 as uuidv4 } from 'uuid';
+
+import Map from '../../components/map/map.component';
 import './contacts.styles.scss';
+import { useEffect } from 'react';
 
 const Contacts = () => {
+  const { contacts } = useContext(CompanyContext);
+
+  const [cityData, setCityData] = useState({});
+
+  useEffect(() => {
+    if (contacts.length > 0) setCityData(contacts[0]);
+  }, [contacts]);
+
+  console.log(cityData);
+
+  const handleCity = (e) => {
+    if (!contacts) return;
+    const [city] = contacts.filter((city) => city.name === e.target.value);
+    setCityData(city);
+  };
+
   return (
     <main className="contacts">
       <h2 className="contacts__title">Contacts</h2>
-      <p className="contacts__text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-        magnam explicabo vero vel voluptatem, dignissimos ea aut qui ullam
-        architecto. Fugiat impedit eos reiciendis possimus doloremque ducimus
-        eaque commodi et? Ducimus voluptate, beatae laudantium alias commodi
-        eius odio vitae est cum dolor, velit numquam nesciunt quae, possimus
-        pariatur iusto quas accusantium deleniti repudiandae ad. Laboriosam
-        placeat rem earum saepe voluptatum. Cum placeat quod fugiat maiores
-        dicta nobis dignissimos voluptatem doloremque saepe quibusdam, vero nemo
-        alias eius omnis enim quos asperiores, autem laudantium facilis
-        consequatur aliquam, tempora a? Autem, obcaecati exercitationem? Porro
-        veniam totam odit quaerat error numquam, illo veritatis amet! Soluta
-        esse labore dolore quasi dolor ab. Amet neque magni vel doloremque nihil
-        doloribus, quos eaque laborum eius, maxime voluptatem! Accusantium ipsam
-        maxime sequi tenetur cupiditate veritatis veniam necessitatibus non
-        quasi officiis est id sunt alias animi eaque earum, quo minus. Similique
-        porro ipsa earum temporibus tempora eius nemo ad? Lorem ipsum dolor, sit
-        amet consectetur adipisicing elit. In ipsum vel culpa corrupti animi
-        veniam quisquam perferendis commodi. Blanditiis harum beatae laborum
-        libero sit eius expedita dolorum ducimus autem minus! Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Officia animi reiciendis sequi
-        dicta, consequuntur quis natus eius aperiam perferendis, et illum, optio
-        nisi obcaecati excepturi. Perspiciatis vitae culpa earum et? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Tenetur suscipit
-        consequatur mollitia sapiente quaerat iusto enim laboriosam ullam
-        maiores quo repellat rerum quis, cum ut eveniet saepe quisquam minima
-        exercitationem?
-      </p>
+
+      {cityData && contacts.length > 0 && (
+        <>
+          <div className="contacts__button-container">
+            {contacts.map((city) => (
+              <button
+                className={
+                  cityData.name === city.name
+                    ? 'contacts__button-active'
+                    : 'contacts__button'
+                }
+                onClick={(e) => handleCity(e)}
+                value={city.name}
+                key={uuidv4()}
+              >
+                {city.city}
+              </button>
+            ))}
+          </div>
+
+          <div className="contacts__info">
+            <Map geolocation={cityData.geolocation} tourName={cityData.city} />
+            <h2>{cityData.city}</h2>
+
+            <span className="contacts__info-title">Address:</span>
+            <span className="contacts__info-item">{cityData.address}</span>
+
+            <span className="contacts__info-title">How to Walk:</span>
+            <span className="contacts__info-item">{cityData.walk}</span>
+
+            <span className="contacts__info-title">How to Drive</span>
+            <span className="contacts__info-item">{cityData.drive}</span>
+
+            <span className="contacts__info-title">
+              Customer Service Department
+            </span>
+            <span className="contacts__info-item">
+              {cityData.tel}
+              <br />
+              {cityData.email}
+            </span>
+          </div>
+        </>
+      )}
     </main>
   );
 };

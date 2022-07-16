@@ -3,29 +3,55 @@
 
 .team {
   @include section();
-  border-bottom: none;
+  border: none;
   align-items: center;
   padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+
+  &__column {
+    position: relative;
+    display: flex;
+    margin: 1rem auto 8rem;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__column::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      $color-white 5%,
+      transparent 30%,
+      $color-white 100%
+    );
+    z-index: 1;
+  }
 
   &__title {
     font-size: 2.5rem;
     text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+    z-index: 2;
   }
 
   &__under-title {
     font-size: 1.4rem;
     color: $color-grey-dark-3;
     margin-bottom: 1rem;
+    z-index: 2;
   }
 
-  &__column {
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    text-align: center;
+  &__background {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    margin-bottom: 4rem;
+    object-fit: cover;
+    object-position: center center;
+    filter: grayscale(0.8);
   }
 
   &__row {
@@ -34,13 +60,15 @@
     width: 100%;
     margin-bottom: 3rem;
     list-style: none;
+    z-index: 2;
   }
 
   &__list-item {
     @include list-item();
-    width: auto;
-    margin: 1rem;
+    width: 90%;
+    margin: 1rem auto;
     flex-direction: row;
+    background-color: rgba($color-white, 0.85);
   }
 
   &__img {
