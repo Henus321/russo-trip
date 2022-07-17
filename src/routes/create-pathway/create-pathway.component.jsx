@@ -198,7 +198,7 @@ const CreatePathway = () => {
             onChange={onMutate}
             required
           >
-            <option value="Observer">Observer</option>
+            <option value="Observing">Observing</option>
             <option value="Active">Active</option>
             <option value="Extreme">Extreme</option>
           </select>

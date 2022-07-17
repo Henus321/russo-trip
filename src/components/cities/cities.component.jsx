@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CompanyContext } from '../../contexts/company.context';
+
 import Button from '../button/button.component';
 import Loader from '../loader/loader.component';
-
 import './cities.styles.scss';
 
 const Cities = () => {

@@ -11,8 +11,9 @@ import {
 } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { db } from '../../utils/firebase/firebase.utils';
-import Button from '../button/button.component';
 
+import Loader from '../loader/loader.component';
+import Button from '../button/button.component';
 import './pathways.styles.scss';
 
 const Pathways = () => {
@@ -120,7 +121,7 @@ const Pathways = () => {
         Wanna be peaceful observer or active pathfinder?
       </p>
       <ul className="pathways__list">
-        {pathways &&
+        {pathways ? (
           pathways.map((pathway) => (
             <li className="pathways__list-item" key={pathway.id}>
               <img
@@ -146,7 +147,10 @@ const Pathways = () => {
                 />
               </div>
             </li>
-          ))}
+          ))
+        ) : (
+          <Loader />
+        )}
       </ul>
       <div className="pathways__buttons-container">
         <Button

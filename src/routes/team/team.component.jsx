@@ -28,16 +28,7 @@ const Team = () => {
                     <div className="team__text-container">
                       <h2 className="team__item-title">{guide.name}</h2>
                       <span className="team__type">{guide.type}</span>
-                      <p className="team__description">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Eaque ducimus optio voluptate ipsum aut dolorem
-                        doloremque aliquid cum sequi quia sint blanditiis,
-                        inventore consequuntur, repellendus minima aliquam fuga!
-                        Similique, dicta. Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Nostrum tenetur aliquam quisquam
-                        libero natus voluptas saepe architecto, amet
-                        reprehenderit totam animi dolore. Libero laborum.
-                      </p>
+                      <p className="team__description">{guide.description}</p>
                     </div>
                   </li>
                 ))}
