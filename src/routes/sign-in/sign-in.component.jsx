@@ -5,8 +5,9 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ReactComponent as GoogleLogo } from '../../assets/google.svg';
-
 import './sign-in.styles.scss';
 import Button from '../../components/button/button.component';
 
@@ -30,7 +31,7 @@ const SignIn = () => {
       await signInWithGooglePopup();
       navigate('/');
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -44,13 +45,13 @@ const SignIn = () => {
     } catch (error) {
       switch (error.code) {
         case 'auth/wrong-password':
-          console.log('incorrect password or email');
+          toast.error('incorrect password or email');
           break;
         case 'auth/user-not-found':
-          console.log('no user associated with this email');
+          toast.error('no user associated with this email');
           break;
         default:
-          console.log(error);
+          toast.error(error.message);
       }
     }
   };
@@ -100,6 +101,7 @@ const SignIn = () => {
           New to Russo Trip? <Link to="/sign-up">Create an account.</Link>
         </span>
       </div>
+      <ToastContainer />
     </main>
   );
 };

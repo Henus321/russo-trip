@@ -11,8 +11,10 @@ import { db } from '../../utils/firebase/firebase.utils';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { CompanyContext } from '../../contexts/company.context';
-import Button from '../../components/button/button.component';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Button from '../../components/button/button.component';
 import './create-pathway.styles.scss';
 
 const YANDEX_API_KEY = process.env.REACT_APP_YANDEX_API_KEY;
@@ -57,7 +59,7 @@ const CreatePathway = () => {
     e.preventDefault();
 
     if (image.length > 1) {
-      console.log('Only 1 image allowed!');
+      toast.error('Only 1 image allowed!');
       return;
     }
 
@@ -71,7 +73,7 @@ const CreatePathway = () => {
       data.response.GeoObjectCollection.metaDataProperty
         .GeocoderResponseMetaData.found === '0';
     if (dataNotFound) {
-      console.log('data not found!');
+      toast.error('data not found!');
       return;
     } else {
       const [lng, lat] =
@@ -101,7 +103,7 @@ const CreatePathway = () => {
                 console.log('Upload is paused');
                 break;
               case 'running':
-                console.log('Upload is running');
+                toast.error('Upload is running');
                 break;
               default:
                 break;
@@ -122,7 +124,7 @@ const CreatePathway = () => {
     const imgUrls = await Promise.all(
       [...image].map((image) => storeImage(image))
     ).catch(() => {
-      console.log('Images not uploaded!');
+      toast.error('Image not uploaded!');
       return;
     });
 
@@ -141,7 +143,6 @@ const CreatePathway = () => {
 
     const docRef = await addDoc(collection(db, 'pathways'), formDataCopy);
     console.log(`/${formDataCopy.city}/${docRef.id}`);
-    // navigate(`/${formDataCopy.city}/${formDataCopy.type}/${docRef.id}`);
   };
 
   const onMutate = (e) => {
@@ -216,7 +217,7 @@ const CreatePathway = () => {
 
           <label className="create-pathway__label">Start Point Address</label>
           <textarea
-            className="create-pathway__input"
+            className="create-pathway__input create-pathway__text-area"
             type="text"
             id="address"
             value={address}
@@ -265,6 +266,7 @@ const CreatePathway = () => {
           />
         </form>
       </div>
+      <ToastContainer />
     </main>
   );
 };

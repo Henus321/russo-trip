@@ -4,6 +4,7 @@ const About = () => {
   return (
     <main className="about">
       <h2 className="about__title">About</h2>
+      <span className="about__under-title">Interesting Details</span>
       <p className="about__text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
         quibusdam ipsam commodi explicabo ea placeat animi temporibus dicta

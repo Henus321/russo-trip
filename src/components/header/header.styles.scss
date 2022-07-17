@@ -46,7 +46,7 @@
     white-space: nowrap;
 
     &:not(:last-child) {
-      margin-right: 3rem;
+      margin-right: 3.5rem;
     }
   }
 
@@ -58,7 +58,7 @@
 
   &__link-active:link,
   &__link-active:visited {
-    text-decoration: underline;
+    text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
     color: $color-black;
   }
 

@@ -5,13 +5,15 @@ import { doc, getDoc } from 'firebase/firestore';
 export const CompanyContext = createContext({
   admin: {},
   cities: [],
-  contacts: {},
+  contacts: [],
+  faq: [],
 });
 
 export const CompanyProvider = ({ children }) => {
-  const [cities, setCities] = useState([]);
   const [admin, setAdmin] = useState({});
-  const [contacts, setContacts] = useState({});
+  const [cities, setCities] = useState([]);
+  const [contacts, setContacts] = useState([]);
+  const [faq, setFaq] = useState([]);
 
   useEffect(() => {
     const fetchCompanyData = async () => {
@@ -21,11 +23,12 @@ export const CompanyProvider = ({ children }) => {
 
         const company = docSnap.data();
 
-        const { admin, cities, contacts } = company;
+        const { admin, cities, contacts, faq } = company;
 
         setAdmin(admin);
         setCities(cities);
         setContacts(contacts);
+        setFaq(faq);
       } catch (error) {
         console.log(error.message);
       }
@@ -38,6 +41,7 @@ export const CompanyProvider = ({ children }) => {
     cities,
     admin,
     contacts,
+    faq,
   };
 
   return (

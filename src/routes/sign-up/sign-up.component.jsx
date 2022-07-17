@@ -5,6 +5,9 @@ import {
   updateAuthProfile,
   signInWithGooglePopup,
 } from '../../utils/firebase/firebase.utils';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Button from '../../components/button/button.component';
 import { ReactComponent as GoogleLogo } from '../../assets/google.svg';
 
@@ -32,7 +35,7 @@ const SignUp = () => {
       await signInWithGooglePopup();
       navigate('/');
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -40,7 +43,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      console.log('passwords do not match');
+      toast.error('Passwords do not match');
       return;
     }
 
@@ -51,7 +54,7 @@ const SignUp = () => {
       resetFormFields();
       navigate('/');
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -121,6 +124,7 @@ const SignUp = () => {
           Already have an account? <Link to="/sign-in">Sign in.</Link>
         </span>
       </div>
+      <ToastContainer />
     </main>
   );
 };

@@ -43,8 +43,8 @@ const Slider = () => {
         {data.map((slide, i) => (
           <SwiperSlide key={i}>
             <h2 className="slider__title">
-              <span className="slider__main-title">EXPLORE RUSSIA</span>
-              <span className="slider__under-title">
+              <span className="slider__title-main">EXPLORE RUSSIA</span>
+              <span className="slider__title-under">
                 Travel with Russo Trip
               </span>
             </h2>

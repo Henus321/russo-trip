@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CompanyContext } from '../../contexts/company.context';
 import { v4 as uuidv4 } from 'uuid';
-
 import Map from '../../components/map/map.component';
+
+import Loader from '../../components/loader/loader.component';
 import './contacts.styles.scss';
-import { useEffect } from 'react';
 
 const Contacts = () => {
   const { contacts } = useContext(CompanyContext);
@@ -26,29 +26,29 @@ const Contacts = () => {
   return (
     <main className="contacts">
       <h2 className="contacts__title">Contacts</h2>
+      <span className="contacts__under-title">Address and Details</span>
 
-      {cityData && contacts.length > 0 && (
+      {cityData && contacts.length > 0 ? (
         <>
-          <div className="contacts__button-container">
-            {contacts.map((city) => (
-              <button
-                className={
-                  cityData.name === city.name
-                    ? 'contacts__button-active'
-                    : 'contacts__button'
-                }
-                onClick={(e) => handleCity(e)}
-                value={city.name}
-                key={uuidv4()}
-              >
-                {city.city}
-              </button>
-            ))}
-          </div>
-
           <div className="contacts__info">
             <Map geolocation={cityData.geolocation} tourName={cityData.city} />
-            <h2>{cityData.city}</h2>
+
+            <div className="contacts__button-container">
+              {contacts.map((city) => (
+                <button
+                  className={
+                    cityData.name === city.name
+                      ? 'contacts__button-active'
+                      : 'contacts__button'
+                  }
+                  onClick={(e) => handleCity(e)}
+                  value={city.name}
+                  key={uuidv4()}
+                >
+                  {city.city}
+                </button>
+              ))}
+            </div>
 
             <span className="contacts__info-title">Address:</span>
             <span className="contacts__info-item">{cityData.address}</span>
@@ -66,6 +66,8 @@ const Contacts = () => {
             </span>
           </div>
         </>
+      ) : (
+        <Loader />
       )}
     </main>
   );

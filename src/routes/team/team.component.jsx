@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CompanyContext } from '../../contexts/company.context';
 import { v4 as uuidv4 } from 'uuid';
 
+import Loader from '../../components/loader/loader.component';
 import './team.styles.scss';
 
 const Team = () => {
@@ -9,7 +10,7 @@ const Team = () => {
 
   return (
     <main className="team">
-      {cities &&
+      {cities.length > 0 ? (
         cities.map((city) => (
           <div className="team__column" key={uuidv4()}>
             <h2 className="team__title">Team {city.title}</h2>
@@ -42,7 +43,10 @@ const Team = () => {
                 ))}
             </ul>
           </div>
-        ))}
+        ))
+      ) : (
+        <Loader />
+      )}
     </main>
   );
 };

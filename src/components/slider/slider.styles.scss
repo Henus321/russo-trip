@@ -31,17 +31,17 @@
     color: $color-white;
     text-shadow: 3px 3px 5px $color-secondary;
     z-index: 10;
-  }
 
-  &__main-title {
-    white-space: nowrap;
-  }
+    &-main {
+      white-space: nowrap;
+    }
 
-  &__under-title {
-    margin-bottom: 2rem;
-    font-size: 3rem;
-    letter-spacing: 0.25rem;
-    white-space: nowrap;
-    text-shadow: 2px 2px $color-secondary;
+    &-under {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+      letter-spacing: 0.25rem;
+      white-space: nowrap;
+      text-shadow: 2px 2px $color-secondary;
+    }
   }
 }

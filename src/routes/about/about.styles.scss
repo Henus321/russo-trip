@@ -6,9 +6,11 @@
   align-items: center;
 
   &__title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+    @include title();
+  }
+
+  &__under-title {
+    @include under-title();
   }
 
   &__text {

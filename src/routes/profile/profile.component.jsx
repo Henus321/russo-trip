@@ -6,6 +6,9 @@ import {
 } from '../../utils/firebase/firebase.utils';
 import { UserContext } from '../../contexts/user.context';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Button from '../../components/button/button.component';
 import defaultAvatar from '../../assets/avatar.png';
 import { FaPen } from 'react-icons/fa';
@@ -67,6 +70,7 @@ const Profile = () => {
                 onClick={() => {
                   changeDetails && onNameChangeSubmit(currentUser, name);
                   setChangeDetails((prevState) => !prevState);
+                  changeDetails && toast.success('Done!');
                 }}
               >
                 {changeDetails ? <FaCheck /> : <FaPen />}
@@ -84,6 +88,7 @@ const Profile = () => {
           </>
         )}
       </div>
+      <ToastContainer />
     </main>
   );
 };

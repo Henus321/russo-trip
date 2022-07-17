@@ -3,17 +3,14 @@
 
 .cities {
   @include section();
+  position: relative;
 
   &__title {
-    align-self: center;
-    font-size: 2.5rem;
-    text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+    @include title();
   }
 
   &__under-title {
-    align-self: center;
-    color: $color-grey-dark-2;
-    margin-bottom: 2rem;
+    @include under-title();
   }
 
   &__list {
