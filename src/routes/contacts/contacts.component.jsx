@@ -15,8 +15,6 @@ const Contacts = () => {
     if (contacts.length > 0) setCityData(contacts[0]);
   }, [contacts]);
 
-  console.log(cityData);
-
   const handleCity = (e) => {
     if (!contacts) return;
     const [city] = contacts.filter((city) => city.name === e.target.value);

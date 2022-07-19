@@ -30,6 +30,58 @@
     margin: 0 0 1rem 2.5rem;
   }
 
+  &__cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto 2rem;
+  }
+
+  &__cart-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+
+    &:first-child {
+      color: $color-grey-dark-3;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__cart-item {
+    width: 17.5%;
+
+    &:first-child {
+      width: 25%;
+    }
+
+    &:last-child {
+      width: 5%;
+      text-align: center;
+    }
+  }
+
+  &__x {
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &__icon {
+    cursor: pointer;
+    transform: translateY(2px);
+    margin: 0 0.5rem;
+  }
+
+  &__increment-btn,
+  &__decrement-btn {
+    background-color: transparent;
+    border: none;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
   &__buttons-container {
     display: flex;
     justify-content: space-between;
