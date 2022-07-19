@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../utils/firebase/firebase.utils';
 
-import { ToastContainer, toast } from 'react-toastify';
 import Loader from '../loader/loader.component';
 import Button from '../button/button.component';
 import { FaPlus } from 'react-icons/fa';
@@ -42,15 +41,6 @@ const PathwaysItem = () => {
   };
 
   const onIncrement = (number) => {
-    if (quantity + number < minLimit) {
-      toast.error('Invalid value');
-      return;
-    }
-    if (quantity + number > maxLimit) {
-      toast.error('Limit exceeded');
-      return;
-    }
-
     setTotal((quantity + number) * pathwaysItem.price);
     setQuantity(quantity + number);
     return;
@@ -157,7 +147,6 @@ const PathwaysItem = () => {
       ) : (
         <Loader />
       )}
-      <ToastContainer />
     </main>
   );
 };
