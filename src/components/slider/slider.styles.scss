@@ -1,4 +1,5 @@
 @import '../../sass/variables.styles.scss';
+@import '../../sass/mixins.styles.scss';
 
 :root {
   --swiper-theme-color: #fff;
@@ -32,6 +33,15 @@
     text-shadow: 3px 3px 5px $color-secondary;
     z-index: 10;
 
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
+
+    @include respond(phone) {
+      top: 40%;
+      font-size: 3rem;
+    }
+
     &-main {
       white-space: nowrap;
     }
@@ -42,6 +52,10 @@
       letter-spacing: 0.25rem;
       white-space: nowrap;
       text-shadow: 2px 2px $color-secondary;
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
     }
   }
 }

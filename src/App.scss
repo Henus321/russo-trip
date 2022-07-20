@@ -1,4 +1,5 @@
 @import './sass/variables.styles.scss';
+@import './sass/mixins.styles.scss';
 
 .container {
   display: flex;
@@ -10,4 +11,8 @@
 
   margin: 0 auto;
   width: 120rem;
+
+  @include respond(tab-land) {
+    width: 100%;
+  }
 }

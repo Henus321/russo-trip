@@ -15,6 +15,8 @@
   &__text {
     font-size: $default-font-size;
     text-align: justify;
+    @include respond(tab-port) {
+    }
   }
 
   &__composition-container {
@@ -24,6 +26,10 @@
     margin-bottom: 1rem;
     width: 50rem;
     height: 30rem;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__composition-image {

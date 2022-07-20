@@ -1,4 +1,5 @@
 @import '../../sass/variables.styles.scss';
+@import '../../sass/mixins.styles.scss';
 
 .footer {
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.15);
@@ -11,6 +12,11 @@
     justify-content: space-between;
     padding: 1rem 2rem;
     margin: 0 3rem;
+
+    @include respond(phone) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
   }
 
   &__column {
@@ -19,15 +25,37 @@
     flex: 1;
     padding: 3rem 4rem;
 
+    @include respond(phone) {
+      align-items: center;
+      text-align: center;
+    }
+
     &:nth-child(2) {
       text-align: center;
       flex: 0 0 40%;
       margin-right: 3rem;
+      @include respond(tab-land) {
+        flex: 1;
+        margin-right: 0;
+      }
+      @include respond(phone) {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      @include respond(tab-land) {
+        display: none;
+      }
     }
   }
 
   &__nav {
     margin-bottom: 0.5rem;
+
+    @include respond(phone) {
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__nav-list {
@@ -56,6 +84,11 @@
     height: 5rem;
     width: 100%;
     overflow: hidden;
+
+    @include respond(phone) {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 
   &__logo {

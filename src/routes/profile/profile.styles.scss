@@ -7,7 +7,11 @@
 
   &__container {
     @include container();
-    width: 36rem;
+    width: 40rem;
+
+    @include respond(phone) {
+      width: 34rem;
+    }
   }
 
   &__title {
@@ -28,14 +32,24 @@
   &__change-details {
     padding: 1rem 1.5rem;
     background-color: $color-secondary;
-    color: #fff;
+    color: $color-smoke;
     cursor: pointer;
+
+    &:hover {
+      background-color: $color-smoke;
+      color: $color-secondary;
+    }
 
     &-active {
       padding: 1rem 1.5rem;
       background-color: $color-primary;
-      color: #fff;
+      color: $color-smoke;
       cursor: pointer;
+
+      &:hover {
+        background-color: $color-smoke;
+        color: $color-primary;
+      }
     }
   }
 

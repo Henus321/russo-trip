@@ -72,6 +72,15 @@
     object-fit: cover;
     object-position: center top;
     filter: grayscale(0.25);
+
+    @include respond(tab-port) {
+      height: 54rem;
+      object-position: center center;
+    }
+
+    @include respond(phone) {
+      height: 35rem;
+    }
   }
 
   &__text-container {

@@ -9,6 +9,10 @@
     @include container();
     width: 40rem;
     text-align: center;
+
+    @include respond(phone) {
+      width: 34rem;
+    }
   }
 
   &__form {

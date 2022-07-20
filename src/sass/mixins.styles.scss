@@ -14,6 +14,14 @@
     filter: brightness(100%);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
   }
+
+  @include respond(tab-land) {
+    width: 48%;
+  }
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
 }
 
 @mixin section() {
@@ -23,6 +31,11 @@
   padding: 0 3rem 3rem;
   font-size: $default-font-size;
   width: 90%;
+
+  @include respond(phone) {
+    width: 100%;
+    padding: 0 1rem 1rem;
+  }
 }
 
 @mixin container() {
@@ -60,10 +73,43 @@
   align-self: center;
   font-size: 2.5rem;
   text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
+
+  @include respond(phone) {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
 }
 
 @mixin under-title() {
   align-self: center;
   color: $color-grey-dark-2;
   margin-bottom: 2rem;
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5rem) {
+      // 600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25rem) {
+      // 900px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75rem) {
+      // 1200px
+      @content;
+    }
+  }
 }

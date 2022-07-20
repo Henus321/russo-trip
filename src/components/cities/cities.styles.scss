@@ -29,6 +29,18 @@
     height: 35rem;
     object-fit: cover;
     margin-bottom: 0.5rem;
+
+    @include respond(tab-land) {
+      height: 30rem;
+    }
+
+    @include respond(tab-port) {
+      height: 45rem;
+    }
+
+    @include respond(phone) {
+      height: 25rem;
+    }
   }
 
   &__item-title {

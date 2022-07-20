@@ -14,7 +14,12 @@
   }
 
   &__button-container {
+    display: flex;
     margin-bottom: 1rem;
+
+    @include respond(tab-land) {
+      flex-direction: column;
+    }
   }
 
   &__button {
@@ -54,6 +59,7 @@
   &__info-item {
     display: flex;
     margin-bottom: 2rem;
+    text-align: justify;
   }
 
   &__button-container {
