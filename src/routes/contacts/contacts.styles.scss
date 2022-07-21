@@ -49,6 +49,13 @@
       margin: 0 0.5rem;
       text-decoration: underline rgba(48, 56, 65, 0.45) 1px;
       cursor: pointer;
+      @include respond(tab-land) {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    @include respond(tab-land) {
+      padding: 0.5rem 1rem;
     }
   }
 
