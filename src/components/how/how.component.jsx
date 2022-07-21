@@ -4,9 +4,7 @@ const How = () => {
   return (
     <div className="how">
       <h2 className="how__title">How to Join</h2>
-      <span className="how__under-title">
-        Do you want to know all the details?
-      </span>
+      <span className="how__under-title">Create your own opportunities!</span>
       <p className="how__text">
         <span className="how__composition-container">
           <img

@@ -116,7 +116,7 @@ const Pathways = () => {
 
   return (
     <main className="pathways">
-      <h2 className="pathways__title">Choose your pathway</h2>
+      <h2 className="pathways__title">Choose Your Pathway</h2>
       <p className="pathways__under-title">
         Wanna be peaceful observer or active pathfinder?
       </p>
