@@ -38,6 +38,8 @@
     padding: 1rem 1.5rem;
     background-color: $color-secondary;
     color: $color-smoke;
+    margin-left: 0.5rem;
+    border-radius: 0.5rem;
     cursor: pointer;
 
     &:hover {
@@ -49,6 +51,8 @@
       padding: 1rem 1.5rem;
       background-color: $color-primary;
       color: $color-smoke;
+      margin-left: 0.5rem;
+      border-radius: 0.5rem;
       cursor: pointer;
 
       &:hover {

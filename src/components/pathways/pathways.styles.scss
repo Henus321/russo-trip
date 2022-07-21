@@ -4,6 +4,8 @@
 .pathways {
   @include section();
 
+  @include header-height-plus-margin();
+
   &__title {
     @include title();
   }

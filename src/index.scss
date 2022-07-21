@@ -30,6 +30,14 @@ code {
     monospace;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 ::selection {
   background-color: $color-primary;
   color: $color-white;

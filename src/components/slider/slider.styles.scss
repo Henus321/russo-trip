@@ -51,7 +51,7 @@
       font-size: 3rem;
       letter-spacing: 0.25rem;
       white-space: nowrap;
-      text-shadow: 2px 2px $color-secondary;
+      text-shadow: 3px 3px 5px $color-secondary;
 
       @include respond(phone) {
         font-size: 2rem;
