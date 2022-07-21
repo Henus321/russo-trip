@@ -5,6 +5,8 @@
   @include section();
   align-items: center;
 
+  @include header-height-plus-margin();
+
   &__container {
     @include container();
     margin-top: 2rem;

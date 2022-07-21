@@ -103,7 +103,7 @@ const CreatePathway = () => {
                 console.log('Upload is paused');
                 break;
               case 'running':
-                toast.error('Upload is running');
+                toast.success('Upload is running');
                 break;
               default:
                 break;

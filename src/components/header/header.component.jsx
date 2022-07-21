@@ -10,13 +10,17 @@ import defaultAvatar from '../../assets/avatar.png';
 import './header.styles.scss';
 
 const Header = () => {
-  const [menuActive, setMenuActive] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   const { currentUser } = useContext(UserContext);
   const { admin } = useContext(CompanyContext);
 
   const setNavLinkActive = ({ isActive }) =>
     isActive ? 'header__link-active' : 'header__link';
+
+  const onCheckboxChange = () => {
+    setChecked(!checked);
+  };
 
   return (
     <header className="header">
@@ -28,19 +32,23 @@ const Header = () => {
           <span>Russo Trip</span>
         </Link>
       </div>
-      <div
-        className="header__burger"
-        onClick={() => {
-          menuActive ? setMenuActive(false) : setMenuActive(true);
-        }}
-      ></div>
-      <nav className={menuActive ? 'header__nav-active' : 'header__nav'}>
+
+      <input
+        className="header__checkbox"
+        type="checkbox"
+        id="checkbox"
+        checked={checked}
+        onChange={onCheckboxChange}
+      />
+      <label className="header__checkbox-label" htmlFor="checkbox"></label>
+
+      <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
             <NavLink
               to={'/'}
               className={setNavLinkActive}
-              onClick={() => setMenuActive(false)}
+              onClick={() => onCheckboxChange()}
             >
               Home
             </NavLink>
@@ -49,7 +57,7 @@ const Header = () => {
             <NavLink
               to="/about"
               className={setNavLinkActive}
-              onClick={() => setMenuActive(false)}
+              onClick={() => onCheckboxChange()}
             >
               About
             </NavLink>
@@ -58,7 +66,7 @@ const Header = () => {
             <NavLink
               to="/contacts"
               className={setNavLinkActive}
-              onClick={() => setMenuActive(false)}
+              onClick={() => onCheckboxChange()}
             >
               Contacts
             </NavLink>
@@ -67,7 +75,7 @@ const Header = () => {
             <NavLink
               to="/team"
               className={setNavLinkActive}
-              onClick={() => setMenuActive(false)}
+              onClick={() => onCheckboxChange()}
             >
               Team
             </NavLink>
@@ -79,7 +87,7 @@ const Header = () => {
                   <NavLink
                     to="/create-pathway"
                     className={setNavLinkActive}
-                    onClick={() => setMenuActive(false)}
+                    onClick={() => onCheckboxChange()}
                   >
                     Create Pathway
                   </NavLink>
@@ -90,7 +98,7 @@ const Header = () => {
                 <NavLink
                   to="/profile"
                   className={setNavLinkActive}
-                  onClick={() => setMenuActive(false)}
+                  onClick={() => onCheckboxChange()}
                 >
                   <img
                     className="header__link header__avatar"
@@ -107,7 +115,7 @@ const Header = () => {
                 <NavLink
                   to="/profile"
                   className={setNavLinkActive}
-                  onClick={() => setMenuActive(false)}
+                  onClick={() => onCheckboxChange()}
                 >
                   Profile
                 </NavLink>
@@ -119,7 +127,7 @@ const Header = () => {
                 <NavLink
                   to="/sign-up"
                   className={setNavLinkActive}
-                  onClick={() => setMenuActive(false)}
+                  onClick={() => onCheckboxChange()}
                 >
                   Sign Up
                 </NavLink>
@@ -128,7 +136,7 @@ const Header = () => {
                 <NavLink
                   to="/sign-in"
                   className={setNavLinkActive}
-                  onClick={() => setMenuActive(false)}
+                  onClick={() => onCheckboxChange()}
                 >
                   Sign In
                 </NavLink>

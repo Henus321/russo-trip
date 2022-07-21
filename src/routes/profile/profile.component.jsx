@@ -23,8 +23,6 @@ const Profile = () => {
     name: currentUser.displayName,
   });
 
-  console.log(formData);
-
   const navigate = useNavigate();
   const { name } = formData;
 
