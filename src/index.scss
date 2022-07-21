@@ -45,6 +45,11 @@ a {
   color: $color-secondary;
 }
 
+button:disabled,
+button[disabled] {
+  color: $color-grey-dark-3;
+}
+
 ::selection {
   background-color: $color-primary;
   color: $color-white;
