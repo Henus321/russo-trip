@@ -7,6 +7,8 @@
 
   &__container {
     @include container();
+    margin-top: 2rem;
+
     width: 40rem;
     text-align: center;
   }

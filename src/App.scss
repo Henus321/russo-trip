@@ -10,7 +10,7 @@
   overflow: hidden;
 
   margin: 0 auto;
-  width: 120rem;
+  width: $default-container-width;
 
   @include respond(tab-land) {
     width: 100%;

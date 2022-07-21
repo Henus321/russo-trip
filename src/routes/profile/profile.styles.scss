@@ -5,9 +5,14 @@
   @include section();
   align-items: center;
 
+  @include header-height-plus-margin();
+
   &__container {
     @include container();
+    margin-top: 2rem;
+
     width: 40rem;
+    text-align: center;
 
     @include respond(phone) {
       width: 34rem;

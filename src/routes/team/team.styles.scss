@@ -8,10 +8,16 @@
   padding: 0;
   width: 100%;
 
+  @include header-height-plus-margin();
+
+  @include respond(phone) {
+    padding: 0;
+  }
+
   &__column {
     position: relative;
     display: flex;
-    margin: 1rem auto 5rem;
+    margin: 1rem auto 4rem;
     flex-direction: column;
     text-align: center;
     width: 100%;
@@ -58,6 +64,9 @@
     list-style: none;
     z-index: 2;
     flex-wrap: wrap;
+    @include respond(phone) {
+      width: 95%;
+    }
   }
 
   &__list-item {

@@ -9,6 +9,8 @@
   padding: 0 9rem 3rem;
   width: 100%;
 
+  @include header-height-plus-margin();
+
   &::before {
     content: '';
     position: absolute;

@@ -2,15 +2,28 @@
 @import '../../sass/mixins.styles.scss';
 
 .header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   font-size: 2rem;
-  width: 100%;
+  width: $default-container-width;
+  height: 10rem;
   padding: 1rem 3rem;
   background-color: $color-white;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+
+  z-index: 10000;
+
+  @include respond(tab-land) {
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+    height: 8rem;
+  }
 
   &__logo-container {
     display: flex;
@@ -25,6 +38,10 @@
     height: 8rem;
     width: auto;
     margin-right: 1rem;
+
+    @include respond(phone) {
+      height: 6rem;
+    }
   }
 
   &__logo-title {
@@ -39,9 +56,43 @@
     }
   }
 
+  &__burger {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translate(-50%, -50%);
+    width: 4rem;
+    height: 2rem;
+    border-top: 5px solid rgba($color-secondary, 0.95);
+    border-bottom: 5px solid rgba($color-secondary, 0.95);
+    cursor: pointer;
+
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+
   &__nav {
     @include respond(tab-port) {
       display: none;
+    }
+
+    &-active {
+      @include respond(tab-port) {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $color-smoke;
+        border-top: 1px solid rgba($color-secondary, 0.5);
+      }
+
+      @include respond(phone) {
+        top: 8rem;
+      }
     }
   }
 
@@ -49,6 +100,12 @@
     display: flex;
     align-items: center;
     margin-right: auto;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      margin-top: 5rem;
+      font-size: 5rem;
+    }
   }
 
   &__nav-item {
@@ -58,6 +115,10 @@
 
     &:not(:last-child) {
       margin-right: 3.5rem;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -77,11 +138,22 @@
     color: $color-black;
   }
 
-  &__profile {
+  &__profile-desktop {
     width: 3rem;
     height: 3rem;
     background-color: $color-white;
     border-radius: 50%;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__profile-mobile {
+    display: none;
+
+    @include respond(tab-port) {
+      display: block;
+    }
   }
 
   &__logout-btn {

@@ -16,7 +16,7 @@ const Cities = () => {
 
   return (
     <main className="cities">
-      <h2 className="cities__title">Travel around Russia with Russo Trip!</h2>
+      <h2 className="cities__title">Travel Russia with Russo Trip!</h2>
       <span className="cities__under-title">
         Choose a city and start your journey...
       </span>
