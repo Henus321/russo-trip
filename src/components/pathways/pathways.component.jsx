@@ -28,6 +28,8 @@ const Pathways = () => {
 
   const paginationLimit = 4;
 
+  console.log(needPagination);
+
   useEffect(() => {
     const fetchPathways = async () => {
       try {
@@ -40,7 +42,9 @@ const Pathways = () => {
           limit(paginationLimit)
         );
 
-        const fullSnap = await getDocs(pathwaysRef);
+        const qFull = query(pathwaysRef, where('city', '==', params.cityName));
+
+        const fullSnap = await getDocs(qFull);
 
         const querySnap = await getDocs(q);
 
