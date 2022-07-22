@@ -28,8 +28,6 @@ const Pathways = () => {
 
   const paginationLimit = 4;
 
-  console.log(needPagination);
-
   useEffect(() => {
     const fetchPathways = async () => {
       try {

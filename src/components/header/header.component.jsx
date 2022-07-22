@@ -20,6 +20,7 @@ const Header = () => {
 
   const onCheckboxChange = () => {
     setChecked(!checked);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -38,7 +39,7 @@ const Header = () => {
         type="checkbox"
         id="checkbox"
         checked={checked}
-        onChange={onCheckboxChange}
+        onChange={() => setChecked(!checked)}
       />
       <label className="header__checkbox-label" htmlFor="checkbox"></label>
 
