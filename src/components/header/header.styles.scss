@@ -153,6 +153,10 @@
     display: block;
   }
 
+  &__link {
+    white-space: nowrap;
+  }
+
   &__link:link,
   &__link:visited {
     text-decoration: none;
