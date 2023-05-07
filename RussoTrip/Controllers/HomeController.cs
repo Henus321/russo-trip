@@ -1,21 +1,25 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using RussoTrip.Interfaces;
 using RussoTrip.Models;
+using RussoTrip.ViewModels;
 
 namespace RussoTrip.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly IExcursionRepository _excursionRepository;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(IExcursionRepository excursionRepository)
     {
-        _logger = logger;
+        _excursionRepository = excursionRepository;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var excursions = _excursionRepository.GetExcursions;
+        var homeViewModel = new HomeViewModel(excursions); 
+        return View(homeViewModel);
     }
 
     public IActionResult Privacy()
