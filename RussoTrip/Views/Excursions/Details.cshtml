@@ -1,0 +1,23 @@
+﻿@model Excursion
+@{
+    ViewData["Title"] = "Blabla";
+}
+
+<div class="album bg-body-tertiary mt-3">
+    <div class="container">
+        <vc:page-title title="@Model.Name"></vc:page-title>
+        <div class="col d-flex flex-column">
+            <div class="d-block ratio ratio-16x9 mb-1">
+                <img class="img-fluid object-fit-cover" src="@Model.ImageUrl" alt="@Model.Name" />
+            </div>
+
+            <h3 class="card-text fw-bold mb-1">@Model.City.Name</h3>
+            <p class="card-text mb-2">@Model.Markdown</p>
+
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+                <small class="text-body-secondary">@Model.Date.ToString("dd/MM/yyyy")</small>
+                <small class="text-body-secondary">@Model.Author</small>
+            </div>
+        </div>
+    </div>
+</div>

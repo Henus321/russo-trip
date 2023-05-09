@@ -17,14 +17,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var excursions = _excursionRepository.GetExcursions;
+        var excursions = _excursionRepository.GetLastSixExcursions;
         var homeViewModel = new HomeViewModel(excursions); 
         return View(homeViewModel);
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

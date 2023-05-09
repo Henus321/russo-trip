@@ -20,10 +20,42 @@
     <None Remove="Interfaces\" />
     <None Remove="Repository\" />
     <None Remove="Migrations\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\ExcursionCard\" />
+    <None Remove="Components\" />
+    <None Remove="Views\Shared\Components\PageTitle\" />
+    <None Remove="Views\Shared\Components\AppFooter\" />
+    <None Remove="Views\Shared\Components\SearchInput\" />
+    <None Remove="Views\About\" />
+    <None Remove="Views\Account\" />
+    <None Remove="Views\Excursions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Repository\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\ExcursionCard\" />
+    <Folder Include="Components\" />
+    <Folder Include="Views\Shared\Components\PageTitle\" />
+    <Folder Include="Views\Shared\Components\AppFooter\" />
+    <Folder Include="Views\Shared\Components\SearchInput\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Excursions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Views\Shared\Components\AppFooter\aa.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="Views\Shared\Components\PageTitle\Defailt.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="Views\Shared\Components\AppHeader\Default.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
   </ItemGroup>
 </Project>
