@@ -15,6 +15,8 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Markdig" Version="0.31.0" />
+    <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.11.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Interfaces\" />
@@ -23,12 +25,13 @@
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\ExcursionCard\" />
     <None Remove="Components\" />
-    <None Remove="Views\Shared\Components\PageTitle\" />
     <None Remove="Views\Shared\Components\AppFooter\" />
     <None Remove="Views\Shared\Components\SearchInput\" />
     <None Remove="Views\About\" />
     <None Remove="Views\Account\" />
     <None Remove="Views\Excursions\" />
+    <None Remove="TagHelpers\" />
+    <None Remove="Views\Shared\Components\AppMarkdown\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
@@ -37,12 +40,13 @@
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\ExcursionCard\" />
     <Folder Include="Components\" />
-    <Folder Include="Views\Shared\Components\PageTitle\" />
     <Folder Include="Views\Shared\Components\AppFooter\" />
     <Folder Include="Views\Shared\Components\SearchInput\" />
     <Folder Include="Views\About\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Excursions\" />
+    <Folder Include="TagHelpers\" />
+    <Folder Include="Views\Shared\Components\AppMarkdown\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Views\Shared\Components\AppFooter\aa.cshtml.css">

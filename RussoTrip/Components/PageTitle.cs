@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using RussoTrip.Models;
 
 namespace RussoTrip.Components
 {

@@ -4,11 +4,12 @@
 
 <div class="album bg-body-tertiary mt-3">
     <div class="container">
-        <vc:page-title title="@ViewData["Title"]"></vc:page-title>
+        <vc:home-page-navigation />
+        <vc:page-title title="@ViewData["Title"]" />
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
             @foreach (var excursion in Model.Excursions)
             {
-                <vc:excursion-card excursion="@excursion"></vc:excursion-card>
+                <vc:excursion-card excursion="@excursion" />
             }
         </div>
     </div>
