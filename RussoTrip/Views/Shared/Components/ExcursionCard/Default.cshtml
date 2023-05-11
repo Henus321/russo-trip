@@ -1,4 +1,5 @@
-﻿@model Excursion
+﻿@using RussoTrip.Helpers
+@model Excursion
 
 <div class="col d-flex">
     <div class="card shadow border-0 rounded-0">
@@ -9,7 +10,7 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <small class="text-body-secondary">@Model.Date.ToString("dd/MM/yyyy")</small>
-                <small class="text-body-secondary">@Model.City.Name</small>
+                <small class="text-body-secondary">@Helpers.GetLocaleCity(Model.City.Name)</small>
             </div>
 
             <h3 class="card-text fw-bold mb-1">@Model.Name</h3>

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<string>
+﻿@using RussoTrip.Helpers
+@model IEnumerable<string>
 @{
     string href = "/excursions?city=";
 }
@@ -6,9 +7,9 @@
 
 <div class="d-flex flex-column ms-4 p-4 shadow-sm bg-light">
     <h4><u>Поиск по городам</u></h4>
-    <a class="text-dark text-decoration-none" asp-controller="excursions" asp-action="index">All</a>
+    <a class="text-dark text-decoration-none" asp-controller="excursions" asp-action="index">Все</a>
     @foreach (var city in Model)
-    {
-        <a class="text-dark text-decoration-none" href="@href@city.ToLower()">@city</a>
+        {
+        <a class="text-dark text-decoration-none" href="@href@city.ToLower()">@Helpers.GetLocaleCity(city)</a>
     }
 </div>

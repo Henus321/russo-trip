@@ -1,4 +1,5 @@
-﻿@model Excursion
+﻿@using RussoTrip.Helpers
+@model Excursion
 @{
     ViewData["Title"] = Model.Name; 
 }
@@ -12,7 +13,7 @@
                 <img class="img-fluid object-fit-cover" src="@Model.ImageUrl" alt="@Model.Name" />
             </div>
 
-            <h3 class="card-text fw-bold mb-1">@Model.City.Name</h3>
+            <h3 class="card-text fw-bold mb-1">@Helpers.GetLocaleCity(Model.City.Name)</h3>
             <vc:app-markdown markdown="@Model.Markdown"></vc:app-markdown>
             
             <div class="d-flex justify-content-between align-items-center mt-auto">
