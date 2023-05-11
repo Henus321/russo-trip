@@ -20,19 +20,27 @@ namespace RussoTrip.Controllers
             _cityRepository = cityRepository;
         }
 
-        public IActionResult Index(string? city)
+        public IActionResult Index(string? city, int page = 1)
         {
+            int pageSize = 4;
+            int pageStart = pageSize * (page - 1);
             IEnumerable<Excursion>? excursions;
-            if(string.IsNullOrEmpty(city))
+            int maxPages;
+    
+            if (string.IsNullOrEmpty(city))
             {
-                excursions = _excursionRepository.GetExcursions;
+                var allExcursions = _excursionRepository.GetExcursions;
+                maxPages = (int)Math.Ceiling((decimal)allExcursions.Count() / (decimal)pageSize);
+                excursions = allExcursions.Skip(pageStart).Take(pageSize);
             }
             else
             {
-                excursions = _excursionRepository.GetExcursionsByCity(city);
+                var allExcursions = _excursionRepository.GetExcursionsByCity(city);
+                maxPages = (int)Math.Ceiling((decimal)allExcursions.Count() / (decimal)pageSize);
+                excursions = allExcursions.Skip(pageStart).Take(pageSize);
             }
             var cities = _cityRepository.GetCities;
-            var excursionsViewModel = new ExcursionsViewModel(excursions, cities);
+            var excursionsViewModel = new ExcursionsViewModel(excursions, cities, page, maxPages);
             return View(excursionsViewModel);
         }
 

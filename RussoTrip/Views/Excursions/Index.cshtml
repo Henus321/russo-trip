@@ -1,8 +1,31 @@
-﻿@model ExcursionsViewModel
+﻿@using Microsoft.AspNetCore.Http
+@using System.Text;
+@model ExcursionsViewModel
 
 @{
     ViewData["Title"] = "Экскурсии";
     var cities = Model.Cities.Select(e => e.Name);
+
+    string url = Context.Request.Path;
+    string currentCity = Context.Request.Query["city"].ToString();
+
+    string GetPaginationHref(int pageNumber)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(url);
+
+        if (!string.IsNullOrEmpty(currentCity))
+        {
+            sb.Append($"?city={currentCity}");
+            sb.Append($"&page={pageNumber}");
+        }
+        else
+        {
+            sb.Append($"?page={pageNumber}");
+        }
+
+        return sb.ToString();
+    }
 }
 
 <div class="album bg-body-tertiary mt-3">
@@ -22,5 +45,15 @@
                 <vc:city-picker cities="@cities"></vc:city-picker>
             </div>
         </div>
+        <ul class="d-flex p-0">
+            @for (int i = 0; i < Model.MaxPages; i++)
+            {
+                <li class="d-flex align-items-center justify-content-center">
+                    <a href="@GetPaginationHref(i + 1)" class="@(Model.Page == (i + 1) ? "bg-dark text-light" : "bg-secondary text-light") mx-2 px-3 py-2 text-decoration-none">
+                        @(i + 1)
+                    </a>
+                </li>
+            }
+        </ul>
     </div>
 </div>
