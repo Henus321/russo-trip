@@ -32,6 +32,7 @@
     <None Remove="Views\Excursions\" />
     <None Remove="TagHelpers\" />
     <None Remove="Views\Shared\Components\AppMarkdown\" />
+    <None Remove="Views\Shared\Components\CityPicker\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
@@ -47,6 +48,7 @@
     <Folder Include="Views\Excursions\" />
     <Folder Include="TagHelpers\" />
     <Folder Include="Views\Shared\Components\AppMarkdown\" />
+    <Folder Include="Views\Shared\Components\CityPicker\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Views\Shared\Components\AppFooter\aa.cshtml.css">

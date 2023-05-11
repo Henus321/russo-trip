@@ -22,6 +22,12 @@ namespace RussoTrip.Repository
             }
         }
 
+
+        public IEnumerable<Excursion>? GetExcursionsByCity(string city)
+        {
+            return _russoTripDbContext.Excursions.Where(e => e.City.Name == city).Include(c => c.City);
+        }
+
         public IEnumerable<Excursion> GetLastSixExcursions
         {
             get

@@ -1,16 +1,26 @@
-﻿@{
+﻿@model ExcursionsViewModel
+
+@{
     ViewData["Title"] = "Экскурсии";
+    var cities = Model.Cities.Select(e => e.Name);
 }
 
 <div class="album bg-body-tertiary mt-3">
     <div class="container">
         <vc:home-page-navigation />
-        <vc:page-title title="@ViewData["Title"]" />
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
-            @foreach (var excursion in Model.Excursions)
-            {
-                <vc:excursion-card excursion="@excursion" />
-            }
+        <div class="d-flex">
+            <div class="d-flex flex-column w-75">
+                <vc:page-title title="@ViewData["Title"]" />
+                <div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
+                    @foreach (var excursion in Model.Excursions)
+                    {
+                        <vc:excursion-card excursion="@excursion" />
+                    }
+                </div>
+            </div>
+            <div class="d-flex flex-column w-25">
+                <vc:city-picker cities="@cities"></vc:city-picker>
+            </div>
         </div>
     </div>
 </div>
