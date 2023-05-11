@@ -22,9 +22,9 @@ namespace RussoTrip.Controllers
 
         public IActionResult Index(string? city, int page = 1)
         {
+            IEnumerable<Excursion>? excursions;
             int pageSize = 4;
             int pageStart = pageSize * (page - 1);
-            IEnumerable<Excursion>? excursions;
             int maxPages;
     
             if (string.IsNullOrEmpty(city))
