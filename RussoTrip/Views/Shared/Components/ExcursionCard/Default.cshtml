@@ -1,5 +1,9 @@
 ﻿@using RussoTrip.Helpers
 @model Excursion
+@{
+    string cityName = Helpers.GetLocaleCity(Model.City.Name);
+    string localeDate = Helpers.GetLocaleDate(Model.Date.ToString("dd/MM/yyyy"));
+}
 
 <div class="col d-flex">
     <div class="card shadow border-0 rounded-0">
@@ -9,8 +13,8 @@
             </div>
 
             <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">@Model.Date.ToString("dd/MM/yyyy")</small>
-                <small class="text-body-secondary">@Helpers.GetLocaleCity(Model.City.Name)</small>
+                <small class="text-body-secondary">@localeDate</small>
+                <small class="text-body-secondary">@cityName</small>
             </div>
 
             <h3 class="card-text fw-bold mb-1">@Model.Name</h3>
@@ -20,7 +24,10 @@
                 <a class="text-dark" asp-controller="excursions"
                    asp-action="details"
                    asp-route-id="@Model.Id">Подробнее</a>
-                <small class="text-body-secondary">@Model.Author</small>
+                <span class="d-flex justify-content-between align-items-center">
+                    <i class="bi bi-person-circle me-1"></i>
+                    <small class="text-body-secondary">@Model.Author</small>
+                </span>
             </div>
         </div>
     </div>

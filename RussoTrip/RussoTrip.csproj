@@ -30,7 +30,6 @@
     <None Remove="Views\About\" />
     <None Remove="Views\Account\" />
     <None Remove="Views\Excursions\" />
-    <None Remove="TagHelpers\" />
     <None Remove="Views\Shared\Components\AppMarkdown\" />
     <None Remove="Views\Shared\Components\CityPicker\" />
     <None Remove="Helpers\" />
@@ -47,7 +46,6 @@
     <Folder Include="Views\About\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Excursions\" />
-    <Folder Include="TagHelpers\" />
     <Folder Include="Views\Shared\Components\AppMarkdown\" />
     <Folder Include="Views\Shared\Components\CityPicker\" />
     <Folder Include="Helpers\" />
