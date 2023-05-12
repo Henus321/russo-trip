@@ -1,6 +1,14 @@
-﻿@model string
+﻿@model Dictionary<string, string>
+@{
+    string subtitle = Model["Subtitle"];
+}
 
-<h1 class="border-bottom border-secondary p-2 mb-3">
-    @Model
+<h1 class="d-flex flex-column border-bottom border-secondary p-2 mb-3">
+    @Model["Title"]
+    <br />
+    @if (!string.IsNullOrEmpty(subtitle))
+    {
+        <span class="fs-5 fw-light">@subtitle</span>
+    }
 </h1>
 

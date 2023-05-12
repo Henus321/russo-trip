@@ -6,9 +6,14 @@ namespace RussoTrip.Components
 {
 	public class PageTitle : ViewComponent
     {
-        public IViewComponentResult Invoke(string title)
+        public IViewComponentResult Invoke(string title, string subtitle)
         {
-            return View<string>(title);
+            var titles = new Dictionary<string, string>
+            {
+                { "Title", title },
+                { "Subtitle", subtitle }
+            };
+            return View(titles);
         }
     }
 }
