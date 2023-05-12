@@ -4,7 +4,6 @@ using RussoTrip.Models;
 using RussoTrip.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // ---------- Dependency Injection Container starts here - bind interface call to new instance of repositoty
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<IExcursionRepository, ExcursionRepository>();

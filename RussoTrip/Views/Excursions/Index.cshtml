@@ -1,0 +1,98 @@
+﻿@using Microsoft.AspNetCore.Http
+@using System.Text;
+@model ExcursionsViewModel
+
+@{
+    ViewData["Title"] = "Экскурсии";
+    var cities = Model.Cities.Select(e => e.Name);
+
+    string url = Context.Request.Path;
+    string currentCity = Context.Request.Query["city"].ToString();
+    string currentPageAsString = Context.Request.Query["page"].ToString();
+    int currentPage = string.IsNullOrEmpty(currentPageAsString) ? 1 : Int32.Parse(currentPageAsString);
+
+    string GetExactPageHref(int pageNumber)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(url);
+
+        if (!string.IsNullOrEmpty(currentCity))
+        {
+            sb.Append($"?city={currentCity}");
+            sb.Append($"&page={pageNumber}");
+        }
+        else
+        {
+            sb.Append($"?page={pageNumber}");
+        }
+
+        return sb.ToString();
+    }
+
+    string GetPageControlHref(bool isForward)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(url);
+
+        int sign;
+        sign = isForward ? 1 : -1;
+
+        if (!string.IsNullOrEmpty(currentCity))
+        {
+            sb.Append($"?city={currentCity}");
+            sb.Append($"&page={currentPage + sign}");
+        }
+        else
+        {
+            sb.Append($"?page={currentPage + sign}");
+        }
+
+        return sb.ToString();
+    }
+}
+
+<div class="album bg-body-tertiary mt-3">
+    <div class="container">
+        <vc:home-page-navigation />
+        <div class="d-flex">
+            <div class="d-flex flex-column w-75">
+                <vc:page-title title="@ViewData["Title"]" subtitle="" />
+                <div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
+                    @foreach (var excursion in Model.Excursions)
+                    {
+                        <vc:excursion-card excursion="@excursion" />
+                    }
+                </div>
+            </div>
+            <div class="d-flex flex-column w-25">
+                <vc:city-picker cities="@cities"></vc:city-picker>
+            </div>
+        </div>
+        <ul class="d-flex p-0">
+            @if(currentPage > 1)
+            {
+                <li class="d-flex align-items-center justify-content-center">
+                    <a href="@GetPageControlHref(false)" class="bg-secondary text-light mx-2 px-3 py-2 text-decoration-none">
+                        &larr;
+                    </a>
+                </li>
+            }
+            @for (int i = 0; i < Model.MaxPages; i++)
+            {
+                <li class="d-flex align-items-center justify-content-center">
+                    <a href="@GetExactPageHref(i + 1)" class="@(Model.Page == (i + 1) ? "bg-dark text-light" : "bg-secondary text-light") mx-2 px-3 py-2 text-decoration-none">
+                        @(i + 1)
+                    </a>
+                </li>
+            }
+            @if(currentPage < Model.MaxPages)
+            {
+                <li class="d-flex align-items-center justify-content-center">
+                    <a href="@GetPageControlHref(true)" class="bg-secondary text-light mx-2 px-3 py-2 text-decoration-none">
+                        &rarr;
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

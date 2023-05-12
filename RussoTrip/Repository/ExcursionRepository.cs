@@ -18,13 +18,28 @@ namespace RussoTrip.Repository
         {
             get
             {
-               return _russoTripDbContext.Excursions.Include(c => c.City); // Population?
+               return _russoTripDbContext.Excursions.Include(c => c.City);
+            }
+        }
+
+
+        public IEnumerable<Excursion>? GetExcursionsByCity(string city)
+        {
+            return _russoTripDbContext.Excursions.Where(e => e.City.Name == city).Include(c => c.City);
+        }
+
+        public IEnumerable<Excursion> GetLastSixExcursions
+        {
+            get
+            {
+                return _russoTripDbContext.Excursions.OrderByDescending(e => e.Date).Take(6).Include(c => c.City);
             }
         }
 
         public Excursion? GetExcursionById(int excursionId)
         {
-            return _russoTripDbContext.Excursions.FirstOrDefault(e => e.Id == excursionId);
+            // replace include
+            return _russoTripDbContext.Excursions.Include(c => c.City).FirstOrDefault(e => e.Id == excursionId);
         }
     }
 }

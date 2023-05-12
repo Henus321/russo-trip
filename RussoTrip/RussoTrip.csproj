@@ -15,15 +15,57 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Markdig" Version="0.31.0" />
+    <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.11.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Interfaces\" />
     <None Remove="Repository\" />
     <None Remove="Migrations\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\ExcursionCard\" />
+    <None Remove="Components\" />
+    <None Remove="Views\Shared\Components\AppFooter\" />
+    <None Remove="Views\Shared\Components\SearchInput\" />
+    <None Remove="Views\About\" />
+    <None Remove="Views\Account\" />
+    <None Remove="Views\Excursions\" />
+    <None Remove="Views\Shared\Components\AppMarkdown\" />
+    <None Remove="Views\Shared\Components\CityPicker\" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Repository\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\ExcursionCard\" />
+    <Folder Include="Components\" />
+    <Folder Include="Views\Shared\Components\AppFooter\" />
+    <Folder Include="Views\Shared\Components\SearchInput\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Excursions\" />
+    <Folder Include="Views\Shared\Components\AppMarkdown\" />
+    <Folder Include="Views\Shared\Components\CityPicker\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Views\Shared\Components\AppFooter\aa.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="Views\Shared\Components\PageTitle\Defailt.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="Views\Shared\Components\AppHeader\Default.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="Views\Shared\Components\AppMarkdown\Default.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
   </ItemGroup>
 </Project>
