@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO.Pipelines;
+using RussoTrip.Areas.Identity.Data;
 
 namespace RussoTrip.Models
 {
@@ -7,7 +8,7 @@ namespace RussoTrip.Models
     {
         public static void Seed(IApplicationBuilder applicationBuilder)
         {
-            RussoTripDbContext context = applicationBuilder.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<RussoTripDbContext>();
+            ApplicationDbContext context = applicationBuilder.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
             if (!context.Cities.Any())
             {
