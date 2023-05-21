@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using RussoTrip.Areas.Identity.Data;
+using RussoTrip.Models;
 
 namespace RussoTrip.Areas.Identity.Pages.Account
 {

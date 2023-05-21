@@ -25,36 +25,41 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Interfaces\" />
     <None Remove="Repository\" />
-    <None Remove="Views\Shared\Components\" />
-    <None Remove="Views\Shared\Components\ExcursionCard\" />
-    <None Remove="Components\" />
-    <None Remove="Views\Shared\Components\AppFooter\" />
-    <None Remove="Views\Shared\Components\SearchInput\" />
-    <None Remove="Views\About\" />
-    <None Remove="Views\Account\" />
-    <None Remove="Views\Excursions\" />
-    <None Remove="Views\Shared\Components\AppMarkdown\" />
-    <None Remove="Views\Shared\Components\CityPicker\" />
     <None Remove="Helpers\" />
+    <None Remove="Pages\" />
+    <None Remove="Pages\Shared\" />
+    <None Remove="Pages\Shared\Components\" />
+    <None Remove="Pages\Excursions\" />
+    <None Remove="Pages\Shared\Components\PageTitle\" />
+    <None Remove="Pages\Shared\Components\AppFooter\" />
+    <None Remove="Pages\Shared\Components\AppHeader\" />
+    <None Remove="Pages\Shared\Components\AppMarkdown\" />
+    <None Remove="Pages\Shared\Components\CityPicker\" />
+    <None Remove="Pages\Shared\Components\ExcursionCard\" />
+    <None Remove="Pages\Shared\Components\SearchInput\" />
+    <None Remove="Pages\About\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Repository\" />
-    <Folder Include="Views\Shared\Components\" />
-    <Folder Include="Views\Shared\Components\ExcursionCard\" />
-    <Folder Include="Components\" />
-    <Folder Include="Views\Shared\Components\AppFooter\" />
-    <Folder Include="Views\Shared\Components\SearchInput\" />
-    <Folder Include="Views\About\" />
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\Excursions\" />
-    <Folder Include="Views\Shared\Components\AppMarkdown\" />
-    <Folder Include="Views\Shared\Components\CityPicker\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Pages\Shared\" />
+    <Folder Include="Pages\Shared\Components\" />
+    <Folder Include="Pages\Excursions\" />
+    <Folder Include="Pages\Shared\Components\PageTitle\" />
+    <Folder Include="Pages\Shared\Components\AppFooter\" />
+    <Folder Include="Pages\Shared\Components\AppHeader\" />
+    <Folder Include="Pages\Shared\Components\AppMarkdown\" />
+    <Folder Include="Pages\Shared\Components\CityPicker\" />
+    <Folder Include="Pages\Shared\Components\ExcursionCard\" />
+    <Folder Include="Pages\Shared\Components\SearchInput\" />
+    <Folder Include="Pages\About\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Views\Shared\Components\AppFooter\aa.cshtml.css">
@@ -65,13 +70,31 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
-    <None Update="Views\Shared\Components\AppHeader\Default.cshtml.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
     <None Update="Views\Shared\Components\AppMarkdown\Default.cshtml.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
+    <None Update="Pages\Shared\Components\AppHeader\AppHeader.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\Excursions\Index.cshtml.cs">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Compile>
+    <Compile Update="Pages\Excursions\Pages\Details.cshtml.cs">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Compile>
+    <Compile Update="Pages\Excursions\ExcursionsModel.cs">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Compile>
+    <Compile Update="Pages\Excursions\Details.cshtml.cs">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Compile>
   </ItemGroup>
 </Project>

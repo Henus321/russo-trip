@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using RussoTrip.Areas.Identity.Data;
 using RussoTrip.Interfaces;
 using RussoTrip.Models;
 

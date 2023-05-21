@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO.Pipelines;
-using RussoTrip.Areas.Identity.Data;
 
 namespace RussoTrip.Models
 {

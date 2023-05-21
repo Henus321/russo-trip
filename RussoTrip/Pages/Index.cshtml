@@ -1,0 +1,20 @@
+﻿@page "/"
+@model RussoTrip.Pages.IndexModel
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="album bg-body-tertiary mt-3">
+    <div class="container">
+        <vc:page-title title="Последние экскурсии" subtitle="" />
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
+            @foreach (var excursion in Model.Excursions)
+            {
+               @await Component.InvokeAsync("ExcursionCard", new {
+                    excursion = excursion
+               }) 
+            }
+        </div>
+        <a class="btn btn-dark rounded-0 w-100" asp-page="excursions/index">Показать все</a>
+    </div>
+</div>
