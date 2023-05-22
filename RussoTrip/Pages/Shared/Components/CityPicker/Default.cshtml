@@ -9,7 +9,7 @@
     <h4><u>Поиск по городам</u></h4>
     <a class="text-dark text-decoration-none" asp-controller="excursions" asp-action="index">Все</a>
     @foreach (var city in Model)
-        {
+    {
         <a class="text-dark text-decoration-none" href="@href@city.ToLower()">@Helpers.GetLocaleCity(city)</a>
     }
 </div>
