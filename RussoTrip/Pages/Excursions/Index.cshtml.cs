@@ -14,7 +14,7 @@ public class IndexModel : PageModel
     public IEnumerable<City> Cities { get; set; }
     [FromQuery(Name = "city")]
     public string City { get; set; }
-    [FromQuery(Name = "page")]
+    [FromQuery(Name = "page-num")]
     public int PageNum { get; set; } = 1;
     public int MaxPages { get; set; }
 
