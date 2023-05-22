@@ -1,0 +1,25 @@
+﻿@page
+@using RussoTrip.Helpers
+@model RussoTrip.Pages.Excursions.DetailsModel
+@{
+    ViewData["Title"] = Model.Excursion.Name;
+    string cityName = Helpers.GetLocaleCity(Model.Excursion.City.Name);
+    string localeDate = Helpers.GetLocaleDate(Model.Excursion.Date.ToString("dd/MM/yyyy"));
+}
+
+<div class="album bg-body-tertiary mt-3">
+    <div class="container">
+        <vc:navigation-to-home />
+        <vc:page-title title="@Model.Excursion.Name" subtitle="@cityName" />
+        <div class="col d-flex flex-column">
+            <div class="d-block ratio ratio-16x9 mb-2">
+                <img class="img-fluid object-fit-cover" src="@Model.Excursion.ImageUrl" alt="@Model.Excursion.Name" />
+            </div>
+            <vc:app-markdown markdown="@Model.Excursion.Markdown"></vc:app-markdown>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+                <small class="text-body-secondary">@localeDate</small>
+                <small class="text-body-secondary">Автор: @Model.Excursion.Author</small>
+            </div>
+        </div>
+    </div>
+</div>

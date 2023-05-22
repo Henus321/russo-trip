@@ -1,0 +1,11 @@
+﻿@using RussoTrip.Helpers
+@model IEnumerable<string>
+
+<div class="d-flex flex-column ms-4 p-4 shadow-sm bg-light">
+    <h4><u>Поиск по городам</u></h4>
+    <a class="text-dark text-decoration-none" asp-page="/excursions/index">Все</a>
+    @foreach (var city in Model)
+    {
+        <a class="text-dark text-decoration-none" asp-page="/excursions/index" asp-route-city="@city.ToLower()">@Helpers.GetLocaleCity(city)</a>
+    }
+</div>

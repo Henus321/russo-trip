@@ -7,18 +7,18 @@ namespace RussoTrip.Repository
 {
 	public class CityRepository : ICityRepository
 	{
-        private readonly RussoTripDbContext _russoTripDbContext;
+        private readonly ApplicationDbContext _applicationDbContext;
 
-        public CityRepository(RussoTripDbContext russoTripDbContext)
+        public CityRepository(ApplicationDbContext applicationDbContext)
         {
-            _russoTripDbContext = russoTripDbContext;
+            _applicationDbContext = applicationDbContext;
         }
 
         public IEnumerable<City> GetCities
         {
             get
             {
-                return _russoTripDbContext.Cities.OrderBy(c => c.Name);
+                return _applicationDbContext.Cities.OrderBy(c => c.Name);
             }
         }
     }
