@@ -18,26 +18,26 @@ namespace RussoTrip.Repository
         {
             get
             {
-               return _applicationDbContext.Excursions.Include(c => c.City);
+               return _applicationDbContext.Excursions.Include(c => c.City).Include(c => c.Author);
             }
         }
 
         public IEnumerable<Excursion>? GetExcursionsByCity(string city)
         {
-            return _applicationDbContext.Excursions.Where(e => e.City.Name == city).Include(c => c.City);
+            return _applicationDbContext.Excursions.Where(e => e.City.Name == city).Include(c => c.City).Include(c => c.Author);
         }
 
         public IEnumerable<Excursion> GetLastSixExcursions
         {
             get
             {
-                return _applicationDbContext.Excursions.OrderByDescending(e => e.Date).Take(6).Include(c => c.City);
+                return _applicationDbContext.Excursions.OrderByDescending(e => e.Date).Take(6).Include(c => c.City).Include(c => c.Author);
             }
         }
 
         public Excursion? GetExcursionById(int excursionId)
         {
-            return _applicationDbContext.Excursions.Include(c => c.City).FirstOrDefault(e => e.Id == excursionId);
+            return _applicationDbContext.Excursions.Include(c => c.City).Include(c => c.Author).FirstOrDefault(e => e.Id == excursionId);
         }
     }
 }
