@@ -45,12 +45,9 @@
     <None Remove="Pages\About\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repository\" />
     <Folder Include="Helpers\" />
     <Folder Include="Pages\" />
     <Folder Include="Pages\Shared\" />
-    <Folder Include="Pages\Shared\Components\" />
     <Folder Include="Pages\Excursions\" />
     <Folder Include="Pages\Shared\Components\PageTitle\" />
     <Folder Include="Pages\Shared\Components\AppFooter\" />

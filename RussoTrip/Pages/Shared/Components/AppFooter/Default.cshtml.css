@@ -1,7 +1,7 @@
 ﻿.footer {
-    position: absolute;
-    bottom: 0;
+    display: block;
     width: 100%;
+    margin-top: auto;
     white-space: nowrap;
     line-height: 60px;
     background-color: #f1f5f9;
